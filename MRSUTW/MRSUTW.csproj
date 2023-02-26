@@ -92,12 +92,91 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\barfiller.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\flaticon.css" />
+    <Content Include="css\font-awesome.min.css" />
+    <Content Include="css\magnific-popup.css" />
+    <Content Include="css\owl.carousel.min.css" />
+    <Content Include="css\slicknav.min.css" />
+    <Content Include="css\style.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="fonts\Flaticon.svg" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
+    <Content Include="img\about-us.jpg" />
+    <Content Include="img\banner-bg.jpg" />
+    <Content Include="img\blog\blog-1.jpg" />
+    <Content Include="img\blog\blog-2.jpg" />
+    <Content Include="img\blog\blog-3.jpg" />
+    <Content Include="img\blog\blog-4.jpg" />
+    <Content Include="img\blog\blog-5.jpg" />
+    <Content Include="img\blog\details\blog-profile.jpg" />
+    <Content Include="img\blog\details\comment-1.jpg" />
+    <Content Include="img\blog\details\comment-2.jpg" />
+    <Content Include="img\blog\details\comment-3.jpg" />
+    <Content Include="img\blog\details\details-1.jpg" />
+    <Content Include="img\blog\details\details-2.jpg" />
+    <Content Include="img\blog\details\details-hero.jpg" />
+    <Content Include="img\blog\details\quote-left.png" />
+    <Content Include="img\breadcrumb-bg.jpg" />
+    <Content Include="img\classes\class-1.jpg" />
+    <Content Include="img\classes\class-2.jpg" />
+    <Content Include="img\classes\class-3.jpg" />
+    <Content Include="img\classes\class-4.jpg" />
+    <Content Include="img\classes\class-5.jpg" />
+    <Content Include="img\classes\class-details\class-detailsl.jpg" />
+    <Content Include="img\classes\class-details\trainer-profile.jpg" />
+    <Content Include="img\gallery\gallery-1.jpg" />
+    <Content Include="img\gallery\gallery-2.jpg" />
+    <Content Include="img\gallery\gallery-3.jpg" />
+    <Content Include="img\gallery\gallery-4.jpg" />
+    <Content Include="img\gallery\gallery-5.jpg" />
+    <Content Include="img\gallery\gallery-6.jpg" />
+    <Content Include="img\gallery\gallery-7.jpg" />
+    <Content Include="img\gallery\gallery-8.jpg" />
+    <Content Include="img\gallery\gallery-9.jpg" />
+    <Content Include="img\hero\hero-1.jpg" />
+    <Content Include="img\hero\hero-2.jpg" />
+    <Content Include="img\letest-blog\latest-1.jpg" />
+    <Content Include="img\letest-blog\latest-2.jpg" />
+    <Content Include="img\letest-blog\latest-3.jpg" />
+    <Content Include="img\letest-blog\latest-4.jpg" />
+    <Content Include="img\letest-blog\latest-5.jpg" />
+    <Content Include="img\logo.png" />
+    <Content Include="img\services\services-1.jpg" />
+    <Content Include="img\services\services-2.jpg" />
+    <Content Include="img\services\services-3.jpg" />
+    <Content Include="img\services\services-4.jpg" />
+    <Content Include="img\sidebar-banner.jpg" />
+    <Content Include="img\team\team-1.jpg" />
+    <Content Include="img\team\team-2.jpg" />
+    <Content Include="img\team\team-3.jpg" />
+    <Content Include="img\team\team-4.jpg" />
+    <Content Include="img\team\team-5.jpg" />
+    <Content Include="img\team\team-6.jpg" />
+    <Content Include="img\testimonial\testimonial-1.jpg" />
+    <Content Include="img\testimonial\testimonial-2.jpg" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\jquery-3.3.1.min.js" />
+    <Content Include="js\jquery.barfiller.js" />
+    <Content Include="js\jquery.magnific-popup.min.js" />
+    <Content Include="js\jquery.slicknav.js" />
+    <Content Include="js\main.js" />
+    <Content Include="js\masonry.pkgd.min.js" />
+    <Content Include="js\owl.carousel.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -105,6 +184,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
+    <Content Include="fonts\Flaticon.eot" />
+    <Content Include="fonts\Flaticon.ttf" />
+    <Content Include="fonts\Flaticon.woff" />
+    <Content Include="fonts\Flaticon.woff2" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
     <None Include="packages.config" />
     <Content Include="Views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">
