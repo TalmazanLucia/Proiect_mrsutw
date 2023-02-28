@@ -103,25 +103,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap-grid.css" />
-    <Content Include="Content\bootstrap-grid.min.css" />
-    <Content Include="Content\bootstrap-grid.rtl.css" />
-    <Content Include="Content\bootstrap-grid.rtl.min.css" />
-    <Content Include="Content\bootstrap-reboot.css" />
-    <Content Include="Content\bootstrap-reboot.min.css" />
-    <Content Include="Content\bootstrap-reboot.rtl.css" />
-    <Content Include="Content\bootstrap-reboot.rtl.min.css" />
-    <Content Include="Content\bootstrap-utilities.css" />
-    <Content Include="Content\bootstrap-utilities.min.css" />
-    <Content Include="Content\bootstrap-utilities.rtl.css" />
-    <Content Include="Content\bootstrap-utilities.rtl.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\bootstrap.rtl.css" />
-    <Content Include="Content\bootstrap.rtl.min.css" />
-    <Content Include="Content\font-awesome.css" />
-    <Content Include="Content\font-awesome.min.css" />
-    <Content Include="Content\Site.css" />
+    <Content Include="Content\themes\barfiller.css" />
+    <Content Include="Content\themes\bootstrap-grid.css" />
+    <Content Include="Content\themes\bootstrap-grid.min.css" />
+    <Content Include="Content\themes\bootstrap-reboot.css" />
+    <Content Include="Content\themes\bootstrap-reboot.min.css" />
+    <Content Include="Content\themes\bootstrap.css" />
+    <Content Include="Content\themes\bootstrap.min.css" />
+    <Content Include="Content\themes\flaticon.css" />
+    <Content Include="Content\themes\font-awesome.css" />
+    <Content Include="Content\themes\font-awesome.min.css" />
+    <Content Include="Content\themes\magnific-popup.css" />
+    <Content Include="Content\themes\owl.carousel.min.css" />
+    <Content Include="Content\themes\Site.css" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
     <Content Include="Content\themes\base\autocomplete.css" />
@@ -163,14 +157,8 @@
     <Content Include="Content\themes\base\tabs.css" />
     <Content Include="Content\themes\base\theme.css" />
     <Content Include="Content\themes\base\tooltip.css" />
-    <Content Include="css\barfiller.css" />
-    <Content Include="css\bootstrap.min.css" />
-    <Content Include="css\flaticon.css" />
-    <Content Include="css\font-awesome.min.css" />
-    <Content Include="css\magnific-popup.css" />
-    <Content Include="css\owl.carousel.min.css" />
-    <Content Include="css\slicknav.min.css" />
-    <Content Include="css\style.css" />
+    <Content Include="Content\themes\slicknav.min.css" />
+    <Content Include="Content\themes\style.css" />
     <Content Include="fonts\Flaticon.svg" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
@@ -227,32 +215,59 @@
     <Content Include="img\team\team-6.jpg" />
     <Content Include="img\testimonial\testimonial-1.jpg" />
     <Content Include="img\testimonial\testimonial-2.jpg" />
-    <Content Include="js\bootstrap.min.js" />
-    <Content Include="js\jquery-3.3.1.min.js" />
-    <Content Include="js\jquery.barfiller.js" />
-    <Content Include="js\jquery.magnific-popup.min.js" />
-    <Content Include="js\jquery.slicknav.js" />
-    <Content Include="js\main.js" />
-    <Content Include="js\masonry.pkgd.min.js" />
-    <Content Include="js\owl.carousel.min.js" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
-    <Content Include="Scripts\bootstrap.esm.js" />
-    <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Content\themes\bootstrap.min.css.map" />
+    <Content Include="Content\themes\bootstrap.css.map" />
+    <Content Include="Content\themes\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\themes\bootstrap-reboot.css.map" />
+    <Content Include="Content\themes\bootstrap-grid.min.css.map" />
     <None Include="Scripts\jquery-3.6.3.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.6.3.js" />
     <Content Include="Scripts\jquery-3.6.3.min.js" />
     <Content Include="Scripts\jquery-3.6.3.slim.js" />
     <Content Include="Scripts\jquery-3.6.3.slim.min.js" />
     <Content Include="Scripts\jquery-3.6.3.slim.min.map" />
     <Content Include="Scripts\jquery-3.6.3.min.map" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-ui-1.13.2.js" />
     <Content Include="Scripts\jquery-ui-1.13.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.barfiller.js" />
+    <Content Include="Scripts\jquery.magnific-popup.min.js" />
+    <Content Include="Scripts\jquery.slicknav.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\main.js" />
+    <Content Include="Scripts\masonry.pkgd.min.js" />
+    <Content Include="Scripts\owl.carousel.min.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -270,37 +285,19 @@
     <Content Include="fonts\Flaticon.ttf" />
     <Content Include="fonts\Flaticon.woff" />
     <Content Include="fonts\Flaticon.woff2" />
-    <Content Include="fonts\fontawesome-webfont.eot" />
-    <Content Include="fonts\fontawesome-webfont.ttf" />
-    <Content Include="fonts\fontawesome-webfont.woff" />
-    <Content Include="fonts\fontawesome-webfont.woff2" />
-    <Content Include="fonts\FontAwesome.otf" />
-    <Content Include="Content\bootstrap.rtl.min.css.map" />
-    <Content Include="Content\bootstrap.rtl.css.map" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-utilities.rtl.min.css.map" />
-    <Content Include="Content\bootstrap-utilities.rtl.css.map" />
-    <Content Include="Content\bootstrap-utilities.min.css.map" />
-    <Content Include="Content\bootstrap-utilities.css.map" />
-    <Content Include="Content\bootstrap-reboot.rtl.min.css.map" />
-    <Content Include="Content\bootstrap-reboot.rtl.css.map" />
-    <Content Include="Content\bootstrap-reboot.min.css.map" />
-    <Content Include="Content\bootstrap-reboot.css.map" />
-    <Content Include="Content\bootstrap-grid.rtl.min.css.map" />
-    <Content Include="Content\bootstrap-grid.rtl.css.map" />
-    <Content Include="Content\bootstrap-grid.min.css.map" />
-    <Content Include="Content\bootstrap-grid.css.map" />
     <None Include="packages.config" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Scripts\bootstrap.min.js.map" />
-    <Content Include="Scripts\bootstrap.js.map" />
-    <Content Include="Scripts\bootstrap.esm.min.js.map" />
-    <Content Include="Scripts\bootstrap.esm.js.map" />
-    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
-    <Content Include="Scripts\bootstrap.bundle.js.map" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\README.md" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -312,6 +309,12 @@
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
     <Folder Include="Views\Some\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
