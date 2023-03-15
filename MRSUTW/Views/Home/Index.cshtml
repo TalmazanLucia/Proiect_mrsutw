@@ -17,17 +17,6 @@
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700&display=swap" rel="stylesheet">
 
-    
-    <style>
-        #train {
-            position: fixed;
-            cursor: pointer;
-            bottom: 0;
-            left: 0;
-            z-index: 100;
-        }
-    </style>
-
     @Styles.Render("~/bundles/bootstrap/css")
     @Styles.Render("~/bundles/font-awesome/css")
     @Styles.Render("~/bundles/flaticon/css")
@@ -45,29 +34,7 @@
     </div>
     -->
     <!-- Offcanvas Menu Section Begin -->
-    <div>
-        <img id="train" src="./../../img/Mascota.gif" width="100">
-
-        
-
-
-        <script>
-            train.onclick = function () {
-                let start = Date.now();
-
-                let timer = setInterval(function () {
-                    let timePassed = Date.now() - start;
-
-                    train.style.left = timePassed / 5 + 'px';
-
-                    if (timePassed > 2000) clearInterval(timer);
-
-                }, 20);
-            }
-        </script>
-
-    </div>
-    <div class="offcanvas-menu-overlay">    </div>
+    <div class="offcanvas-menu-overlay"></div>
     <div class="offcanvas-menu-wrapper">
         <div class="canvas-close">
             <i class="fa fa-close"></i>
@@ -108,7 +75,6 @@
     <!-- Offcanvas Menu Section End -->
     <!-- Header Section Begin -->
     <header class="header-section">
-
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-3">
@@ -163,7 +129,6 @@
     <!-- Header End -->
     <!-- Hero Section Begin -->
     <section class="hero-section">
-
         <div class="hs-slider owl-carousel">
             <div class="hs-item set-bg" data-setbg="./../../img/hero/hero-1.jpg">
                 <div class="container">
@@ -196,7 +161,6 @@
     <!-- Hero Section End -->
     <!-- ChoseUs Section Begin -->
     <section class="choseus-section spad">
-        <!-- imaginea mascota-->
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -626,8 +590,6 @@
             </form>
         </div>
     </div>
-
-
 
     @Scripts.Render("~/bundles/jquery-3.3.1/js")
     @Scripts.Render("~/bundles/jquery.magnific-popup/js")
