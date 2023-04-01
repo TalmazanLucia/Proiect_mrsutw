@@ -34,6 +34,9 @@ namespace MRSUTW
             bundles.Add(new StyleBundle("~/bundles/style/LogIn").Include(
                 "~/Content/themes/LogIn.css", new CssRewriteUrlTransform()));
 
+            bundles.Add(new StyleBundle("~/bundles/style/profile").Include(
+                 "~/Content/themes/Profile.css", new CssRewriteUrlTransform()));
+
             bundles.Add(new ScriptBundle("~/bundles/jquery-3.3.1/js").Include(
                 "~/Scripts/jquery-3.3.1.min.js"));
 

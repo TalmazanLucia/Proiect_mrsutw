@@ -160,6 +160,7 @@
     <Content Include="Content\themes\slicknav.min.css" />
     <Content Include="Content\themes\style.css" />
     <Content Include="Content\themes\LogIn.css" />
+    <Content Include="Content\themes\profile.css" />
     <Content Include="fonts\Flaticon.svg" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
@@ -187,6 +188,7 @@
     <Content Include="img\classes\class-5.jpg" />
     <Content Include="img\classes\class-details\class-detailsl.jpg" />
     <Content Include="img\classes\class-details\trainer-profile.jpg" />
+    <Content Include="img\edit-logo.svg" />
     <Content Include="img\gallery\gallery-1.jpg" />
     <Content Include="img\gallery\gallery-2.jpg" />
     <Content Include="img\gallery\gallery-3.jpg" />
