@@ -1,4 +1,4 @@
-﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -160,6 +160,7 @@
     <Content Include="Content\themes\slicknav.min.css" />
     <Content Include="Content\themes\style.css" />
     <Content Include="Content\themes\LogIn.css" />
+    <Content Include="Content\themes\profile.css" />
     <Content Include="fonts\Flaticon.svg" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
@@ -187,6 +188,7 @@
     <Content Include="img\classes\class-5.jpg" />
     <Content Include="img\classes\class-details\class-detailsl.jpg" />
     <Content Include="img\classes\class-details\trainer-profile.jpg" />
+    <Content Include="img\edit-logo.svg" />
     <Content Include="img\gallery\gallery-1.jpg" />
     <Content Include="img\gallery\gallery-2.jpg" />
     <Content Include="img\gallery\gallery-3.jpg" />
@@ -277,12 +279,14 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Controllers\SalaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TrainersController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\SignInController.cs" />
     <Compile Include="Controllers\SignUpController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\TrainersModel.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -309,6 +313,7 @@
     <Content Include="Views\SignUp\Index.cshtml" />
     <Content Include="Views\Profile\Index.cshtml" />
     <Content Include="Views\Sala\PaginaSala.cshtml" />
+    <Content Include="Views\Trainers\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
