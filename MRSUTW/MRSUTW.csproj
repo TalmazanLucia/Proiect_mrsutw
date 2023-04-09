@@ -329,6 +329,16 @@
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MRSUTW.BusinessLogic\MRSUTW.BusinessLogic.csproj">
+      <Project>{82d433e1-cd3a-40fc-a2bf-36705f499b17}</Project>
+      <Name>MRSUTW.BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MRSUTW.Domain\MRSUTW.Domain.csproj">
+      <Project>{9442feaf-241c-42a9-a6e8-e7cc98f740e9}</Project>
+      <Name>MRSUTW.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
