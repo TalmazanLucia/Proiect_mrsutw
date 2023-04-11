@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MRSUTW.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,12 @@ namespace MRSUTW.Controllers
         // GET: healthy_menu
         public ActionResult Index()
         {
-            return View();
+            ProductsModel p = new ProductsModel();
+            p.Username = "Customer";
+            p.Menus = new List<string> {"Meniu #1", "Meniu #2", "Meniu #3", "Meniu #4", "Meniu #5"};
+
+               
+            return View(p);
         }
     }
 }
