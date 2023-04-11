@@ -1,0 +1,115 @@
+﻿@{
+     Layout = null;
+}
+@using System.Web.Optimization
+@model MRSUTW.Models.User
+
+<!DOCTYPE html>
+
+<html>
+<head>
+     <meta charset="UTF-8">
+     <meta name="description" content="Gym Template">
+     <meta name="keywords" content="Gym, unica, creative, html">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>Gym | Template</title>
+
+     <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700&display=swap" rel="stylesheet">
+
+     @Styles.Render("~/bundles/bootstrap/css")
+     @Styles.Render("~/bundles/font-awesome/css")
+     @Styles.Render("~/bundles/flaticon/css")
+     @Styles.Render("~/bundles/owl-carousel/css")
+     @Styles.Render("~/bundles/barfiller/css")
+     @Styles.Render("~/bundles/magnific-popup/css")
+     @Styles.Render("~/bundles/slicknav/css")
+     @Styles.Render("~/bundles/style/profile")
+</head>
+<body>
+     <div class="profile">
+          <div class="profile-container">
+               <a href="@Url.Action("Index", "Home")" class="profile-back">
+                    Go back
+               </a>
+               <div class="profile-header">
+                    <div class="profile-header-left">
+                         <div class="profile-header-left-avatar-container">
+                              <img src="~/img/avatar.svg" alt="" />
+                         </div>
+                         <div class="profile-header-left-text-container">
+                              <div class="profile-header-left-your-account">Your account</div>
+                              <div class="profile-header-left-registred">
+                                   Registred on @Html.DisplayFor(u => u.Registred)
+                              </div>
+                         </div>
+                    </div>
+                    <div class="profile-header-right">
+                         <button class="profile-header-right-edit-button">
+                              <img src="~/img/edit-logo.svg" alt="" />
+                              <p>Edit profile</p>
+                         </button>
+                    </div>
+               </div>
+               <div class="profile-tabs">
+                    <div class="profile-tabs-item active">My info</div>
+                    <div class="profile-tabs-item">Contacts</div>
+               </div>
+               <div class="profile-info">
+                    <div class="profile-info-item">
+                         <div class="profile-info-item-title">Name</div>
+                         <input class="profile-info-item-value"
+                                type="text"
+                                disabled="true"
+                                value="@Html.DisplayFor(u => u.Username)" />
+                    </div>
+                    <div class="profile-info-item">
+                         <div class="profile-info-item-title">Identity</div>
+                         <input class="profile-info-item-value"
+                                type="text"
+                                disabled="true"
+                                value="@Html.DisplayFor(u => u.Identity)" />
+                    </div>
+                    <div class="profile-info-item">
+                         <div class="profile-info-item-title">Age</div>
+                         <input class="profile-info-item-value"
+                                type="text"
+                                disabled="true"
+                                value="@Html.DisplayFor(u => u.Age)" />
+                    </div>
+                    <div class="profile-info-item large">
+                         <div class="profile-info-item-title">Description</div>
+                         <textarea class="profile-info-item-value"
+                                   type="text"
+                                   disabled="true"
+                                   rows="5">@Html.DisplayFor(u => u.Description)</textarea>
+                    </div>
+                    <div class="profile-info-item">
+                         <div class="profile-info-item-title">Weight</div>
+                         <input class="profile-info-item-value"
+                                type="text"
+                                disabled="true"
+                                value="@Html.DisplayFor(u => u.Weight) kg" />
+                    </div>
+                    <div class="profile-info-item">
+                         <div class="profile-info-item-title">Height</div>
+                         <input class="profile-info-item-value"
+                                type="text"
+                                disabled="true"
+                                value="@Html.DisplayFor(u => u.Height) cm" />
+                    </div>
+               </div>
+          </div>
+     </div>
+
+     @Scripts.Render("~/bundles/jquery-3.3.1/js")
+     @Scripts.Render("~/bundles/jquery.magnific-popup/js")
+     @Scripts.Render("~/bundles/masonry-pkgd/js")
+     @Scripts.Render("~/bundles/jquery-barfiller/js")
+     @Scripts.Render("~/bundles/jquery-slicknav/js")
+     @Scripts.Render("~/bundles/owl-carousel/js")
+     @Scripts.Render("~/bundles/main/js")
+     @Scripts.Render("~/bundles/bootstrap/js")
+</body>
+</html>
