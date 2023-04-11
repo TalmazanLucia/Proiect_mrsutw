@@ -9,7 +9,7 @@ namespace MRSUTW.Controllers
     public class SalaController : Controller
     {
         // GET: Home
-        public ActionResult PaginaSala()
+        public ActionResult Index()
         {
             return View();
         }

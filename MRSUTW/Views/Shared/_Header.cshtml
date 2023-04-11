@@ -1,0 +1,42 @@
+﻿
+<header class="header-section">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="logo">
+                    <a href="./index.html">
+                        <img src="./../../img/logo.png" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <nav class="nav-menu">
+                    <ul>
+                        <li class="active"><a href="./index.html">Home</a></li>
+
+                        <li><a href="@Url.Action("Index", "Trainers") ">Trainers</a></li>
+                        <li><a href="@Url.Action("Index", "Sala")">Classes</a></li>
+                        <li>
+                            <a href="#">Pages</a>
+                            <ul class="dropdown">
+                                <li><a href="./about-us.html">About us</a></li>
+                                <li><a href="@Url.Action("Index", "Trainers") ">Trainers</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="@Url.Action("Index", "SignIn")">Sign In</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <a href="@Url.Action("Index", "Profile")" style="margin-left:auto">
+                <div class="col-lg-3" style="max-width: 50px; margin-left:auto; height: 50px !important; background: #b8b8b8; border-radius: 100%; display: flex; align-items: center; justify-content: center;">
+                    <img src="~/img/avatar.svg" style=" height: 30px; width: auto;" />
+                </div>
+            </a>
+        </div>
+
+        <div class="canvas-open">
+            <i class="fa fa-bars"></i>
+
+        </div>
+    </div>
+</header>
