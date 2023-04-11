@@ -1,0 +1,375 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using System.Web.Optimization
+
+<!DOCTYPE html>
+
+<html>
+<body>
+    <!-- Breadcrumb Section Begin -->
+    <section class="breadcrumb-section set-bg" data-setbg="./../../img/breadcrumb-bg.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="breadcrumb-text">
+                        <h2>Activities</h2>
+                        <div class="bt-option">
+                            <a href="@Url.Action("Index", "Home")">Home</a>
+                            <a href="#">Sala</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Section End -->
+    <!-- Class Details Section Begin -->
+    <section class="class-details-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="class-details-text">
+                        <div class="cd-pic">
+                            <img src="./../../img/classes/class-details/sala-de-sport-utm.jpg" alt="">
+                        </div>
+                        <div class="cd-text">
+                            <div class="cd-single-item">
+                                <h3>Sala de Forta, Rascani</h3>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                                    irure Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                    tempor incididunt ut labore et dolore magna aliqua accusantium doloremque
+                                    laudantium. Excepteur sint occaecat cupidatat non proident sculpa.
+                                </p>
+                            </div>
+                            <div class="cd-single-item">
+                                <h3>Sala de Sport, Rascani</h3>
+                                <p>
+                                    Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                                    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                    ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur officia
+                                    deserunt mollit.
+                                </p>
+                            </div>
+                        </div>
+                        <!--<div class="cd-trainer">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="cd-trainer-pic">
+                                        <img src="./../../img/classes/class-details/trainer-profile.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="cd-trainer-text">
+                                        <div class="trainer-title">
+                                            <h4>Athart Rachel</h4>
+                                            <span>Gym Trainer</span>
+                                        </div>
+                                        <div class="trainer-social">
+                                            <a href="#"><i class="fa fa-facebook"></i></a>
+                                            <a href="#"><i class="fa fa-twitter"></i></a>
+                                            <a href="#"><i class="fa fa-youtube-play"></i></a>
+                                            <a href="#"><i class="fa fa-instagram"></i></a>
+                                            <a href="#"><i class="fa  fa-envelope-o"></i></a>
+                                        </div>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                            tempor incididunt ut labore et dolore magna aliqua viverra maecenas lacus
+                                            vel facilisis.
+                                        </p>
+                                        <ul class="trainer-info">
+                                            <li><span>Age</span>35</li>
+                                            <li><span>Weight</span>148lbs</li>
+                                            <li><span>Height</span>10' 2``</li>
+                                            <li><span>Occupation</span>no-founder</li>
+                                        </ul>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                            tempor incididunt ut labore et dolore magna aliqua viverra maecenas lacus
+                                            vel facilisis.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>-->
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-8">
+                    <div class="sidebar-option">
+                        <div class="so-latest">
+                            <h5 class="title">Latest news</h5>
+                            <div class="latest-large set-bg" data-setbg="./../../img/letest-blog/latest-1.jpeg">
+                                <div class="ll-text">
+                                    <h5><a href="#">Felicitări echipa UTM-DOR pentru Locul I între Instituțiile de Învățământ Superior</a></h5>
+                                    <ul>
+                                        <li>Nov 19, 2022</li>
+                                        <li>20 Comment</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="latest-item">
+                                <div class="li-pic">
+                                    <img src="./../../img/letest-blog/latest-2.jpg" alt="">
+                                </div>
+                                <div class="li-text">
+                                    <h6><a href="#">Felicitări lui Lilian Balan, student IMC-211, Facultatea Energetica si Inginerie Electrica, UTM</a></h6>
+                                    <span class="li-time">Mar 16, 2022</span>
+                                </div>
+                            </div>
+                            <div class="latest-item">
+                                <div class="li-pic">
+                                    <img src="./../../img/letest-blog/latest-3.jpg" alt="">
+                                </div>
+                                <div class="li-text">
+                                    <h6><a href="#">Felicitări UTM Rugby Team</a></h6>
+                                    <span class="li-time">Sep 21, 2021</span>
+                                </div>
+                            </div>
+                            <!--<div class="latest-item">
+                                <div class="li-pic">
+                                    <img src="./../../img/letest-blog/latest-4.jpg" alt="">
+                                </div>
+                                <div class="li-text">
+                                    <h6><a href="#">Ina Garten's Skillet-Roasted Lemon Chicken</a></h6>
+                                    <span class="li-time">Aug 15, 2019</span>
+                                </div>
+                            </div>
+                            <div class="latest-item">
+                                <div class="li-pic">
+                                    <img src="./../../img/letest-blog/latest-5.jpg" alt="">
+                                </div>
+                                <div class="li-text">
+                                    <h6><a href="#">The Best Weeknight Baked Potatoes, 3 Creative Ways</a></h6>
+                                    <span class="li-time">Aug 15, 2019</span>
+                                </div>
+                            </div>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Class Details Section End -->
+    <!-- Class Timetable Section Begin -->
+    <section class="class-timetable-section class-details-timetable spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="class-details-timetable_title">
+                        <h5>Orarul Antrenamentelor</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="class-timetable details-timetable">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Luni</th>
+                                    <th>Marti</th>
+                                    <th>Miercuri</th>
+                                    <th>Joi</th>
+                                    <th>Vineri</th>
+                                    <th>Sambata</th>
+                                    <th>Duminica</th>
+                                    <th>Locul desfasurarii</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="class-time">
+                                        <h5>Popusoi Anatolie</h5>
+                                        <span>Atletism</span>
+                                    </td>
+                                    <td class="dark-bg hover-dp ts-meta">
+                                        <span>16:30-18:00</span>
+                                    </td>
+                                    <td class="blank-td"></td>
+                                    <td class="dark-bg hover-dp ts-meta">
+                                        <span>16:30-18:00</span>
+                                    </td>
+                                    <td class="blank-td"></td>
+                                    <td class="dark-bg blank-td"></td>
+                                    <td class="blank-td"></td>
+                                    <td class="dark-bg blank-td"></td>
+                                    <td class="class-time">
+                                        <h5>Manej, sala atletism</h5>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="class-time">
+                                        <h5>Covaliova Tatiana</h5>
+                                        <span>Volei(femei)</span>
+                                    </td>
+                                    <td class="blank-td"></td>
+                                    <td class="dark-bg hover-dp ts-meta">
+                                        <span>17:00-19:15</span>
+                                    </td>
+                                    <td class="blank-td"></td>
+                                    <td class="dark-bg hover-dp ts-meta">
+                                        <span>17:00-19:00</span>
+                                    </td>
+                                    <td class="blank-td"></td>
+                                    <td class="dark-bg blank-td"></td>
+                                    <td class="hover-dp ts-meta">
+                                        <span>11:00-13:30</span>
+                                    </td>
+                                    <td class="class-time">
+                                        <h5>Centrul de Sport UTM</h5>
+                                        <span>str. Studentilor 3/8</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="class-time">
+                                        <h5>Prozorov Veaceslav</h5>
+                                        <span>Tenis de masa</span>
+                                    </td>
+                                    <td class="dark-bg hover-dp ts-meta">
+                                        <span>16:45-19:00</span>
+                                    </td>
+                                    <td class="blank-td"></td>
+                                    <td class="dark-bg hover-dp ts-meta">
+                                        <span>16:45-19:00</span>
+                                    </td>
+                                    <td class="hover-dp ts-meta">
+                                        <span>16:45-19:00</span>
+                                    </td>
+                                    <td class="dark-bg blank-td"></td>
+                                    <td class="blank-td"></td>
+                                    <td class="dark-bg blank-td"></td>
+                                    <td class="class-time">
+                                        <h5>Sala Sportiva Florilor</h5>
+                                        <span>str. Florilor 4/1</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="class-time">
+                                        <h5>Verghizova Olga</h5>
+                                        <span>Baschet(femei)</span>
+                                    </td>
+                                    <td class="hover-dp ts-meta">
+                                        <span>17:00-18:30</span>
+                                    </td>
+                                    <td class="dark-bg blank-td"></td>
+                                    <td class="hover-dp ts-meta">
+                                        <span>18:30-20:00</span>
+                                    </td>
+                                    <td class="dark-bg blank-td"></td>
+                                    <td class="hover-dp ts-meta">
+                                        <span>17:00-18:30</span>
+                                    </td>
+                                    <td class="dark-bg hover-dp ts-meta">
+                                        <span>12:00-13:30</span>
+                                    </td>
+                                    <td class="blank-td"></td>
+                                    <td class="class-time">
+                                        <h5>Centrul de Sport UTM</h5>
+                                        <span>str. Studentilor 3/8</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="class-time">
+                                        <h5>Macovchina Olga</h5>
+                                        <span>Baschet(barbati)</span>
+                                    </td>
+                                    <td class="dark-bg hover-dp ts-meta">
+                                        <span>18:30-20:00</span>
+                                    </td>
+                                    <td class="blank-td"></td>
+                                    <td class="dark-bg hover-dp ts-meta">
+                                        <span>17:00-18:30</span>
+                                    </td>
+                                    <td class="blank-td"></td>
+                                    <td class="dark-bg hover-dp ts-meta">
+                                        <span>18:30-20:00</span>
+                                    </td>
+                                    <td class="hover-dp ts-meta">
+                                        <span>13:30-15:00</span>
+                                    </td>
+                                    <td class="dark-bg blank-td"></td>
+                                    <td class="class-time">
+                                        <h5>Centrul de Sport UTM</h5>
+                                        <span>str. Studentilor 3/8</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="class-time">
+                                        <h5>Gangan Valentin</h5>
+                                        <span>Lupta libera</span>
+                                    </td>
+                                    <td class="hover-dp ts-meta">
+                                        <span>16:00-17:30</span>
+                                    </td>
+                                    <td class="dark-bg hover-dp ts-meta">
+                                        <span>16:00-17:30</span>
+                                    </td>
+                                    <td class="blank-td"></td>
+                                    <td class="dark-bg hover-dp ts-meta">
+                                        <span>16:00-17:30</span>
+                                    </td>
+                                    <td class="hover-dp ts-meta">
+                                        <span>16:00-17:30</span>
+                                    </td>
+                                    <td class="dark-bg blank-td"></td>
+                                    <td class="blank-td"></td>
+                                    <td class="class-time">
+                                        <h5>CL Olimpia; Liceu. Sport</h5>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="class-time">
+                                        <h5>Ramcovici Victor</h5>
+                                        <span>Sah</span>
+                                    </td>
+                                    <td class="dark-bg hover-dp ts-meta">
+                                        <span>16:45-18:30</span>
+                                    </td>
+                                    <td class="blank-td"></td>
+                                    <td class="dark-bg hover-dp ts-meta">
+                                        <span>16:45-18:30</span>
+                                    </td>
+                                    <td class="blank-td"></td>
+                                    <td class="dark-bg hover-dp ts-meta">
+                                        <span>16:45-18:30</span>
+                                    </td>
+                                    <td class="blank-td"></td>
+                                    <td class="dark-bg blank-td"></td>
+                                    <td class="class-time">
+                                        <h5>Clubul de sah si joc de dame</h5>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="class-time">
+                                        <h5>Sturza Greta</h5>
+                                        <span>Joc de dame</span>
+                                    </td>
+                                    <td class="blank-td"></td>
+                                    <td class="dark-bg hover-dp ts-meta">
+                                        <span>15:00-19:30</span>
+                                    </td>
+                                    <td class="blank-td"></td>
+                                    <td class="dark-bg hover-dp ts-meta">
+                                        <span>15:00-19:30</span>
+                                    </td>
+                                    <td class="blank-td"></td>
+                                    <td class="dark-bg blank-td"></td>
+                                    <td class="blank-td"></td>
+                                    <td class="class-time">
+                                        <h5>Clubul de sah si joc de dame</h5>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
