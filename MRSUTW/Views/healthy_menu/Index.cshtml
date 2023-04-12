@@ -1,5 +1,5 @@
 ﻿@{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @using System.Web.Optimization
 @model MRSUTW.Models.ProductsModel
@@ -7,91 +7,69 @@
 <!DOCTYPE html>
 
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Gym Template">
-    <meta name="keywords" content="Gym, unica, creative, html">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Gym | Template</title>
-
-    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700&display=swap" rel="stylesheet">
-
-    @Styles.Render("~/bundles/bootstrap/css")
-    @Styles.Render("~/bundles/font-awesome/css")
-    @Styles.Render("~/bundles/flaticon/css")
-    @Styles.Render("~/bundles/owl-carousel/css")
-    @Styles.Render("~/bundles/barfiller/css")
-    @Styles.Render("~/bundles/magnific-popup/css")
-    @Styles.Render("~/bundles/slicknav/css")
-    @Styles.Render("~/bundles/style/css")
-</head>
 <body>
-    <div class="row">
-        <div class="col-md-12">
-            <a class="back-button" href="@Url.Action("Index", "Home")">GYM</a>
-            
+    <section class="hero-section">
+        <div class="hs-slider owl-carousel">
+            <div class="breadcrumb-section set-bg" data-setbg="./../../img/healthy_menu/menu_back.jpg">
+            </div>
         </div>
-    </div>
-            <div class="row">
-                <div class="ts-slider owl-carousel owl-loaded owl-drag">
-
-                    <div class="owl-stage-outer">
-                        <div class="owl-stage" style="transform: translate3d(-585px, 0px, 0px); transition: all 1.2s ease 0s; width: 1171px;">
-                            <div class="owl-item cloned" style="width: 97.556px;">
-                                <div class="col-lg-4">
-                                    <div class="ts-item set-bg" data-setbg="./../../img/healthy_menu/menu1.jpg" style="background-image: url(&quot;./../../img/healthy_menu/menu1.jpg&quot;);">
-                                        <div class="ts_text">
-                                            <h4>Burrito bowl with chipotle black beans</h4>
-                                            <span>Burrito bowl with chipotle black beans</span>
-                                        </div>
-                                    </div>
+    </section>
+    <div class="row">
+        <div class="ts-slider owl-carousel owl-loaded owl-drag">
+            <div class="owl-stage-outer">
+                <div class="owl-stage" style="transform: translate3d(-585px, 0px, 0px); transition: all 1.2s ease 0s; width: 1171px;">
+                    <div class="owl-item cloned" style="width: 97.556px;">
+                        <div class="col-lg-4">
+                            <div class="ts-item set-bg" data-setbg="./../../img/healthy_menu/menu1.jpg" style="background-image: url(&quot;./../../img/healthy_menu/menu1.jpg&quot;);">
+                                <div class="ts_text">
+                                    <h4>Burrito bowl with chipotle black beans</h4>
+                                    <span>Burrito bowl with chipotle black beans</span>
                                 </div>
-                            </div><div class="owl-item cloned" style="width: 97.556px;">
-                                <div class="col-lg-4">
-                                    <div class="ts-item set-bg" data-setbg="./../../img/healthy_menu/menu2.jpg" style="background-image: url(&quot;./../../img/healthy_menu/menu2.jpg&quot;);">
-                                        <div class="ts_text">
-                                            <h4>Chicken satay salad</h4>
-                                            <span>Chicken satay salad</span>
-                                        </div>
-                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="owl-item cloned" style="width: 97.556px;">
+                        <div class="col-lg-4">
+                            <div class="ts-item set-bg" data-setbg="./../../img/healthy_menu/menu2.jpg" style="background-image: url(&quot;./../../img/healthy_menu/menu2.jpg&quot;);">
+                                <div class="ts_text">
+                                    <h4>Chicken satay salad</h4>
+                                    <span>Chicken satay salad</span>
                                 </div>
-                            </div><div class="owl-item cloned" style="width: 97.556px;">
-                                <div class="col-lg-4">
-                                    <div class="ts-item set-bg" data-setbg="./../../img/healthy_menu/menu3.jpg" style="background-image: url(&quot;./../../img/healthy_menu/menu3.jpg&quot;);">
-                                        <div class="ts_text">
-                                            <h4>Healthy salmon bowl</h4>
-                                            <span>Healthy salmon bowl</span>
-                                        </div>
-                                    </div>
+                            </div>
+                        </div>
+                    </div><div class="owl-item cloned" style="width: 97.556px;">
+                        <div class="col-lg-4">
+                            <div class="ts-item set-bg" data-setbg="./../../img/healthy_menu/menu3.jpg" style="background-image: url(&quot;./../../img/healthy_menu/menu3.jpg&quot;);">
+                                <div class="ts_text">
+                                    <h4>Healthy salmon bowl</h4>
+                                    <span>Healthy salmon bowl</span>
                                 </div>
-                            </div><div class="owl-item" style="width: 97.556px;">
-                                <div class="col-lg-4">
-                                    <div class="ts-item set-bg" data-setbg="./../../img/healthy_menu/menu4.jpg" style="background-image: url(&quot;./../../img/healthy_menu/menu4.jpg&quot;);">
-                                        <div class="ts_text">
-                                            <h4>Healthy bolognese</h4>
-                                            <span>Healthy bolognese</span>
-                                        </div>
-                                    </div>
+                            </div>
+                        </div>
+                    </div><div class="owl-item" style="width: 97.556px;">
+                        <div class="col-lg-4">
+                            <div class="ts-item set-bg" data-setbg="./../../img/healthy_menu/menu4.jpg" style="background-image: url(&quot;./../../img/healthy_menu/menu4.jpg&quot;);">
+                                <div class="ts_text">
+                                    <h4>Healthy bolognese</h4>
+                                    <span>Healthy bolognese</span>
                                 </div>
-                            </div><div class="owl-item" style="width: 97.556px;">
-                                <div class="col-lg-4">
-                                    <div class="ts-item set-bg" data-setbg="./../../img/healthy_menu/menu5.jpg" style="background-image: url(&quot;./../../img/healthy_menu/menu5.jpg&quot;);">
-                                        <div class="ts_text">
-                                            <h4>Penne with cabbage & walnuts</h4>
-                                            <span>Penne with cabbage & walnuts</span>
-                                        </div>
-                                    </div>
+                            </div>
+                        </div>
+                    </div><div class="owl-item" style="width: 97.556px;">
+                        <div class="col-lg-4">
+                            <div class="ts-item set-bg" data-setbg="./../../img/healthy_menu/menu5.jpg" style="background-image: url(&quot;./../../img/healthy_menu/menu5.jpg&quot;);">
+                                <div class="ts_text">
+                                    <h4>Penne with cabbage & walnuts</h4>
+                                    <span>Penne with cabbage & walnuts</span>
                                 </div>
-                            </div><div class="owl-item" style="width: 97.556px;">
-                                <div class="col-lg-4">
-                                    <div class="ts-item set-bg" data-setbg="./../../img/healthy_menu/menu6.jpg" style="background-image: url(&quot;./../../img/healthy_menu/menu5.jpg&quot;);">
-                                        <div class="ts_text">
-                                            <h4>Chicken parmigiana</h4>
-                                            <span>Chicken parmigiana</span>
-                                        </div>
-                                    </div>
+                            </div>
+                        </div>
+                    </div><div class="owl-item" style="width: 97.556px;">
+                        <div class="col-lg-4">
+                            <div class="ts-item set-bg" data-setbg="./../../img/healthy_menu/menu6.jpg" style="background-image: url(&quot;./../../img/healthy_menu/menu5.jpg&quot;);">
+                                <div class="ts_text">
+                                    <h4>Chicken parmigiana</h4>
+                                    <span>Chicken parmigiana</span>
                                 </div>
                             </div>
                         </div>
@@ -100,16 +78,18 @@
             </div>
         </div>
     </div>
-            
-        </div>
     </div>
-        @Scripts.Render("~/bundles/jquery-3.3.1/js")
-        @Scripts.Render("~/bundles/jquery.magnific-popup/js")
-        @Scripts.Render("~/bundles/masonry-pkgd/js")
-        @Scripts.Render("~/bundles/jquery-barfiller/js")
-        @Scripts.Render("~/bundles/jquery-slicknav/js")
-        @Scripts.Render("~/bundles/owl-carousel/js")
-        @Scripts.Render("~/bundles/main/js")
-        @Scripts.Render("~/bundles/bootstrap/js")
+    </div>
+
+    </div>
+    </div>
+    @Scripts.Render("~/bundles/jquery-3.3.1/js")
+    @Scripts.Render("~/bundles/jquery.magnific-popup/js")
+    @Scripts.Render("~/bundles/masonry-pkgd/js")
+    @Scripts.Render("~/bundles/jquery-barfiller/js")
+    @Scripts.Render("~/bundles/jquery-slicknav/js")
+    @Scripts.Render("~/bundles/owl-carousel/js")
+    @Scripts.Render("~/bundles/main/js")
+    @Scripts.Render("~/bundles/bootstrap/js")
 </body>
 </html>
