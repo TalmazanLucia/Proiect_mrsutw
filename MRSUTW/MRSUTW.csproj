@@ -278,6 +278,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SetProfileController.cs" />
     <Compile Include="Controllers\TrainersController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\SignInController.cs" />
@@ -312,6 +313,7 @@
     <Content Include="Views\SignUp\Index.cshtml" />
     <Content Include="Views\Profile\Index.cshtml" />
     <Content Include="Views\Trainers\Index.cshtml" />
+    <Content Include="Views\SetProfile\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
