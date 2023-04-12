@@ -37,7 +37,6 @@
                <div class="avatar-container">
                     <img src="~/img/avatar.svg" alt="" />
                </div>
-               <form>
                     <div class="form-group">
                          <input type="text" id="username" name="username" placeholder="Username:" value="@Html.DisplayFor(u => u.Username)" required>
                     </div>
@@ -45,8 +44,16 @@
                          <input type="password" id="password" name="password" placeholder="Password:" value="@Html.DisplayFor(u => u.Password)" required>
                     </div>
                     <p class="form-redirect">Don't have an account? <a href="@Url.Action("Index", "SignUp")">Create here!</a></p>
-                    <button type="submit">Login</button>
-               </form>
+                    @using (Ajax.BeginForm("Index", "SignIn", new AjaxOptions
+                    {
+                         HttpMethod = "POST",
+                         OnSuccess = "succes",
+                         OnFailure = "failure",
+                         UpdateTargetId = "resultTarget"
+                    }))
+                    {
+                         <button type="submit">Login</button>
+                    }
           </div>
      </div>
 
