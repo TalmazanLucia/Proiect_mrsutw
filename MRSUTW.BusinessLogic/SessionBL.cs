@@ -15,5 +15,13 @@ namespace MRSUTW.BusinessLogic
           {
                return UserLoginAction(data);
           }
+          public PostResponse UserRegister(ULoginData data)
+          {
+               return UserRegisterAction(data);
+          }
+          public UProfileData GetProfile()
+          {
+               return GetProfileAction();
+          }
      }
 }

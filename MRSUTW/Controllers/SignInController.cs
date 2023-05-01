@@ -45,7 +45,7 @@ namespace MRSUTW.Controllers
                     var userLogin = _session.UserLogin(data);
                     if (userLogin.Status)
                     {
-                         return RedirectToAction("Index", "SetProfile");
+                         return RedirectToAction("Index", "Home");
                     }
                     else
                     {

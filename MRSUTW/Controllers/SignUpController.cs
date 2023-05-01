@@ -1,4 +1,6 @@
-﻿using MRSUTW.Models;
+﻿using MRSUTW.BusinessLogic.Interfaces;
+using MRSUTW.Domain.Entities.User;
+using MRSUTW.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +11,12 @@ namespace MRSUTW.Controllers
 {
     public class SignUpController : Controller
     {
+          private ISession _session;
+          public SignUpController()
+          {
+               var bl = new BusinessLogic.BussinesLogic();
+               _session = bl.GetSessionBL();
+          }
         // GET: SignUp
         public ActionResult Index()
         {
@@ -19,5 +27,32 @@ namespace MRSUTW.Controllers
 
                return View();
         }
-    }
+          [HttpPost]
+          public ActionResult Index(User login)
+          {
+               if (true)
+               {
+                    ULoginData data = new ULoginData
+                    {
+                         Credential = login.Username,
+                         Password = login.Password,
+                         LoginIp = Request.UserHostAddress,
+                         LoginDateTime = DateTime.Now,
+                    };
+
+                    var userRegister = _session.UserRegister(data);
+                    if (userRegister.Status)
+                    {
+                         return RedirectToAction("Index", "SetProfile");
+                    }
+                    else
+                    {
+                         ModelState.AddModelError("", userRegister.StatusMsg);
+                         return View();
+                    }
+               }
+
+               return View();
+          }
+     }
 }
