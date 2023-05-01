@@ -310,7 +310,9 @@
           }
 
           nextStep = () => {
-               if (step + 1 > 5) return
+               if (step + 1 > 5) {
+                    window.location.href = "http://localhost:50019/Home/"
+               }
                step = step + 1
                verifyStep()
           }
