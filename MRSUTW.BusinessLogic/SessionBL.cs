@@ -23,5 +23,10 @@ namespace MRSUTW.BusinessLogic
           {
                return GetProfileAction();
           }
+
+          public UTrainersData  GetTrainers()
+          {
+               return GetTrainersAction();
+          }
      }
 }
