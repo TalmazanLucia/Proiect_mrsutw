@@ -33,5 +33,19 @@ namespace MRSUTW.BusinessLogic.Core
 
                return u;
           }
+          internal UTrainersData GetTrainersAction()
+          {
+               UTrainersData t = new UTrainersData();
+               t.Username = "Arnold Bunicescu";
+               t.Email = "arnold_trainer@gmail.com";
+               t.Registred = "5 may 2023";
+               t.Identity = "Male";
+               t.Description = "Trainer for beginners, advanced, ";
+               t.Age = 22;
+               t.Weight = 86;
+               t.Height = 196;
+
+               return t;
+          }    
      }
 }

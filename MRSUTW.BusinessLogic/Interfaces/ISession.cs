@@ -12,5 +12,6 @@ namespace MRSUTW.BusinessLogic.Interfaces
           PostResponse UserLogin(ULoginData data);
           PostResponse UserRegister(ULoginData data);
           UProfileData GetProfile();
+          UTrainersData GetTrainers();
      }
 }
