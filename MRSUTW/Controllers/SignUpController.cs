@@ -28,14 +28,16 @@ namespace MRSUTW.Controllers
                return View();
         }
           [HttpPost]
-          public ActionResult Index(User login)
+          public ActionResult Index(UserSignup signup)
           {
                if (true)
                {
-                    ULoginData data = new ULoginData
+                    USignupData data = new USignupData
                     {
-                         Credential = login.Username,
-                         Password = login.Password,
+                         Username = signup.Username,
+                         Email = signup.Email,
+                         Password1 = signup.Password1,
+                         Password2 = signup.Password2,
                          LoginIp = Request.UserHostAddress,
                          LoginDateTime = DateTime.Now,
                     };
