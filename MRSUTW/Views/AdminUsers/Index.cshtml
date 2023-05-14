@@ -2,6 +2,8 @@
      Layout = null;
 }
 @using System.Web.Optimization
+@model IEnumerable<MRSUTW.Models.User>
+@using System.Diagnostics
 
 <!DOCTYPE html>
 
@@ -69,10 +71,10 @@
                     color: #f07f2d;
                }
 
-                    .admin-nav-item.active img,
-                    .admin-nav-item:hover img {
-                         filter: invert(51%) sepia(80%) saturate(695%) hue-rotate(342deg) brightness(99%) contrast(90%);
-                    }
+               .admin-nav-item.active img,
+               .admin-nav-item:hover img {
+                    filter: invert(51%) sepia(80%) saturate(695%) hue-rotate(342deg) brightness(99%) contrast(90%);
+               }
 
           .admin-nav-item-image {
                width: 30px;
@@ -129,6 +131,8 @@
                gap: 50px;
                grid-template-columns: repeat(2, 1fr);
                grid-template-rows: repeat(3, 1fr);
+               max-height: calc(100vh - 50px);
+               overflow-y: auto;
           }
 
           .admin-home-widget {
@@ -284,225 +288,54 @@
      <div class="admin-home-page">
           @{ Html.RenderPartial("_AdminHeader", "Users"); }
           <div class="admin-home-content">
-               <div class="admin-home-widget">
-                    <div class="admin-home-widget-container">
-                         <p class="admin-home-widget-title">Lucia Talmazan</p>
-                         <div class="admin-home-widget-data-container-item-image">
-                              <img src="~/img/arrow-right.svg" alt="" />
-                         </div>
-                    </div>
-                    <div class="admin-data-container">
-                         <div class="admin-data-container-row">
-                              <div class="admin-data-container-row-item">
-                                   <p class="admin-home-widget-title-data">Identity: </p>
-                                   <p class="admin-home-widget-data">Female</p>
-                              </div>
-                              <div class="admin-data-container-row-item">
-                                   <p class="admin-home-widget-title-data">Age: </p>
-                                   <p class="admin-home-widget-data">21</p>
+               @foreach (var u in Model)
+               {
+                    <a class="admin-home-widget" href="@Url.Action("Profile","Profile", new {id = u.ID})">
+                         <div class="admin-home-widget-container">
+                              <p class="admin-home-widget-title">@u.Username</p>
+                              <div class="admin-home-widget-data-container-item-image">
+                                   <img src="~/img/arrow-right.svg" alt="" />
                               </div>
                          </div>
-                         <div class="admin-data-container-row">
-                              <div class="admin-data-container-row-item">
-                                   <p class="admin-home-widget-title-data">Weight: </p>
-                                   <p class="admin-home-widget-data">50kg</p>
+                         <div class="admin-data-container">
+                              <div class="admin-data-container-row">
+                                   <div class="admin-data-container-row-item">
+                                        <p class="admin-home-widget-title-data">Identity: </p>
+                                        <p class="admin-home-widget-data">@u.Identity</p>
+                                   </div>
+                                   <div class="admin-data-container-row-item">
+                                        <p class="admin-home-widget-title-data">Age: </p>
+                                        <p class="admin-home-widget-data">@u.Age</p>
+                                   </div>
                               </div>
-                              <div class="admin-data-container-row-item">
-                                   <p class="admin-home-widget-title-data">Height: </p>
-                                   <p class="admin-home-widget-data">160</p>
+                              <div class="admin-data-container-row">
+                                   <div class="admin-data-container-row-item">
+                                        <p class="admin-home-widget-title-data">Weight: </p>
+                                        <p class="admin-home-widget-data">@u.Weight kg</p>
+                                   </div>
+                                   <div class="admin-data-container-row-item">
+                                        <p class="admin-home-widget-title-data">Height: </p>
+                                        <p class="admin-home-widget-data">@u.Height cm </p>
+                                   </div>
                               </div>
-                         </div>
-                         <div class="admin-data-container-row">
-                              <div class="admin-data-container-row-item">
-                                   <p class="admin-home-widget-title-data">Email: </p>
-                                   <p class="admin-home-widget-data">test@gmail.com</p>
+                              <div class="admin-data-container-row">
+                                   <div class="admin-data-container-row-item">
+                                        <p class="admin-home-widget-title-data">Email: </p>
+                                        <p class="admin-home-widget-data">@u.Email</p>
+                                   </div>
                               </div>
-                         </div>
-                    </div>
-               </div>
-               <div class="admin-home-widget">
-                    <div class="admin-home-widget-container">
-                         <p class="admin-home-widget-title">Lucia Talmazan</p>
-                         <div class="admin-home-widget-data-container-item-image">
-                              <img src="~/img/arrow-right.svg" alt="" />
-                         </div>
-                    </div>
-                    <div class="admin-data-container">
-                         <div class="admin-data-container-row">
-                              <div class="admin-data-container-row-item">
-                                   <p class="admin-home-widget-title-data">Identity: </p>
-                                   <p class="admin-home-widget-data">Female</p>
-                              </div>
-                              <div class="admin-data-container-row-item">
-                                   <p class="admin-home-widget-title-data">Age: </p>
-                                   <p class="admin-home-widget-data">21</p>
+                              <div class="admin-data-container-row">
+                                   <div class="admin-data-container-row-item">
+                                        <p class="admin-home-widget-title-data">Type: </p>
+                                        <p class="admin-home-widget-data">@u.Role</p>
+                                   </div>
                               </div>
                          </div>
-                         <div class="admin-data-container-row">
-                              <div class="admin-data-container-row-item">
-                                   <p class="admin-home-widget-title-data">Weight: </p>
-                                   <p class="admin-home-widget-data">50kg</p>
-                              </div>
-                              <div class="admin-data-container-row-item">
-                                   <p class="admin-home-widget-title-data">Height: </p>
-                                   <p class="admin-home-widget-data">160</p>
-                              </div>
-                         </div>
-                         <div class="admin-data-container-row">
-                              <div class="admin-data-container-row-item">
-                                   <p class="admin-home-widget-title-data">Email: </p>
-                                   <p class="admin-home-widget-data">test@gmail.com</p>
-                              </div>
-                         </div>
-                    </div>
-               </div>
-               <div class="admin-home-widget">
-                    <div class="admin-home-widget-container">
-                         <p class="admin-home-widget-title">Lucia Talmazan</p>
-                         <div class="admin-home-widget-data-container-item-image">
-                              <img src="~/img/arrow-right.svg" alt="" />
-                         </div>
-                    </div>
-                    <div class="admin-data-container">
-                         <div class="admin-data-container-row">
-                              <div class="admin-data-container-row-item">
-                                   <p class="admin-home-widget-title-data">Identity: </p>
-                                   <p class="admin-home-widget-data">Female</p>
-                              </div>
-                              <div class="admin-data-container-row-item">
-                                   <p class="admin-home-widget-title-data">Age: </p>
-                                   <p class="admin-home-widget-data">21</p>
-                              </div>
-                         </div>
-                         <div class="admin-data-container-row">
-                              <div class="admin-data-container-row-item">
-                                   <p class="admin-home-widget-title-data">Weight: </p>
-                                   <p class="admin-home-widget-data">50kg</p>
-                              </div>
-                              <div class="admin-data-container-row-item">
-                                   <p class="admin-home-widget-title-data">Height: </p>
-                                   <p class="admin-home-widget-data">160</p>
-                              </div>
-                         </div>
-                         <div class="admin-data-container-row">
-                              <div class="admin-data-container-row-item">
-                                   <p class="admin-home-widget-title-data">Email: </p>
-                                   <p class="admin-home-widget-data">test@gmail.com</p>
-                              </div>
-                         </div>
-                    </div>
-               </div>
-               <div class="admin-home-widget">
-                    <div class="admin-home-widget-container">
-                         <p class="admin-home-widget-title">Lucia Talmazan</p>
-                         <div class="admin-home-widget-data-container-item-image">
-                              <img src="~/img/arrow-right.svg" alt="" />
-                         </div>
-                    </div>
-                    <div class="admin-data-container">
-                         <div class="admin-data-container-row">
-                              <div class="admin-data-container-row-item">
-                                   <p class="admin-home-widget-title-data">Identity: </p>
-                                   <p class="admin-home-widget-data">Female</p>
-                              </div>
-                              <div class="admin-data-container-row-item">
-                                   <p class="admin-home-widget-title-data">Age: </p>
-                                   <p class="admin-home-widget-data">21</p>
-                              </div>
-                         </div>
-                         <div class="admin-data-container-row">
-                              <div class="admin-data-container-row-item">
-                                   <p class="admin-home-widget-title-data">Weight: </p>
-                                   <p class="admin-home-widget-data">50kg</p>
-                              </div>
-                              <div class="admin-data-container-row-item">
-                                   <p class="admin-home-widget-title-data">Height: </p>
-                                   <p class="admin-home-widget-data">160</p>
-                              </div>
-                         </div>
-                         <div class="admin-data-container-row">
-                              <div class="admin-data-container-row-item">
-                                   <p class="admin-home-widget-title-data">Email: </p>
-                                   <p class="admin-home-widget-data">test@gmail.com</p>
-                              </div>
-                         </div>
-                    </div>
-               </div>
-               <div class="admin-home-widget">
-                    <div class="admin-home-widget-container">
-                         <p class="admin-home-widget-title">Lucia Talmazan</p>
-                         <div class="admin-home-widget-data-container-item-image">
-                              <img src="~/img/arrow-right.svg" alt="" />
-                         </div>
-                    </div>
-                    <div class="admin-data-container">
-                         <div class="admin-data-container-row">
-                              <div class="admin-data-container-row-item">
-                                   <p class="admin-home-widget-title-data">Identity: </p>
-                                   <p class="admin-home-widget-data">Female</p>
-                              </div>
-                              <div class="admin-data-container-row-item">
-                                   <p class="admin-home-widget-title-data">Age: </p>
-                                   <p class="admin-home-widget-data">21</p>
-                              </div>
-                         </div>
-                         <div class="admin-data-container-row">
-                              <div class="admin-data-container-row-item">
-                                   <p class="admin-home-widget-title-data">Weight: </p>
-                                   <p class="admin-home-widget-data">50kg</p>
-                              </div>
-                              <div class="admin-data-container-row-item">
-                                   <p class="admin-home-widget-title-data">Height: </p>
-                                   <p class="admin-home-widget-data">160</p>
-                              </div>
-                         </div>
-                         <div class="admin-data-container-row">
-                              <div class="admin-data-container-row-item">
-                                   <p class="admin-home-widget-title-data">Email: </p>
-                                   <p class="admin-home-widget-data">test@gmail.com</p>
-                              </div>
-                         </div>
-                    </div>
-               </div>
-               <div class="admin-home-widget">
-                    <div class="admin-home-widget-container">
-                         <p class="admin-home-widget-title">Lucia Talmazan</p>
-                         <div class="admin-home-widget-data-container-item-image">
-                              <img src="~/img/arrow-right.svg" alt="" />
-                         </div>
-                    </div>
-                    <div class="admin-data-container">
-                         <div class="admin-data-container-row">
-                              <div class="admin-data-container-row-item">
-                                   <p class="admin-home-widget-title-data">Identity: </p>
-                                   <p class="admin-home-widget-data">Female</p>
-                              </div>
-                              <div class="admin-data-container-row-item">
-                                   <p class="admin-home-widget-title-data">Age: </p>
-                                   <p class="admin-home-widget-data">21</p>
-                              </div>
-                         </div>
-                         <div class="admin-data-container-row">
-                              <div class="admin-data-container-row-item">
-                                   <p class="admin-home-widget-title-data">Weight: </p>
-                                   <p class="admin-home-widget-data">50kg</p>
-                              </div>
-                              <div class="admin-data-container-row-item">
-                                   <p class="admin-home-widget-title-data">Height: </p>
-                                   <p class="admin-home-widget-data">160</p>
-                              </div>
-                         </div>
-                         <div class="admin-data-container-row">
-                              <div class="admin-data-container-row-item">
-                                   <p class="admin-home-widget-title-data">Email: </p>
-                                   <p class="admin-home-widget-data">test@gmail.com</p>
-                              </div>
-                         </div>
-                    </div>
-               </div>
+                    </a>
+               }
+               
           </div>
      </div>
-
 
      @Scripts.Render("~/bundles/jquery-3.3.1/js")
      @Scripts.Render("~/bundles/jquery.magnific-popup/js")

@@ -2,6 +2,7 @@
      Layout = null;
 }
 @using System.Web.Optimization
+@using MRSUTW.Domain.Enums
 @model MRSUTW.Models.User
 
 <!DOCTYPE html>
@@ -89,9 +90,17 @@
 <body>
      <div class="profile">
           <div class="profile-container">
-               <a href="@Url.Action("Index", "Home")" class="profile-back">
-                    Go back
-               </a>
+               <div style="display:flex;gap:24px">
+                    <a href="@Url.Action("Index", "Home")" class="profile-back">
+                         Go back
+                    </a>
+                    @if (Model.Role == URole.Administrator)
+                    {
+                         <a href="@Url.Action("Index", "AdminHome")" class="profile-back">
+                              Admin Page
+                         </a>
+                    }
+               </div>
                <div class="profile-header">
                     <div class="profile-header-left">
                          <div class="profile-header-left-avatar-container">
