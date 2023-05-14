@@ -19,19 +19,22 @@ namespace MRSUTW.Controllers
                var bl = new BusinessLogic.BussinesLogic();
                _session = bl.GetSessionBL();
           }
-        // GET: Profile
-        public ActionResult Index()
-        {
+          // GET: Profile
+          public ActionResult Index()
+          {
+               var userCookie = Request.Cookies["MRSUTW"];
+               if (userCookie == null) { return RedirectToAction("Index", "Home"); }
+
                var config = new MapperConfiguration(cfg => {
                     cfg.CreateMap<UProfileData, User>();
                });
 
                IMapper mapper = config.CreateMapper();
 
-               User u = mapper.Map<User>(_session.GetProfile());
-            
+               User u = mapper.Map<User>(_session.GetProfileByCookie(userCookie.Value));
+
 
                return View(u);
-        }
-    }
+          }
+     }
 }
