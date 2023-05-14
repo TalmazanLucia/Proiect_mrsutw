@@ -1,6 +1,5 @@
 ﻿using MRSUTW.BusinessLogic.DBModel;
 using MRSUTW.Domain.Entities.User;
-using MRSUTW.Domain.Enums;
 using MRSUTW.Helpers.Session;
 using System;
 using System.Collections.Generic;
@@ -123,7 +122,6 @@ namespace MRSUTW.BusinessLogic.Core
                          LasIp = data.LoginIp,
                          LastLogin = data.LoginDateTime,
                          Registred = DateTime.Now,
-                         Type = URole.Client,
                     };
 
                     using (var db = new UserContext())
