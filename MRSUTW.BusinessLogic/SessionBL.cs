@@ -4,8 +4,10 @@ using MRSUTW.Domain.Entities.User;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace MRSUTW.BusinessLogic
 {
@@ -19,12 +21,19 @@ namespace MRSUTW.BusinessLogic
           {
                return UserRegisterAction(data);
           }
-          public UProfileData GetProfile()
+          public HttpCookie GenCookie(string loginCredential)
           {
-               return GetProfileAction();
+               return Cookie(loginCredential);
           }
-
-          public UTrainersData  GetTrainers()
+          public UProfileData GetProfileByCookie(string cookie)
+          {
+               return GetProfileByCookieAction(cookie);
+          }
+          public PostResponse UpdateProfile(UProfileData profile)
+          {
+               return UpdateProfileAction(profile);
+          }
+          public UTrainersData GetTrainers()
           {
                return GetTrainersAction();
           }

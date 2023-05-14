@@ -1,6 +1,8 @@
 ﻿@{
      Layout = null;
 }
+@model MRSUTW.Models.User
+@using System.Web.Optimization
 
 <!DOCTYPE html>
 <html lang="en">
@@ -277,6 +279,12 @@
                }
           }
      </style>
+
+     @Scripts.Render("~/bundles/jquery-3.3.1/js")
+     @Scripts.Render("~/bundles/jquery.magnific-popup/js")
+     @Scripts.Render("~/bundles/jquery-barfiller/js")
+     @Scripts.Render("~/bundles/jquery-slicknav/js")
+
      <script type="text/javascript">
           var step = 1
           window.onload = () => {
@@ -311,10 +319,28 @@
 
           nextStep = () => {
                if (step + 1 > 5) {
-                    window.location.href = "http://localhost:50019/Home/"
+                    $.ajax({
+                         url: "/SetProfile/Index",
+                         type: "POST",
+                         data: {
+                              //type: $("#username").val(),
+                              identity: $(".set-profile-step-2-genders-item.active").text().split(/\s/).filter(item => item)[0],
+                              age: $(".set-profile-step-3-range").val(),
+                              description: $(".set-profile-step-4-textarea").val(),
+                              weight: $(".set-profile-step-5-weight-input").val(),
+                              height: $(".set-profile-step-5-height-input").val(),
+                         },
+                         success: function (result) {
+                              window.location.href = "http://localhost:50019/Home/"
+                         },
+                         error: function (xhr, status, error) {
+                              console.log(xhr.responseText);
+                         }
+                    });
+               } else {
+                    step = step + 1;
+                    verifyStep();
                }
-               step = step + 1
-               verifyStep()
           }
 
           previousStep = () => {
@@ -334,7 +360,7 @@
 
                switch (step) {
                     case 1:
-                         document.querySelector('.set-profile-header').innerHTML = 'What is your name?'
+                         document.querySelector('.set-profile-header').innerHTML = 'Who are you?'
                          break
                     case 2:
                          document.querySelector('.set-profile-header').innerHTML = 'What is your gender?'
@@ -351,7 +377,7 @@
                }
 
                if (step === 1) {
-                    document.querySelector('.set-profile-description').innerHTML = 'You will need this for easier logining'
+                    document.querySelector('.set-profile-description').innerHTML = 'Client or Trainer?'
                } else {
                     document.querySelector('.set-profile-description').innerHTML = 'Getting to know you better will help you find what you like'
                }
@@ -401,9 +427,11 @@
                }
 
                if (step === 5) {
-                    document.querySelector('.set-profile-buttons-item.primary').innerHTML = 'Submit'
+                    document.querySelector('.set-profile-buttons-item.primary.form').style.display = 'block'
+                    document.querySelector('.set-profile-buttons-item.primary.not-form').style.display = 'none'
                } else {
-                    document.querySelector('.set-profile-buttons-item.primary').innerHTML = 'Next'
+                    document.querySelector('.set-profile-buttons-item.primary.form').style.display = 'none'
+                    document.querySelector('.set-profile-buttons-item.primary.not-form').style.display = 'block'
                }
           }
 
@@ -424,11 +452,11 @@
                     <div class="set-profile-steps-item"></div>
                </div>
                <div class="set-profile-header">
-                    What is your name?
+                    Who are you?
                </div>
 
                <div class="set-profile-description">
-                    You will need this for easier logining
+                    Client or Trainer?
                </div>
 
                <div class="set-profile-step-container">
