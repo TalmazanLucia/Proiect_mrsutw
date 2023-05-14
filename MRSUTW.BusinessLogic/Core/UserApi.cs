@@ -1,5 +1,6 @@
 ﻿using MRSUTW.BusinessLogic.DBModel;
 using MRSUTW.Domain.Entities.User;
+using MRSUTW.Domain.Enums;
 using MRSUTW.Helpers.Session;
 using System;
 using System.Collections.Generic;
@@ -122,6 +123,7 @@ namespace MRSUTW.BusinessLogic.Core
                          LasIp = data.LoginIp,
                          LastLogin = data.LoginDateTime,
                          Registred = DateTime.Now,
+                         Type = URole.Client,
                     };
 
                     using (var db = new UserContext())
@@ -135,6 +137,7 @@ namespace MRSUTW.BusinessLogic.Core
                else
                {
                     return new PostResponse { Status = false, StatusMsg = "Invalid email" };
+
                }
           }
 
@@ -224,6 +227,38 @@ namespace MRSUTW.BusinessLogic.Core
 
                return userprofile;
           }
+
+          internal PostResponse UpdateProfileAction(UProfileData profile)
+          {
+               using (var db = new UserContext())
+               {
+                    var result = db.Users.FirstOrDefault(u => u.Id == profile.ID);
+
+                    if (result == null)
+                    {
+                         return new PostResponse { Status = false, StatusMsg = "User not found" };
+                    }
+
+                    if (profile.Username.Length < 5)
+                    {
+                         return new PostResponse { Status = false, StatusMsg = "Username too short" };
+                    }
+
+                    result.Username = profile.Username;
+                    result.Identity = profile.Identity;
+                    result.Age = profile.Age;
+                    result.Description = profile.Description;
+                    result.Weight = profile.Weight;
+                    result.Height = profile.Height;
+                    result.Email = profile.Email;
+
+                    db.SaveChanges();
+               }
+
+               return new PostResponse { Status = true };
+          }
+
+
           internal UTrainersData GetTrainersAction()
           {
                UTrainersData t = new UTrainersData();
@@ -237,6 +272,6 @@ namespace MRSUTW.BusinessLogic.Core
                t.Height = 196;
 
                return t;
-          }    
+          }
      }
 }

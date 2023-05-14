@@ -5,13 +5,14 @@ using MRSUTW.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
 namespace MRSUTW.Controllers
 {
-    public class ProfileController : Controller
-    {
+     public class ProfileController : Controller
+     {
           private ISession _session;
 
           public ProfileController()
@@ -35,6 +36,24 @@ namespace MRSUTW.Controllers
 
 
                return View(u);
+          }
+
+          [HttpPost]
+          public ActionResult Index(User data)
+          {
+               _session.UpdateProfile(new UProfileData
+               {
+                    ID = data.ID,
+                    Username = data.Username,
+                    Email = data.Email,
+                    Identity = data.Identity,
+                    Description = data.Description,
+                    Age = data.Age,
+                    Weight = data.Weight,
+                    Height = data.Height,
+               });
+
+               return View(data);
           }
      }
 }
