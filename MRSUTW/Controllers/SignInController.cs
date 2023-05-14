@@ -7,11 +7,12 @@ using System.Web;
 using System.Web.Mvc;
 using MRSUTW.BusinessLogic;
 using MRSUTW.Domain.Entities.User;
+using System.Configuration;
 
 namespace MRSUTW.Controllers
 {
-    public class SignInController : Controller
-    {
+     public class SignInController : Controller
+     {
           private readonly ISession _session;
 
           public SignInController()
@@ -21,18 +22,14 @@ namespace MRSUTW.Controllers
           }
           // GET: SignIn
           public ActionResult Index()
-        {
-            User u = new User();
-            u.Username = "admin";
-            u.Password = "admin";
-
-            return View(u);
-        }
+          {
+               return View();
+          }
 
           [HttpPost]
           public ActionResult Index(User login)
           {
-               if (true)
+               if (ModelState.IsValid)
                {
                     ULoginData data = new ULoginData
                     {
@@ -45,7 +42,19 @@ namespace MRSUTW.Controllers
                     var userLogin = _session.UserLogin(data);
                     if (userLogin.Status)
                     {
-                         return RedirectToAction("Index", "Home");
+                         HttpCookie cookie = _session.GenCookie(data.Credential);
+                         ControllerContext.HttpContext.Response.Cookies.Add(cookie);
+
+                         var userData = _session.GetProfileByCookie(cookie.Value);
+
+                         if (userData.Identity != null && userData.Age != 0 && userData.Weight != 0 && userData.Height != 0)
+                         {
+                              return RedirectToAction("Index", "Home");
+                         }
+                         else
+                         {
+                              return RedirectToAction("Index", "SetProfile");
+                         }
                     }
                     else
                     {
@@ -56,5 +65,5 @@ namespace MRSUTW.Controllers
 
                return View();
           }
-    }
+     }
 }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace MRSUTW.BusinessLogic.Interfaces
 {
@@ -11,7 +12,9 @@ namespace MRSUTW.BusinessLogic.Interfaces
      {
           PostResponse UserLogin(ULoginData data);
           PostResponse UserRegister(USignupData data);
-          UProfileData GetProfile();
+          HttpCookie GenCookie(string loginCredential);
+          UProfileData GetProfileByCookie(string cookie);
+          PostResponse UpdateProfile(UProfileData profile);
           UTrainersData GetTrainers();
      }
 }

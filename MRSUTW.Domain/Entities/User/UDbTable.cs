@@ -35,5 +35,13 @@ namespace MRSUTW.Domain.Entities.User
 
           [StringLength(30)]
           public string LasIp { get; set; }
+
+          [DataType(DataType.Date)]
+          public DateTime Registred { get; set; }
+          public string Identity { get; set; }
+          public string Description { get; set; }
+          public int Age { get; set; }
+          public int Weight { get; set; }
+          public int Height { get; set; }
      }
 }

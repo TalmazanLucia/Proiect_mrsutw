@@ -57,6 +57,7 @@
                     <div class="form-group">
                          <input type="password" id="Password2" name="Password2" placeholder="Password again:" value="@Html.DisplayFor(u => u.Password2)" required>
                     </div>
+                    @Html.ValidationSummary(true)
                     <p class="form-redirect">Already have an account? <a href="@Url.Action("Index", "SignIn")">Login here!</a></p>
 
                     <button type="submit">Register</button>
