@@ -184,19 +184,45 @@ namespace MRSUTW.BusinessLogic.Core
                return apiCookie;
           }
 
-          internal UProfileData GetProfileAction()
+          internal UProfileData GetProfileByCookieAction(string cookie)
           {
-               UProfileData u = new UProfileData();
-               u.Username = "Lucia Talmazan";
-               u.Email = "admin@gmail.com";
-               u.Registred = "25 february 2023";
-               u.Identity = "Female";
-               u.Description = "Every day sport becomes more important than ever. Of course, we all notice the bad diet that many people follow now due to the lack of time. Fast food saturated with fats and carbohydrates has become one of the meals of our children as well as adults.";
-               u.Age = 20;
-               u.Weight = 50;
-               u.Height = 170;
+               SessionsDbTable session;
+               UDbTable curentUser;
 
-               return u;
+               using (var db = new UserContext())
+               {
+                    session = db.Sessions.FirstOrDefault(s => s.CookieString == cookie && s.ExpireTime > DateTime.Now);
+               }
+
+               if (session == null) return null;
+               using (var db = new UserContext())
+               {
+                    var validate = new EmailAddressAttribute();
+                    if (validate.IsValid(session.UserEmail))
+                    {
+                         curentUser = db.Users.FirstOrDefault(u => u.Email == session.UserEmail);
+                    }
+                    else
+                    {
+                         curentUser = db.Users.FirstOrDefault(u => u.Email == session.UserEmail);
+                    }
+               }
+
+               if (curentUser == null) return null;
+               var userprofile = new UProfileData
+               {
+                    ID = curentUser.Id,
+                    Username = curentUser.Username,
+                    Email = curentUser.Email,
+                    Registred = curentUser.Registred,
+                    Identity = curentUser.Identity,
+                    Description = curentUser.Description,
+                    Age = curentUser.Age,
+                    Weight = curentUser.Weight,
+                    Height = curentUser.Height,
+               };
+
+               return userprofile;
           }
           internal UTrainersData GetTrainersAction()
           {

@@ -24,11 +24,10 @@ namespace MRSUTW.BusinessLogic
           {
                return Cookie(loginCredential);
           }
-          public UProfileData GetProfile()
+          public UProfileData GetProfileByCookie(string cookie)
           {
-               return GetProfileAction();
+               return GetProfileByCookieAction(cookie);
           }
-
           public UTrainersData  GetTrainers()
           {
                return GetTrainersAction();

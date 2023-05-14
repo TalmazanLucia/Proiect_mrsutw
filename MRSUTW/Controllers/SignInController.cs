@@ -45,7 +45,16 @@ namespace MRSUTW.Controllers
                          HttpCookie cookie = _session.GenCookie(data.Credential);
                          ControllerContext.HttpContext.Response.Cookies.Add(cookie);
 
-                         return RedirectToAction("Index", "Home");
+                         var userData = _session.GetProfileByCookie(cookie.Value);
+
+                         if (userData.Identity != null && userData.Age != 0 && userData.Weight != 0 && userData.Height != 0)
+                         {
+                              return RedirectToAction("Index", "Home");
+                         }
+                         else
+                         {
+                              return RedirectToAction("Index", "SetProfile");
+                         }
                     }
                     else
                     {
