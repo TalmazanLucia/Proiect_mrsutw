@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
+
 namespace MRSUTW.Domain.Entities.User
 {
      public class UDbTable
