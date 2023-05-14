@@ -4,6 +4,7 @@ using MRSUTW.Helpers.Session;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Data.Entity;
 using System.Data.Entity.Validation;
 using System.Linq;
 using System.Text;
@@ -16,7 +17,54 @@ namespace MRSUTW.BusinessLogic.Core
           internal PostResponse UserLoginAction(ULoginData data)
           {
 
-               return new PostResponse { Status = true };
+               UDbTable result;
+               var validate = new EmailAddressAttribute();
+               if (validate.IsValid(data.Credential))
+               {
+                    var pass = LoginHelper.HashGen(data.Password);
+                    using (var db = new UserContext())
+                    {
+                         result = db.Users.FirstOrDefault(u => u.Email == data.Credential && u.Password == pass);
+                    }
+
+                    if (result == null)
+                    {
+                         return new PostResponse { Status = false, StatusMsg = "The Username or Password is Incorrect" };
+                    }
+
+                    using (var todo = new UserContext())
+                    {
+                         result.LasIp = data.LoginIp;
+                         result.LastLogin = data.LoginDateTime;
+                         todo.Entry(result).State = EntityState.Modified;
+                         todo.SaveChanges();
+                    }
+
+                    return new PostResponse { Status = true };
+               }
+               else
+               {
+                    var pass = LoginHelper.HashGen(data.Password);
+                    using (var db = new UserContext())
+                    {
+                         result = db.Users.FirstOrDefault(u => u.Username == data.Credential && u.Password == pass);
+                    }
+
+                    if (result == null)
+                    {
+                         return new PostResponse { Status = false, StatusMsg = "The Username or Password is Incorrect" };
+                    }
+
+                    using (var todo = new UserContext())
+                    {
+                         result.LasIp = data.LoginIp;
+                         result.LastLogin = data.LoginDateTime;
+                         todo.Entry(result).State = EntityState.Modified;
+                         todo.SaveChanges();
+                    }
+
+                    return new PostResponse { Status = true };
+               }
           }
 
           internal PostResponse UserRegisterAction(USignupData data)

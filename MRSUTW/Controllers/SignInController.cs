@@ -7,11 +7,12 @@ using System.Web;
 using System.Web.Mvc;
 using MRSUTW.BusinessLogic;
 using MRSUTW.Domain.Entities.User;
+using System.Configuration;
 
 namespace MRSUTW.Controllers
 {
-    public class SignInController : Controller
-    {
+     public class SignInController : Controller
+     {
           private readonly ISession _session;
 
           public SignInController()
@@ -21,18 +22,14 @@ namespace MRSUTW.Controllers
           }
           // GET: SignIn
           public ActionResult Index()
-        {
-            User u = new User();
-            u.Username = "admin";
-            u.Password = "admin";
-
-            return View(u);
-        }
+          {
+               return View();
+          }
 
           [HttpPost]
           public ActionResult Index(User login)
           {
-               if (true)
+               if (ModelState.IsValid)
                {
                     ULoginData data = new ULoginData
                     {
@@ -56,5 +53,5 @@ namespace MRSUTW.Controllers
 
                return View();
           }
-    }
+     }
 }
