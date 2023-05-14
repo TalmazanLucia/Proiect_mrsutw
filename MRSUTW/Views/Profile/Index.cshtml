@@ -18,6 +18,29 @@
      <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
      <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700&display=swap" rel="stylesheet">
 
+     @Scripts.Render("~/bundles/jquery-3.3.1/js")
+     @Scripts.Render("~/bundles/jquery.magnific-popup/js")
+     @Scripts.Render("~/bundles/jquery-barfiller/js")
+     @Scripts.Render("~/bundles/jquery-slicknav/js")
+
+     <script type="text/javascript">
+          $(document).ready(function () {
+               $("#info_tab").click(function () {
+                    $("#info_tab").addClass("active");
+                    $("#contacts_tab").removeClass("active");
+                    $("#my_info_container").show();
+                    $("#contacts_container").hide();
+               });
+
+               $("#contacts_tab").click(function () {
+                    $("#info_tab").removeClass("active");
+                    $("#contacts_tab").addClass("active");
+                    $("#my_info_container").hide();
+                    $("#contacts_container").show();
+               });
+          });
+     </script>
+
      @Styles.Render("~/bundles/bootstrap/css")
      @Styles.Render("~/bundles/font-awesome/css")
      @Styles.Render("~/bundles/flaticon/css")
@@ -56,10 +79,12 @@
                     <div class="profile-tabs-item active">My info</div>
                     <div class="profile-tabs-item">Contacts</div>
                </div>
-               <div class="profile-info">
+               <div class="profile-info" id="my_info_container">
                     <div class="profile-info-item">
                          <div class="profile-info-item-title">Name</div>
                          <input class="profile-info-item-value"
+                                id="username"
+                                name="username"
                                 type="text"
                                 disabled="true"
                                 value="@Html.DisplayFor(u => u.Username)" />
@@ -67,6 +92,8 @@
                     <div class="profile-info-item">
                          <div class="profile-info-item-title">Identity</div>
                          <input class="profile-info-item-value"
+                                id="identity"
+                                name="identity"
                                 type="text"
                                 disabled="true"
                                 value="@Html.DisplayFor(u => u.Identity)" />
@@ -74,6 +101,8 @@
                     <div class="profile-info-item">
                          <div class="profile-info-item-title">Age</div>
                          <input class="profile-info-item-value"
+                                id="age"
+                                name="age"
                                 type="text"
                                 disabled="true"
                                 value="@Html.DisplayFor(u => u.Age)" />
@@ -81,33 +110,46 @@
                     <div class="profile-info-item large">
                          <div class="profile-info-item-title">Description</div>
                          <textarea class="profile-info-item-value"
+                                   id="description"
+                                   name="description"
                                    type="text"
                                    disabled="true"
                                    rows="5">@Html.DisplayFor(u => u.Description)</textarea>
                     </div>
                     <div class="profile-info-item">
-                         <div class="profile-info-item-title">Weight</div>
+                         <div class="profile-info-item-title">Weight(kg)</div>
                          <input class="profile-info-item-value"
+                                id="weight"
+                                name="weight"
                                 type="text"
                                 disabled="true"
-                                value="@Html.DisplayFor(u => u.Weight) kg" />
+                                value="@Html.DisplayFor(u => u.Weight)" />
                     </div>
                     <div class="profile-info-item">
-                         <div class="profile-info-item-title">Height</div>
+                         <div class="profile-info-item-title">Height(cm)</div>
                          <input class="profile-info-item-value"
+                                id="height"
+                                name="height"
                                 type="text"
                                 disabled="true"
-                                value="@Html.DisplayFor(u => u.Height) cm" />
+                                value="@Html.DisplayFor(u => u.Height)" />
+                    </div>
+               </div>
+               <div class="profile-info" id="contacts_container" style="display: none">
+                    <div class="profile-info-item">
+                         <div class="profile-info-item-title">Email</div>
+                         <input class="profile-info-item-value"
+                                id="email"
+                                name="email"
+                                type="text"
+                                disabled="true"
+                                value="@Html.DisplayFor(u => u.Email)" />
                     </div>
                </div>
           </div>
      </div>
 
-     @Scripts.Render("~/bundles/jquery-3.3.1/js")
-     @Scripts.Render("~/bundles/jquery.magnific-popup/js")
      @Scripts.Render("~/bundles/masonry-pkgd/js")
-     @Scripts.Render("~/bundles/jquery-barfiller/js")
-     @Scripts.Render("~/bundles/jquery-slicknav/js")
      @Scripts.Render("~/bundles/owl-carousel/js")
      @Scripts.Render("~/bundles/main/js")
      @Scripts.Render("~/bundles/bootstrap/js")
