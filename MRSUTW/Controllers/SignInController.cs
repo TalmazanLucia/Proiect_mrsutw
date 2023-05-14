@@ -23,7 +23,7 @@ namespace MRSUTW.Controllers
           public ActionResult Index()
         {
             User u = new User();
-            u.Username = "admin";
+            u.Username = "cristi";
             u.Password = "admin";
 
             return View(u);
@@ -43,7 +43,7 @@ namespace MRSUTW.Controllers
                     };
 
                     var userLogin = _session.UserLogin(data);
-                    if (userLogin.Status)
+                    if (userLogin.Status && data.Credential != null)
                     {
                          return RedirectToAction("Index", "Home");
                     }
