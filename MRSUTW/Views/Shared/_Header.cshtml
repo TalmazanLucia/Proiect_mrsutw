@@ -11,22 +11,25 @@
             </div>
             <div class="col-lg-6">
                 <nav class="nav-menu">
-                    <ul>
-                        <li><a href="@Url.Action("Index", "Home")">Home</a></li>
+                     <ul>
+                          <li><a href="@Url.Action("Index", "Home")">Home</a></li>
 
-                        <li><a href="@Url.Action("Index", "Trainers") ">Trainers</a></li>
-                        <li><a href="@Url.Action("Index", "Sala")">Classes</a></li>
-                        <li><a href="@Url.Action("Index", "healthy_menu")">Menus</a></li>
+                          <li><a href="@Url.Action("Index", "Trainers") ">Trainers</a></li>
+                          <li><a href="@Url.Action("Index", "Sala")">Classes</a></li>
+                          <li><a href="@Url.Action("Index", "healthy_menu")">Menus</a></li>
 
-                        <li>
-                            <a href="#">Pages</a>
-                            <ul class="dropdown">
-                                <li><a href="./about-us.html">About us</a></li>
-                                <li><a href="@Url.Action("Index", "Trainers") ">Trainers</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="@Url.Action("Index", "SignIn")">Sign In</a></li>
-                    </ul>
+                          <li>
+                               <a href="#">Pages</a>
+                               <ul class="dropdown">
+                                    <li><a href="./about-us.html">About us</a></li>
+                                    <li><a href="@Url.Action("Index", "Trainers") ">Trainers</a></li>
+                               </ul>
+                          </li>
+                          @if (Request.Cookies["MRSUTW"] == null)
+                          {
+                               <li><a href="@Url.Action("Index", "SignIn")">Sign In</a></li>
+                          }
+                     </ul>
                 </nav>
             </div>
             <a href="@Url.Action("Index", "Profile")" style="margin-left:auto">
