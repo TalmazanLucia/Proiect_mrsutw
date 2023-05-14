@@ -9,6 +9,7 @@ using System.Data.Entity.Validation;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace MRSUTW.BusinessLogic.Core
 {
@@ -135,6 +136,52 @@ namespace MRSUTW.BusinessLogic.Core
                {
                     return new PostResponse { Status = false, StatusMsg = "Invalid email" };
                }
+          }
+
+          internal HttpCookie Cookie(string loginCredential)
+          {
+               var apiCookie = new HttpCookie("MRSUTW")
+               {
+                    Value = CookieGenerator.Create(loginCredential)
+               };
+
+               //find email if username used
+               UDbTable result;
+               using (var db = new UserContext())
+               {
+                    result = db.Users.FirstOrDefault(u => u.Email == loginCredential || u.Username == loginCredential);
+               }
+
+               loginCredential = result.Email;
+
+
+               using (var db = new UserContext())
+               {
+                    SessionsDbTable curent;
+                    curent = (from e in db.Sessions where e.UserEmail == loginCredential select e).FirstOrDefault();
+
+                    if (curent != null)
+                    {
+                         curent.CookieString = apiCookie.Value;
+                         curent.ExpireTime = DateTime.Now.AddMinutes(60);
+                         using (var up = new UserContext())
+                         {
+                              up.Entry(curent).State = EntityState.Modified;
+                              up.SaveChanges();
+                         }
+                    }
+                    else
+                    {
+                         db.Sessions.Add(new SessionsDbTable
+                         {
+                              UserEmail = loginCredential,
+                              CookieString = apiCookie.Value,
+                              ExpireTime = DateTime.Now.AddMinutes(60)
+                         });
+                         db.SaveChanges();
+                    }
+               }
+               return apiCookie;
           }
 
           internal UProfileData GetProfileAction()

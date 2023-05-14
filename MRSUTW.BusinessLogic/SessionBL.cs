@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace MRSUTW.BusinessLogic
 {
@@ -18,6 +19,10 @@ namespace MRSUTW.BusinessLogic
           public PostResponse UserRegister(USignupData data)
           {
                return UserRegisterAction(data);
+          }
+          public HttpCookie GenCookie(string loginCredential)
+          {
+               return Cookie(loginCredential);
           }
           public UProfileData GetProfile()
           {

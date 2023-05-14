@@ -15,5 +15,6 @@ namespace MRSUTW.BusinessLogic.DBModel
           { }
 
           public virtual DbSet<UDbTable> Users { get; set; }
+          public virtual DbSet<SessionsDbTable> Sessions { get; set; }
      }
 }
