@@ -9,9 +9,9 @@ We are a group of passionate individuals who came together to work on this proje
 
 <table>
   <tr>
-    <td><img src="https://avatars.githubusercontent.com/u/79890227?v=4" width="100px;"/><br /><sub><b>Talmazan Lucia</b></sub></td>
-    <td><img src="https://avatars.githubusercontent.com/u/72634461?v=4" width="100px;"/><br /><sub><b>Vornicescu Veronica</b></sub></td>
-    <td><img src="https://avatars.githubusercontent.com/u/79890072?v=4" width="100px;"/><br /><sub><b>Lunca Mariana</b></sub></td>
-    <td><img src="https://avatars.githubusercontent.com/u/68234624?v=4" width="100px;"/><br /><sub><b>Galațchi Cristian</b></sub></td>
+    <td><img src="https://github.com/TalmazanLucia.png" width="100px;"/><br /><sub><ahref="https://github.com/TalmazanLucia">Talmazan Lucia</a></sub></td>
+    <td><img src="https://github.com/VeronicaaV.png" width="100px;"/><br /><sub><ahref="https://github.com/VeronicaaV">Vornicescu Veronica</a></sub></td>
+    <td><img src="https://github.com/MarianaLn.png" width="100px;"/><br /><sub><ahref="https://github.com/MarianaLn">Lunca Mariana</a></sub></td>
+    <td><img src="https://github.com/Kr15tIan.png" width="100px;"/><br /><sub><ahref="https://github.com/Kr15tIan">Galațchi Cristian</a></sub></td>
   </tr>
 </table>
