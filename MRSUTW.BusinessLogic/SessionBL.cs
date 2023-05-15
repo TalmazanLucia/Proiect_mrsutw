@@ -30,9 +30,17 @@ namespace MRSUTW.BusinessLogic
           {
                return GetProfileByCookieAction(cookie);
           }
+          public UProfileData GetProfileById(int id)
+          {
+               return GetProfileByIdAction(id);
+          }
           public PostResponse UpdateProfile(UProfileData profile)
           {
                return UpdateProfileAction(profile);
+          }
+          public List<UProfileData> GetUsers()
+          {
+               return GetUsersAction();
           }
           public UTrainersData GetTrainers()
           {

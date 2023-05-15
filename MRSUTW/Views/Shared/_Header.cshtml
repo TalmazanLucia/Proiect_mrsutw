@@ -28,6 +28,9 @@
                              @if (Request.Cookies["MRSUTW"] == null)
                              {
                                   <li><a href="@Url.Action("Index", "SignIn")">Sign In</a></li>
+                             } else
+                             {
+                                  <li><a href="@Url.Action("DeleteCookie", "Home")">Log out</a></li>
                              }
                         </ul>
                    </nav>
