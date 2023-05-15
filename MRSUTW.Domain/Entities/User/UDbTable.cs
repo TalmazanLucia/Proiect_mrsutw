@@ -1,11 +1,17 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Xml.Linq;
+using MRSUTW.Domain.Enums;
 
 
 namespace MRSUTW.Domain.Entities.User
 {
-     class UDbTable
+     public class UDbTable
      {
           [Key]
           [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -30,9 +36,15 @@ namespace MRSUTW.Domain.Entities.User
           public DateTime LastLogin { get; set; }
 
           [StringLength(30)]
-          public string LasIP { get; set; }
+          public string LasIp { get; set; }
 
-          public URole Level { get; set; }
-
+          [DataType(DataType.Date)]
+          public DateTime Registred { get; set; }
+          public string Identity { get; set; }
+          public string Description { get; set; }
+          public int Age { get; set; }
+          public int Weight { get; set; }
+          public int Height { get; set; }
+          public URole Role { get; set; }
      }
 }

@@ -9,33 +9,30 @@ using System.Web.Mvc;
 
 namespace MRSUTW.Controllers
 {
-    public class SignUpController : Controller
-    {
+     public class SignUpController : Controller
+     {
           private ISession _session;
           public SignUpController()
           {
                var bl = new BusinessLogic.BussinesLogic();
                _session = bl.GetSessionBL();
           }
-        // GET: SignUp
-        public ActionResult Index()
-        {
-               User u = new User();
-               u.Username = "admin";
-               u.Email= "admin@gmail.com";
-               u.Password = "admin";
-
-               return View();
-        }
-          [HttpPost]
-          public ActionResult Index(User login)
+          // GET: SignUp
+          public ActionResult Index()
           {
-               if (true)
+               return View();
+          }
+          [HttpPost]
+          public ActionResult Index(UserSignup signup)
+          {
+               if (ModelState.IsValid)
                {
-                    ULoginData data = new ULoginData
+                    USignupData data = new USignupData
                     {
-                         Credential = login.Username,
-                         Password = login.Password,
+                         Username = signup.Username,
+                         Email = signup.Email,
+                         Password1 = signup.Password1,
+                         Password2 = signup.Password2,
                          LoginIp = Request.UserHostAddress,
                          LoginDateTime = DateTime.Now,
                     };
@@ -43,7 +40,7 @@ namespace MRSUTW.Controllers
                     var userRegister = _session.UserRegister(data);
                     if (userRegister.Status)
                     {
-                         return RedirectToAction("Index", "SetProfile");
+                         return RedirectToAction("Index", "SignIn");
                     }
                     else
                     {

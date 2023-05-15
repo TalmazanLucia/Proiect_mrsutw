@@ -1,19 +1,22 @@
-﻿using System;
+﻿using MRSUTW.Domain.Entities.User;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
 using MRSUTW.Domain.Entities.User;
 
-namespace MRSUTW.BusinessLogic.DBModel.Seed
+namespace MRSUTW.BusinessLogic.DBModel
 {
-     class UserContext : DbContext 
+     public class UserContext : DbContext
      {
           public UserContext() :
-               base("name=MRSUTW") //connectionstring name define in web.config
-          { 
-          }
+               base("name=MRSUTW")
+          { }
+
           public virtual DbSet<UDbTable> Users { get; set; }
+          public virtual DbSet<SessionsDbTable> Sessions { get; set; }
      }
 }

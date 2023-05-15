@@ -91,6 +91,7 @@
      filter: drop-shadow(2px 4px 2px rgba(240, 127, 45, 0.49));
      transition: all 0.3s;
      cursor: pointer;
+     outline: none;
 }
 
      .profile-header-right-edit-button:hover {
