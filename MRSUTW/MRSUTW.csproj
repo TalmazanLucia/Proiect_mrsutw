@@ -259,6 +259,7 @@
     <Content Include="Content\themes\bootstrap-reboot.min.css.map" />
     <Content Include="Content\themes\bootstrap-reboot.css.map" />
     <Content Include="Content\themes\bootstrap-grid.min.css.map" />
+    <Compile Include="Controllers\AppointmentController.cs" />
     <None Include="Scripts\jquery-3.6.3.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.6.3.js" />
@@ -337,6 +338,7 @@
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Shared\_Search.cshtml" />
     <Content Include="Views\healthy_menu\Index.cshtml" />
+    <Content Include="Views\Appointment\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
