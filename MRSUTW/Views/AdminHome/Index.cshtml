@@ -2,6 +2,7 @@
      Layout = null;
 }
 @using System.Web.Optimization
+@model MRSUTW.Models.AdminHomeData
 
 <!DOCTYPE html>
 
@@ -69,10 +70,10 @@
                     color: #f07f2d;
                }
 
-                    .admin-nav-item.active img,
-                    .admin-nav-item:hover img {
-                         filter: invert(51%) sepia(80%) saturate(695%) hue-rotate(342deg) brightness(99%) contrast(90%);
-                    }
+               .admin-nav-item.active img,
+               .admin-nav-item:hover img {
+                    filter: invert(51%) sepia(80%) saturate(695%) hue-rotate(342deg) brightness(99%) contrast(90%);
+               }
 
           .admin-nav-item-image {
                width: 30px;
@@ -194,6 +195,8 @@
                display: flex;
                flex-direction: column;
                gap: 8px;
+               max-height: 82px;
+               overflow-x: auto;
           }
 
           .admin-home-widget-data-container-item {
@@ -260,8 +263,15 @@
                                    <img src="~/img/user.svg" alt="" />
                               </div>
                               <p class="admin-home-widget-container-item-text">
-                                   100 <br />
-                                   users
+                                   @Model.Users.Count <br />
+                                   @if (Model.Users.Count > 1)
+                                   {
+                                        <span>users</span>
+                                   }
+                                   else
+                                   {
+                                        <span>user</span>
+                                   }
                               </p>
                          </div>
                          <div class="admin-home-widget-container-item">
@@ -331,39 +341,20 @@
                <div class="admin-home-widget">
                     <p class="admin-home-widget-title">App users</p>
                     <div class="admin-home-widget-data-container">
-                         <div class="admin-home-widget-data-container-item">
-                              <div class="admin-home-widget-data-container-item-primary">
-                                   User 1
-                              </div>
-                              <div class="admin-home-widget-data-container-item-secondary">
-                                   Client
-                              </div>
-                              <div class="admin-home-widget-data-container-item-image">
-                                   <img src="~/img/arrow-right.svg" alt="" />
-                              </div>
-                         </div>
-                         <div class="admin-home-widget-data-container-item">
-                              <div class="admin-home-widget-data-container-item-primary">
-                                   User 2
-                              </div>
-                              <div class="admin-home-widget-data-container-item-secondary">
-                                   Trainer
-                              </div>
-                              <div class="admin-home-widget-data-container-item-image">
-                                   <img src="~/img/arrow-right.svg" alt="" />
-                              </div>
-                         </div>
-                         <div class="admin-home-widget-data-container-item">
-                              <div class="admin-home-widget-data-container-item-primary">
-                                   User 3
-                              </div>
-                              <div class="admin-home-widget-data-container-item-secondary">
-                                   Client
-                              </div>
-                              <div class="admin-home-widget-data-container-item-image">
-                                   <img src="~/img/arrow-right.svg" alt="" />
-                              </div>
-                         </div>
+                         @foreach (var u in Model.Users)
+                         {
+                              <a class="admin-home-widget-data-container-item" href="@Url.Action("Profile","Profile", new {id = u.ID})">
+                                   <div class="admin-home-widget-data-container-item-primary">
+                                        @u.Username
+                                   </div>
+                                   <div class="admin-home-widget-data-container-item-secondary">
+                                        @u.Role
+                                   </div>
+                                   <div class="admin-home-widget-data-container-item-image">
+                                        <img src="~/img/arrow-right.svg" alt="" />
+                                   </div>
+                              </a>
+                         }
                     </div>
                </div>
                <div class="admin-home-widget">
