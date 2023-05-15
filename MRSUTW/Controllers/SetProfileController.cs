@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using MRSUTW.BusinessLogic.Interfaces;
 using MRSUTW.Domain.Entities.User;
+using MRSUTW.Domain.Enums;
 using MRSUTW.Models;
 using System;
 using System.Collections.Generic;
@@ -53,6 +54,7 @@ namespace MRSUTW.Controllers
                     Weight = data.Weight,
                     Height = data.Height,
                     Email = u.Email,
+                    Role = data.Role,
                });
 
                if (response.Status)

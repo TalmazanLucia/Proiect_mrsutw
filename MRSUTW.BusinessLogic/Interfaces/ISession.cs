@@ -14,7 +14,9 @@ namespace MRSUTW.BusinessLogic.Interfaces
           PostResponse UserRegister(USignupData data);
           HttpCookie GenCookie(string loginCredential);
           UProfileData GetProfileByCookie(string cookie);
+          UProfileData GetProfileById(int id);
           PostResponse UpdateProfile(UProfileData profile);
+          List<UProfileData> GetUsers();
           UTrainersData GetTrainers();
      }
 }

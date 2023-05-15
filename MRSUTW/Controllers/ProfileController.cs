@@ -38,6 +38,23 @@ namespace MRSUTW.Controllers
                return View(u);
           }
 
+          [ActionName("Profile")]
+          public ActionResult Index(int id)
+          {
+               var userCookie = Request.Cookies["MRSUTW"];
+               if (userCookie == null) { return RedirectToAction("Index", "Home"); }
+
+               var config = new MapperConfiguration(cfg => {
+                    cfg.CreateMap<UProfileData, User>();
+               });
+
+               IMapper mapper = config.CreateMapper();
+
+               User u = mapper.Map<User>(_session.GetProfileById(id));
+
+               return View("Index", u);
+          }
+
           [HttpPost]
           public ActionResult Index(User data)
           {
