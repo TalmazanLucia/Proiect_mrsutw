@@ -1,0 +1,74 @@
+﻿@model string
+
+<div class="admin-nav">
+     <div class="admin-nav-items">
+          <a class="admin-nav-item" href="@Url.Action("Index","Home")">
+               <div class="admin-nav-item-image">
+                    <img src="~/img/arrow-left.svg" alt="" />
+               </div>
+               <p class="admin-nav-item-text">Back</p>
+          </a>
+          @if (Model == "Home")
+          {
+               <div class="admin-nav-item active">
+                    <div class="admin-nav-item-image">
+                         <img src="~/img/home.svg" alt="" />
+                    </div>
+                    <p class="admin-nav-item-text">Home</p>
+               </div>
+          }
+          else
+          {
+               <a class="admin-nav-item" href="@Url.Action("Index","AdminHome")">
+                    <div class="admin-nav-item-image">
+                         <img src="~/img/home.svg" alt="" />
+                    </div>
+                    <p class="admin-nav-item-text">Home</p>
+               </a>
+          }
+          @if (Model == "Users")
+          {
+               <div class="admin-nav-item active">
+                    <div class="admin-nav-item-image">
+                         <img src="~/img/user.svg" alt="" />
+                    </div>
+                    <p class="admin-nav-item-text">Users</p>
+               </div>
+          }
+          else
+          {
+               <a class="admin-nav-item" href="@Url.Action("Index","AdminUsers")">
+                    <div class="admin-nav-item-image">
+                         <img src="~/img/user.svg" alt="" />
+                    </div>
+                    <p class="admin-nav-item-text">Users</p>
+               </a>
+          }
+
+
+          <div class="admin-nav-item">
+               <div class="admin-nav-item-image">
+                    <img src="~/img/class.svg" alt="" />
+               </div>
+               <p class="admin-nav-item-text">Classes</p>
+          </div>
+          <div class="admin-nav-item">
+               <div class="admin-nav-item-image">
+                    <img src="~/img/subscription.svg" alt="" />
+               </div>
+               <p class="admin-nav-item-text">Subscriptions</p>
+          </div>
+          <div class="admin-nav-item">
+               <div class="admin-nav-item-image">
+                    <img src="~/img/product.svg" alt="" />
+               </div>
+               <p class="admin-nav-item-text">Products</p>
+          </div>
+     </div>
+     <div class="admin-nav-status-container">
+          <div class="admin-nav-status-image">
+               <img src="~/img/user.svg" alt="" />
+          </div>
+          <p class="admin-nav-status-text">My account</p>
+     </div>
+</div>

@@ -202,6 +202,8 @@
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
     <Content Include="img\about-us.jpg" />
+    <Content Include="img\arrow-left.svg" />
+    <Content Include="img\arrow-right.svg" />
     <Content Include="img\avatar.svg" />
     <Content Include="img\banner-bg.jpg" />
     <Content Include="img\blog\blog-1.jpg" />
@@ -218,6 +220,7 @@
     <Content Include="img\blog\details\details-hero.jpg" />
     <Content Include="img\blog\details\quote-left.png" />
     <Content Include="img\breadcrumb-bg.jpg" />
+    <Content Include="img\class.svg" />
     <Content Include="img\classes\class-1.jpg" />
     <Content Include="img\classes\class-2.jpg" />
     <Content Include="img\classes\class-3.jpg" />
@@ -225,7 +228,9 @@
     <Content Include="img\classes\class-5.jpg" />
     <Content Include="img\classes\class-details\class-detailsl.jpg" />
     <Content Include="img\classes\class-details\trainer-profile.jpg" />
+    <Content Include="img\delete.svg" />
     <Content Include="img\edit-logo.svg" />
+    <Content Include="img\edit.svg" />
     <Content Include="img\gallery\gallery-1.jpg" />
     <Content Include="img\gallery\gallery-2.jpg" />
     <Content Include="img\gallery\gallery-3.jpg" />
@@ -237,17 +242,21 @@
     <Content Include="img\gallery\gallery-9.jpg" />
     <Content Include="img\hero\hero-1.jpg" />
     <Content Include="img\hero\hero-2.jpg" />
+    <Content Include="img\home.svg" />
     <Content Include="img\letest-blog\latest-1.jpg" />
     <Content Include="img\letest-blog\latest-2.jpg" />
     <Content Include="img\letest-blog\latest-3.jpg" />
     <Content Include="img\letest-blog\latest-4.jpg" />
     <Content Include="img\letest-blog\latest-5.jpg" />
     <Content Include="img\logo.png" />
+    <Content Include="img\plus.svg" />
+    <Content Include="img\product.svg" />
     <Content Include="img\services\services-1.jpg" />
     <Content Include="img\services\services-2.jpg" />
     <Content Include="img\services\services-3.jpg" />
     <Content Include="img\services\services-4.jpg" />
     <Content Include="img\sidebar-banner.jpg" />
+    <Content Include="img\subscription.svg" />
     <Content Include="img\team\team-1.jpg" />
     <Content Include="img\team\team-2.jpg" />
     <Content Include="img\team\team-3.jpg" />
@@ -261,6 +270,7 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="img\user.svg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -315,6 +325,8 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Controllers\AdminHomeController.cs" />
+    <Compile Include="Controllers\AdminUsersController.cs" />
     <Compile Include="Controllers\SalaController.cs" />
     <Compile Include="Controllers\healthy_menuController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -326,6 +338,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AdminHomeData.cs" />
     <Compile Include="Models\ProductsModel.cs" />
     <Compile Include="Models\TrainersModel.cs" />
     <Compile Include="Models\User.cs" />
@@ -362,6 +375,9 @@
     <Content Include="Views\Shared\_Search.cshtml" />
     <Content Include="Views\healthy_menu\Index.cshtml" />
     <Content Include="Views\Appointment\Index.cshtml" />
+    <Content Include="Views\AdminHome\Index.cshtml" />
+    <Content Include="Views\AdminUsers\Index.cshtml" />
+    <Content Include="Views\Shared\_AdminHeader.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

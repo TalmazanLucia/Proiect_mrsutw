@@ -58,6 +58,7 @@
     <Compile Include="Entities\User\UProfileData.cs" />
     <Compile Include="Entities\User\USignupData.cs" />
     <Compile Include="Entities\User\UTrainersData.cs" />
+    <Compile Include="Enums\URole.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -66,9 +67,7 @@
       <Name>MRSUTW.Helpers</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Enums\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />

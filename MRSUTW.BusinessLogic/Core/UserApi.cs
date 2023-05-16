@@ -221,6 +221,34 @@ namespace MRSUTW.BusinessLogic.Core
                     Age = curentUser.Age,
                     Weight = curentUser.Weight,
                     Height = curentUser.Height,
+                    Role = curentUser.Role,
+               };
+
+               return userprofile;
+          }
+
+          internal UProfileData GetProfileByIdAction(int id)
+          {
+               UDbTable curentUser;
+               using (var db = new UserContext())
+               {
+                    curentUser = db.Users.FirstOrDefault(u => u.Id == id);
+
+               }
+
+               if (curentUser == null) return null;
+               var userprofile = new UProfileData
+               {
+                    ID = curentUser.Id,
+                    Username = curentUser.Username,
+                    Email = curentUser.Email,
+                    Registred = curentUser.Registred,
+                    Identity = curentUser.Identity,
+                    Description = curentUser.Description,
+                    Age = curentUser.Age,
+                    Weight = curentUser.Weight,
+                    Height = curentUser.Height,
+                    Role = curentUser.Role,
                };
 
                return userprofile;
@@ -249,6 +277,7 @@ namespace MRSUTW.BusinessLogic.Core
                     result.Weight = profile.Weight;
                     result.Height = profile.Height;
                     result.Email = profile.Email;
+                    result.Role =  profile.Role;
 
                     db.SaveChanges();
                }
@@ -256,6 +285,36 @@ namespace MRSUTW.BusinessLogic.Core
                return new PostResponse { Status = true };
           }
 
+          internal List<UProfileData> GetUsersAction()
+          {
+               List<UProfileData> users = new List<UProfileData>();
+
+               using (var db = new UserContext())
+               {
+                    var userList = db.Users.ToList();
+
+                    foreach (var user in userList)
+                    {
+                         var userprofile = new UProfileData
+                         {
+                              ID = user.Id,
+                              Username = user.Username,
+                              Email = user.Email,
+                              Registred = user.Registred,
+                              Identity = user.Identity,
+                              Description = user.Description,
+                              Age = user.Age,
+                              Weight = user.Weight,
+                              Height = user.Height,
+                              Role = user.Role
+                         };
+
+                         users.Add(userprofile);
+                    }
+               }
+
+               return users;
+          }
 
           internal UTrainersData GetTrainersAction()
           {
