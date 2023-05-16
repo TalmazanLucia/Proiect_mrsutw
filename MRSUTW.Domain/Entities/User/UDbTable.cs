@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 using MRSUTW.Domain.Enums;
 
+
 namespace MRSUTW.Domain.Entities.User
 {
      public class UDbTable
