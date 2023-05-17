@@ -17,6 +17,10 @@ namespace MRSUTW.BusinessLogic.Interfaces
           UProfileData GetProfileById(int id);
           PostResponse UpdateProfile(UProfileData profile);
           List<UProfileData> GetUsers();
+
+          UProfileData GetTrainerByCookie(string cookie);
+          UProfileData GetTrainerById(int id);
+          PostResponse UpdateTrainer(UTrainersData trainer);
           List<UTrainersData> GetTrainers();
      }
 }

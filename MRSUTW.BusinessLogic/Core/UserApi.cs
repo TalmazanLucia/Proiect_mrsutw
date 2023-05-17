@@ -316,8 +316,37 @@ namespace MRSUTW.BusinessLogic.Core
 
                return users;
           }
+          internal PostResponse UpdateTrainerAction(UTrainersData profile)
+          {
+               using (var db = new UserContext())
+               {
+                    var result = db.Users.FirstOrDefault(u => u.Id == profile.ID);
 
-           internal List<UTrainersData> GetTrainersAction()
+                    if (result == null)
+                    {
+                         return new PostResponse { Status = false, StatusMsg = "User not found" };
+                    }
+
+                    if (profile.Username.Length < 5)
+                    {
+                         return new PostResponse { Status = false, StatusMsg = "Username too short" };
+                    }
+
+                    result.Username = profile.Username;
+                    result.Identity = profile.Identity;
+                    result.Age = profile.Age;
+                    result.Description = profile.Description;
+                    result.Weight = profile.Weight;
+                    result.Height = profile.Height;
+                    result.Email = profile.Email;
+                    result.Role = profile.Role;
+
+                    db.SaveChanges();
+               }
+
+               return new PostResponse { Status = true };
+          }
+          internal List<UTrainersData> GetTrainersAction()
           {
                List<UTrainersData> users = new List<UTrainersData>();
 
