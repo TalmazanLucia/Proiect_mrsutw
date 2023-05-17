@@ -17,6 +17,6 @@ namespace MRSUTW.BusinessLogic.Interfaces
           UProfileData GetProfileById(int id);
           PostResponse UpdateProfile(UProfileData profile);
           List<UProfileData> GetUsers();
-          List<UTrainersData> GetTrainers();
+          UTrainersData GetTrainers();
      }
 }

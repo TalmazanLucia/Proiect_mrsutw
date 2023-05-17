@@ -1,6 +1,5 @@
 ﻿using MRSUTW.BusinessLogic.DBModel;
 using MRSUTW.Domain.Entities.User;
-using MRSUTW.Domain.Enums;
 using MRSUTW.Helpers.Session;
 using System;
 using System.Collections.Generic;
@@ -278,7 +277,7 @@ namespace MRSUTW.BusinessLogic.Core
                     result.Weight = profile.Weight;
                     result.Height = profile.Height;
                     result.Email = profile.Email;
-                    result.Role =  profile.Role;
+                    result.Role = profile.Role;
 
                     db.SaveChanges();
                }
@@ -317,37 +316,19 @@ namespace MRSUTW.BusinessLogic.Core
                return users;
           }
 
-           internal List<UTrainersData> GetTrainersAction()
+          internal UTrainersData GetTrainersAction()
           {
-               List<UTrainersData> users = new List<UTrainersData>();
+               UTrainersData t = new UTrainersData();
+               t.Username = "Arnold Bunicescu";
+               t.Email = "arnold_trainer@gmail.com";
+               t.Registred = "5 may 2023";
+               t.Identity = "Male";
+               t.Description = "Trainer for beginners, advanced, ";
+               t.Age = 22;
+               t.Weight = 86;
+               t.Height = 196;
 
-               using (var db = new UserContext())
-               {
-                    var userList = db.Users.ToList();
-
-                    foreach (var user in userList)
-                    {
-                         var userprofile = new UTrainersData
-                         {
-                              ID = user.Id,
-                              Username = user.Username,
-                              Email = user.Email,
-                              Identity = user.Identity,
-                              Description = user.Description,
-                              Age = user.Age,
-                              Weight = user.Weight,
-                              Height = user.Height,
-                              Role = user.Role
-                         };
-
-                         if (userprofile.Role == URole.Trainer)
-                         {
-                              users.Add(userprofile);
-                         }
-                    }
-               }
-
-               return users;
+               return t;
           }
      }
 }
