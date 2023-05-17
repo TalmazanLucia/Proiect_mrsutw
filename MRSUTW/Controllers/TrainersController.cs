@@ -1,25 +1,36 @@
-﻿using Microsoft.Ajax.Utilities;
+﻿using AutoMapper;
+using MRSUTW.BusinessLogic.Interfaces;
+using MRSUTW.Domain.Entities.User;
 using MRSUTW.Models;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
 namespace MRSUTW.Controllers
 {
-    public class TrainersController : Controller
-    {
-        // GET: Trainers
-        public ActionResult Index()
-        {
-               TrainersModel t = new TrainersModel();
+     public class TrainersController : Controller
+     {
+          private ISession _session;
 
-               t.Name = "Name";
-               t.Description = "Description";
-                     
-            return View();
-        }
-    }
+          public TrainersController()
+          {
+               var bl = new BusinessLogic.BussinesLogic();
+               _session = bl.GetSessionBL();
+          }
+          // GET: Trainers
+          public ActionResult Index()
+          {
+               var config = new MapperConfiguration(cfg => {
+                    cfg.CreateMap<UTrainersData, TrainersModel>();
+               });
+
+               IMapper mapper = config.CreateMapper();
+
+               TrainersModel u = mapper.Map<TrainersModel>(_session.GetTrainers());
+
+               return View(u);
+          }
+     }
 }

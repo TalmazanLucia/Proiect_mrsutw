@@ -1,0 +1,534 @@
+﻿@{
+     Layout = null;
+}
+@model MRSUTW.Models.User
+@using System.Web.Optimization
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+     <title>Fitness Complex</title>
+
+     <style>
+          * {
+               margin: 0;
+               padding: 0;
+               box-sizing: border-box;
+               font-family: "Muli", sans-serif;
+               -webkit-font-smoothing: antialiased;
+               font-smoothing: antialiased;
+          }
+
+          .set-profile {
+               background-color: #f07f2d;
+               height: 100vh;
+               display: flex;
+               align-items: center;
+               justify-content: center;
+          }
+
+          .set-profile-container {
+               background: #ffffff;
+               box-shadow: 15px 15px 0px #b8b8b8;
+               border-radius: 5vw;
+               padding: 48px;
+               display: flex;
+               flex-direction: column;
+               align-items: center;
+               justify-content: center;
+               position: relative;
+               min-width: fit-content;
+               min-height: fit-content;
+               transition: height 1s, width 1s;
+          }
+
+          .set-profile-steps {
+               width: calc(100% - (5vw * 2));
+               position: absolute;
+               top: 16px;
+               display: flex;
+               gap: 8px;
+          }
+
+          .set-profile-steps-item {
+               width: 100%;
+               height: 4px;
+               background: #b8b8b8;
+               border-radius: 8px;
+               transition: all 1s;
+          }
+
+               .set-profile-steps-item.active {
+                    background: #2d9ef0;
+               }
+
+          .set-profile-header {
+               font-weight: 600;
+               font-size: 24px;
+               line-height: 29px;
+          }
+
+          .set-profile-description {
+               font-weight: 500;
+               font-size: 20px;
+               line-height: 24px;
+               margin-top: 12px;
+          }
+
+          .set-profile-step-container {
+               margin-top: 48px;
+          }
+
+          .set-profile-step-1-input {
+               width: 300px;
+               font-size: 18px;
+               line-height: 20px;
+               padding: 8px 16px;
+               border-radius: 12px;
+               border: 1px solid #000000;
+               outline: none;
+               transition: all 1s;
+          }
+
+               .set-profile-step-1-input:hover,
+               .set-profile-step-1-input:focus {
+                    border: 1px solid #2d9ef0;
+               }
+
+          .set-profile-step-2,
+          .set-profile-step-3,
+          .set-profile-step-4,
+          .set-profile-step-5 {
+               display: none;
+          }
+
+          .set-profile-step-2-genders,
+          .set-profile-step-1-type {
+               display: flex;
+               gap: 12px;
+               flex-direction: column;
+          }
+
+          .set-profile-step-2-genders-item,
+          .set-profile-step-1-type-item {
+               width: 300px;
+               height: 50px;
+               font-size: 18px;
+               line-height: 20px;
+               padding: 8px 16px;
+               background: #b8b8b8;
+               color: #2d2d2d;
+               border-radius: 20px;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               transition: all 1s;
+               cursor: pointer;
+          }
+
+               .set-profile-step-2-genders-item:hover,
+               .set-profile-step-2-genders-item.active,
+               .set-profile-step-1-type-item:hover,
+               .set-profile-step-1-type-item.active {
+                    background: #2d9ef0;
+                    color: #fff;
+               }
+
+          .set-profile-step-3-container {
+               display: flex;
+               align-items: center;
+               gap: 12px
+          }
+
+          .set-profile-step-3-range {
+               -webkit-appearance: none;
+               width: 400px;
+               height: 15px;
+               border-radius: 12px;
+               background: #b8b8b8;
+               outline: none;
+               opacity: 0.7;
+               -webkit-transition: 1s;
+               transition: opacity 1s;
+          }
+
+               .set-profile-step-3-range::-webkit-slider-thumb {
+                    -webkit-appearance: none;
+                    appearance: none;
+                    width: 25px;
+                    height: 25px;
+                    border-radius: 100%;
+                    background: #2d9ef0;
+                    cursor: pointer;
+               }
+
+               .set-profile-step-3-range::-moz-range-thumb {
+                    width: 25px;
+                    height: 25px;
+                    border-radius: 100%;
+                    background: #2d9ef0;
+                    cursor: pointer;
+               }
+
+          .set-profile-step-3-range-value {
+               font-size: 18px;
+               line-height: 20px;
+               cursor: default;
+          }
+
+          .set-profile-step-4 {
+               position: relative;
+          }
+
+          .set-profile-step-4-textarea {
+               width: 500px;
+               height: 150px;
+               resize: none;
+               outline: none;
+               font-size: 18px;
+               line-height: 20px;
+               padding: 8px 16px;
+               border: 1px solid #000000;
+               border-radius: 12px;
+               transition: all 1s;
+               position: relative;
+          }
+
+               .set-profile-step-4-textarea:hover,
+               .set-profile-step-4-textarea:focus {
+                    border: 1px solid #2d9ef0;
+               }
+
+          .set-profile-step-4-textarea-value {
+               position: absolute;
+               bottom: 10px;
+               right: 12px;
+               font-size: 14px;
+               line-height: 16px;
+               color: #2d2d2d;
+          }
+
+          .set-profile-step-5-container {
+               display: flex;
+               align-items: center;
+               gap: 48px;
+          }
+
+          .set-profile-step-5-weight,
+          .set-profile-step-5-height {
+               display: flex;
+               align-items: center;
+               gap: 8px;
+          }
+
+          .set-profile-step-5-weight-input,
+          .set-profile-step-5-height-input {
+               width: 200px;
+               font-size: 18px;
+               line-height: 20px;
+               padding: 8px 16px;
+               border-radius: 12px;
+               border: 1px solid #000000;
+               outline: none;
+               transition: all 1s;
+          }
+
+               .set-profile-step-5-weight-input:hover,
+               .set-profile-step-5-weight-input:focus,
+               .set-profile-step-5-height-input:hover,
+               .set-profile-step-5-height-input:focus {
+                    border: 1px solid #2d9ef0;
+               }
+
+          .set-profile-buttons {
+               margin-top: 48px;
+               display: flex;
+               justify-content: space-between;
+               width: 100%;
+          }
+
+          .set-profile-buttons-item {
+               border-radius: 12px;
+               padding: 8px 16px;
+               cursor: pointer;
+          }
+
+               .set-profile-buttons-item.secondary {
+                    background: #fff;
+                    border: 1px solid #2d9ef0;
+                    color: #2d9ef0;
+                    box-shadow: 2px 4px 0px #2d9ef0;
+                    display: none;
+               }
+
+               .set-profile-buttons-item.primary {
+                    background: #2d9ef0;
+                    color: #fff;
+                    box-shadow: 2px 4px 0px #2d2d2d;
+                    position: relative;
+                    animation: pressbutton 2s ease-in-out alternate infinite 5s;
+                    margin-left: auto;
+               }
+
+          @@keyframes pressbutton {
+               0% {
+                    box-shadow: 2px 4px 0px #2d2d2d;
+               }
+
+               100% {
+                    box-shadow: 1px 2px 0px #2d2d2d;
+               }
+          }
+     </style>
+
+     @Scripts.Render("~/bundles/jquery-3.3.1/js")
+     @Scripts.Render("~/bundles/jquery.magnific-popup/js")
+     @Scripts.Render("~/bundles/jquery-barfiller/js")
+     @Scripts.Render("~/bundles/jquery-slicknav/js")
+
+     <script type="text/javascript">
+          var step = 1
+          window.onload = () => {
+               document.querySelector("#nextButton").addEventListener("click", nextStep)
+               document.querySelector("#previousButton").addEventListener("click", previousStep)
+               const typeButtons = document.querySelectorAll('.set-profile-step-1-type-item');
+
+               typeButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                         if (!button.classList.contains('active')) {
+                              const selectedButton = document.querySelector('.set-profile-step-1-type-item.active');
+                              if (selectedButton) {
+                                   selectedButton.classList.remove('active');
+                              }
+
+                              button.classList.add('active');
+                         } else {
+                              button.classList.remove('active');
+                         }
+                    });
+               })
+
+               const genderButtons = document.querySelectorAll('.set-profile-step-2-genders-item');
+
+               genderButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                         if (!button.classList.contains('active')) {
+                              const selectedButton = document.querySelector('.set-profile-step-2-genders-item.active');
+                              if (selectedButton) {
+                                   selectedButton.classList.remove('active');
+                              }
+
+                              button.classList.add('active');
+                         } else {
+                              button.classList.remove('active');
+                         }
+                    });
+               });
+               const textarea = document.querySelector('.set-profile-step-4-textarea');
+               const valueElement = document.querySelector('.set-profile-step-4-textarea-value');
+
+               textarea.addEventListener('input', () => {
+                    const textLength = textarea.value.length;
+                    valueElement.textContent = `${textLength}/300`;
+               });
+
+               document.querySelector(".set-profile-step-3-range").addEventListener("change", rangeChange)
+          }
+
+          nextStep = () => {
+               if (step + 1 > 5) {
+                    $.ajax({
+                         url: "/SetProfile/Index",
+                         type: "POST",
+                         data: {
+                              role: $(".set-profile-step-1-type-item.active").text().split(/\s/).filter(item => item)[0],
+                              identity: $(".set-profile-step-2-genders-item.active").text().split(/\s/).filter(item => item)[0],
+                              age: $(".set-profile-step-3-range").val(),
+                              description: $(".set-profile-step-4-textarea").val(),
+                              weight: $(".set-profile-step-5-weight-input").val(),
+                              height: $(".set-profile-step-5-height-input").val(),
+                         },
+                         success: function (result) {
+                              window.location.href = "http://localhost:50019/Home/"
+                         },
+                         error: function (xhr, status, error) {
+                              console.log(xhr.responseText);
+                         }
+                    });
+               } else {
+                    step = step + 1;
+                    verifyStep();
+               }
+          }
+
+          previousStep = () => {
+               step = step - 1
+               console.log(step)
+               verifyStep()
+          }
+
+          verifyStep = () => {
+               topItems = document.querySelectorAll(".set-profile-steps-item")
+               for (let i = 0; i < step; i++) {
+                    topItems[i].style.background = '#2d9ef0';
+               }
+               for (let i = step; i < 5; i++) {
+                    topItems[i].style.background = '#b8b8b8';
+               }
+
+               switch (step) {
+                    case 1:
+                         document.querySelector('.set-profile-header').innerHTML = 'Who are you?'
+                         break
+                    case 2:
+                         document.querySelector('.set-profile-header').innerHTML = 'What is your gender?'
+                         break
+                    case 3:
+                         document.querySelector('.set-profile-header').innerHTML = 'What is your age?'
+                         break
+                    case 4:
+                         document.querySelector('.set-profile-header').innerHTML = 'How you will describe yourself?'
+                         break
+                    case 5:
+                         document.querySelector('.set-profile-header').innerHTML = 'What is your weight and height?'
+                         break
+               }
+
+               switch (step) {
+                    case 1:
+                         document.querySelector('.set-profile-step-1').style.display = 'block'
+                         document.querySelector('.set-profile-step-2').style.display = 'none'
+                         document.querySelector('.set-profile-step-3').style.display = 'none'
+                         document.querySelector('.set-profile-step-4').style.display = 'none'
+                         document.querySelector('.set-profile-step-5').style.display = 'none'
+                         break
+                    case 2:
+                         document.querySelector('.set-profile-step-1').style.display = 'none'
+                         document.querySelector('.set-profile-step-2').style.display = 'block'
+                         document.querySelector('.set-profile-step-3').style.display = 'none'
+                         document.querySelector('.set-profile-step-4').style.display = 'none'
+                         document.querySelector('.set-profile-step-5').style.display = 'none'
+                         break
+                    case 3:
+                         document.querySelector('.set-profile-step-1').style.display = 'none'
+                         document.querySelector('.set-profile-step-2').style.display = 'none'
+                         document.querySelector('.set-profile-step-3').style.display = 'block'
+                         document.querySelector('.set-profile-step-4').style.display = 'none'
+                         document.querySelector('.set-profile-step-5').style.display = 'none'
+                         break
+                    case 4:
+                         document.querySelector('.set-profile-step-1').style.display = 'none'
+                         document.querySelector('.set-profile-step-2').style.display = 'none'
+                         document.querySelector('.set-profile-step-3').style.display = 'none'
+                         document.querySelector('.set-profile-step-4').style.display = 'block'
+                         document.querySelector('.set-profile-step-5').style.display = 'none'
+                         break
+                    case 5:
+                         document.querySelector('.set-profile-step-1').style.display = 'none'
+                         document.querySelector('.set-profile-step-2').style.display = 'none'
+                         document.querySelector('.set-profile-step-3').style.display = 'none'
+                         document.querySelector('.set-profile-step-4').style.display = 'none'
+                         document.querySelector('.set-profile-step-5').style.display = 'block'
+                         break
+               }
+
+               if (step !== 1) {
+                    document.querySelector('.set-profile-buttons-item.secondary').style.display = 'block'
+               } else {
+                    document.querySelector('.set-profile-buttons-item.secondary').style.display = 'none'
+               }
+
+               if (step === 5) {
+                    document.querySelector('.set-profile-buttons-item.primary.form').style.display = 'block'
+                    document.querySelector('.set-profile-buttons-item.primary.not-form').style.display = 'none'
+               } else {
+                    document.querySelector('.set-profile-buttons-item.primary.form').style.display = 'none'
+                    document.querySelector('.set-profile-buttons-item.primary.not-form').style.display = 'block'
+               }
+          }
+
+          rangeChange = () => {
+               let value = document.querySelector(".set-profile-step-3-range").value;
+               document.querySelector(".set-profile-step-3-range-value").innerHTML = value;
+          }
+     </script>
+</head>
+<body>
+     <div class="set-profile">
+          <div class="set-profile-container">
+               <div class="set-profile-steps">
+                    <div class="set-profile-steps-item active"></div>
+                    <div class="set-profile-steps-item"></div>
+                    <div class="set-profile-steps-item"></div>
+                    <div class="set-profile-steps-item"></div>
+                    <div class="set-profile-steps-item"></div>
+               </div>
+               <div class="set-profile-header">
+                    Who are you?
+               </div>
+
+               <div class="set-profile-description">
+                    Getting to know you better will help you find what you like
+               </div>
+
+               <div class="set-profile-step-container">
+                    <div class="set-profile-step-1">
+                         <div class="set-profile-step-1-type">
+                              <div class="set-profile-step-1-type-item">
+                                   Client
+                              </div>
+                              <div class="set-profile-step-1-type-item">
+                                   Trainer
+                              </div>
+                         </div>
+                    </div>
+                    <div class="set-profile-step-2">
+                         <div class="set-profile-step-2-genders">
+                              <div class="set-profile-step-2-genders-item">
+                                   Male
+                              </div>
+                              <div class="set-profile-step-2-genders-item">
+                                   Female
+                              </div>
+                         </div>
+                    </div>
+                    <div class="set-profile-step-3">
+                         <div class="set-profile-step-3-container">
+                              <input type="range"
+                                     min="1"
+                                     max="100"
+                                     value="30"
+                                     class="set-profile-step-3-range" />
+                              <div class="set-profile-step-3-range-value">30</div>
+                         </div>
+                    </div>
+                    <div class="set-profile-step-4">
+                         <textarea class="set-profile-step-4-textarea" maxlength="300"></textarea>
+                         <p class="set-profile-step-4-textarea-value">0/300</p>
+                    </div>
+                    <div class="set-profile-step-5">
+                         <div class="set-profile-step-5-container">
+                              <div class="set-profile-step-5-weight">
+                                   <input type="text" class="set-profile-step-5-weight-input" />
+                                   <p class="set-profile-step-5-weight-value">kg</p>
+                              </div>
+                              <div class="set-profile-step-5-height">
+                                   <input type="text" class="set-profile-step-5-height-input" />
+                                   <p class="set-profile-step-5-height-value">cm</p>
+                              </div>
+                         </div>
+                    </div>
+
+               </div>
+               <div class="set-profile-buttons">
+                    <div class="set-profile-buttons-item secondary" id="previousButton">Previous</div>
+                    <div class="set-profile-buttons-item primary" id="nextButton">Next</div>
+               </div>
+          </div>
+     </div>
+</body>
+
+</html>

@@ -2,7 +2,7 @@
      Layout = null;
 }
 @using System.Web.Optimization
-@model MRSUTW.Models.User
+@model MRSUTW.Models.UserSignup
 
 <!DOCTYPE html>
 
@@ -34,22 +34,34 @@
                Home
           </a>
           <div class="login-form">
-               <div class="avatar-container">
-                    <img src="~/img/avatar.svg" alt="" />
-               </div>
-               <form>
-                    <div class="form-group">
-                         <input type="text" id="username" name="username" placeholder="Username:" value="@Html.DisplayFor(u => u.Username)" required>
+               @using (Ajax.BeginForm("Index", "SignUp", new AjaxOptions
+               {
+                    HttpMethod = "POST",
+                    OnSuccess = "succes",
+                    OnFailure = "failure",
+                    UpdateTargetId = "resultTarget"
+               }))
+               {
+                    <div class="avatar-container">
+                         <img src="~/img/avatar.svg" alt="" />
                     </div>
                     <div class="form-group">
-                         <input type="text" id="email" name="email" placeholder="Email:" value="@Html.DisplayFor(u => u.Email)" required>
+                         <input type="text" id="Username" name="Username" placeholder="Username:" value="@Html.DisplayFor(u => u.Username)" required>
                     </div>
                     <div class="form-group">
-                         <input type="password" id="password" name="password" placeholder="Password:" value="@Html.DisplayFor(u => u.Password)" required>
+                         <input type="text" id="Email" name="Email" placeholder="Email:" value="@Html.DisplayFor(u => u.Email)" required>
                     </div>
+                    <div class="form-group">
+                         <input type="password" id="Password1" name="Password1" placeholder="Password:" value="@Html.DisplayFor(u => u.Password1)" required>
+                    </div>
+                    <div class="form-group">
+                         <input type="password" id="Password2" name="Password2" placeholder="Password again:" value="@Html.DisplayFor(u => u.Password2)" required>
+                    </div>
+                    @Html.ValidationSummary(true)
                     <p class="form-redirect">Already have an account? <a href="@Url.Action("Index", "SignIn")">Login here!</a></p>
+
                     <button type="submit">Register</button>
-               </form>
+               }
           </div>
      </div>
 

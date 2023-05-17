@@ -1,0 +1,349 @@
+﻿@{
+     Layout = null;
+}
+@using System.Web.Optimization
+@model IEnumerable<MRSUTW.Models.User>
+@using System.Diagnostics
+
+<!DOCTYPE html>
+
+<html>
+<head>
+     <meta charset="UTF-8">
+     <meta name="description" content="Gym Template">
+     <meta name="keywords" content="Gym, unica, creative, html">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>Gym | Template</title>
+
+     <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700&display=swap" rel="stylesheet">
+
+     <style>
+          * {
+               margin: 0;
+               padding: 0;
+               box-sizing: border-box;
+               font-family: "Muli", sans-serif;
+               -webkit-font-smoothing: antialiased;
+               color: #000;
+          }
+
+          p {
+               margin: 0 !important;
+          }
+
+          .admin-home-page {
+               width: 100vw;
+               height: 100vh;
+               background-color: #f07f2d;
+               display: flex;
+          }
+
+          /* Header */
+          .admin-nav {
+               width: 331px;
+               height: 100vh;
+               background: #ffffff;
+               box-shadow: 15px 15px 0px #b8b8b8;
+               border-radius: 0px 67px 67px 0px;
+               padding: 50px;
+               display: flex;
+               flex-direction: column;
+               justify-content: space-between;
+          }
+
+          .admin-nav-items {
+               display: flex;
+               flex-direction: column;
+               gap: 24px;
+          }
+
+          .admin-nav-item {
+               display: flex;
+               align-items: center;
+               gap: 8px;
+               cursor: pointer;
+          }
+
+               .admin-nav-item.active .admin-nav-item-text,
+               .admin-nav-item:hover .admin-nav-item-text {
+                    color: #f07f2d;
+               }
+
+               .admin-nav-item.active img,
+               .admin-nav-item:hover img {
+                    filter: invert(51%) sepia(80%) saturate(695%) hue-rotate(342deg) brightness(99%) contrast(90%);
+               }
+
+          .admin-nav-item-image {
+               width: 30px;
+               height: 24px;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+          }
+
+               .admin-nav-item-image img {
+                    height: 24px;
+                    width: auto;
+               }
+
+          .admin-nav-item-text {
+               color: #000;
+               font-weight: 700;
+               font-size: 24px;
+               line-height: 29px;
+          }
+
+          .admin-nav-status-container {
+               display: flex;
+               align-items: center;
+               gap: 8px;
+               cursor: pointer;
+          }
+
+          .admin-nav-status-image {
+               width: 30px;
+               height: 24px;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+          }
+
+               .admin-nav-status-image img {
+                    height: 24px;
+                    width: auto;
+               }
+
+          .admin-nav-status-text {
+               color: #000;
+               font-weight: 500;
+               font-size: 20px;
+               line-height: 24px;
+          }
+
+          /* Content */
+          .admin-home-content {
+               width: 100%;
+               padding: 25px 50px;
+               display: grid;
+               gap: 50px;
+               grid-template-columns: repeat(2, 1fr);
+               grid-template-rows: repeat(3, 1fr);
+               max-height: calc(100vh - 50px);
+               overflow-y: auto;
+          }
+
+          .admin-home-widget {
+               width: 100%;
+               height: 100%;
+               padding: 24px;
+               background: #ffffff;
+               box-shadow: 15px 15px 0px #b8b8b8;
+               border-radius: 30px;
+               display: flex;
+               flex-direction: column;
+               gap: 20px;
+          }
+
+          .admin-home-widget-title {
+               color: #000;
+               font-weight: 700;
+               font-size: 24px;
+               line-height: 29px;
+          }
+
+          .admin-home-widget-description {
+               color: #000;
+               font-weight: 500;
+               font-size: 18px;
+               line-height: 22px;
+          }
+
+          .admin-home-widget-container {
+               display: flex;
+               justify-content: space-between;
+          }
+
+          .admin-home-widget-container-item {
+               display: flex;
+               flex-direction: column;
+               gap: 8px;
+          }
+
+          .admin-home-widget-container-item-image {
+               width: 40px;
+               height: 40px;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               margin: 0 auto;
+          }
+
+               .admin-home-widget-container-item-image img {
+                    height: 40px;
+                    width: auto;
+               }
+
+          .admin-home-widget-container-item-text {
+               color: #000;
+               font-weight: 400;
+               font-size: 12px;
+               line-height: 15px;
+               text-align: center;
+          }
+
+          .admin-home-widget-data-container {
+               display: flex;
+               flex-direction: column;
+               gap: 8px;
+          }
+
+          .admin-home-widget-data-container-item {
+               display: flex;
+               justify-content: space-between;
+          }
+
+          .admin-home-widget-data-container-item-primary {
+               width: 40%;
+               color: #000;
+               font-weight: 600;
+               font-size: 18px;
+               line-height: 22px;
+               text-overflow: ellipsis;
+               white-space: nowrap;
+               overflow: hidden;
+          }
+
+          .admin-home-widget-data-container-item-secondary {
+               width: 30%;
+               color: #000;
+               font-weight: 500;
+               font-size: 18px;
+               line-height: 22px;
+          }
+
+          .admin-home-widget-data-container-item-image {
+               width: 20px;
+               height: 16px;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               cursor: pointer;
+          }
+
+               .admin-home-widget-data-container-item-image img {
+                    height: 16px;
+                    width: auto;
+               }
+
+          .admin-data-container {
+               display: flex;
+               flex-direction: column;
+               gap: 8px;
+               width: 100%;
+          }
+
+          .admin-data-container-row {
+               display: flex;
+               gap: 24px;
+               width: 100%;
+          }
+
+          .admin-data-container-row-item {
+               flex: 1;
+               justify-content: space-between;
+               display: flex;
+          }
+
+          .admin-home-widget-title-data {
+               font-weight: 700;
+               font-size: 20px;
+               line-height: 24px;
+               color: #000 !important;
+               margin: 0;
+          }
+
+          .admin-home-widget-data {
+               font-weight: 400;
+               font-size: 20px;
+               line-height: 24px;
+               color: #000 !important;
+               margin: 0;
+          }
+     </style>
+
+     @Styles.Render("~/bundles/bootstrap/css")
+     @Styles.Render("~/bundles/font-awesome/css")
+     @Styles.Render("~/bundles/flaticon/css")
+     @Styles.Render("~/bundles/owl-carousel/css")
+     @Styles.Render("~/bundles/barfiller/css")
+     @Styles.Render("~/bundles/magnific-popup/css")
+     @Styles.Render("~/bundles/slicknav/css")
+     @Styles.Render("~/bundles/style/css")
+     @Styles.Render("~/bundles/style/LogIn")
+</head>
+<body>
+     <div class="admin-home-page">
+          @{ Html.RenderPartial("_AdminHeader", "Users"); }
+          <div class="admin-home-content">
+               @foreach (var u in Model)
+               {
+                    <a class="admin-home-widget" href="@Url.Action("Profile","Profile", new {id = u.ID})">
+                         <div class="admin-home-widget-container">
+                              <p class="admin-home-widget-title">@u.Username</p>
+                              <div class="admin-home-widget-data-container-item-image">
+                                   <img src="~/img/arrow-right.svg" alt="" />
+                              </div>
+                         </div>
+                         <div class="admin-data-container">
+                              <div class="admin-data-container-row">
+                                   <div class="admin-data-container-row-item">
+                                        <p class="admin-home-widget-title-data">Identity: </p>
+                                        <p class="admin-home-widget-data">@u.Identity</p>
+                                   </div>
+                                   <div class="admin-data-container-row-item">
+                                        <p class="admin-home-widget-title-data">Age: </p>
+                                        <p class="admin-home-widget-data">@u.Age</p>
+                                   </div>
+                              </div>
+                              <div class="admin-data-container-row">
+                                   <div class="admin-data-container-row-item">
+                                        <p class="admin-home-widget-title-data">Weight: </p>
+                                        <p class="admin-home-widget-data">@u.Weight kg</p>
+                                   </div>
+                                   <div class="admin-data-container-row-item">
+                                        <p class="admin-home-widget-title-data">Height: </p>
+                                        <p class="admin-home-widget-data">@u.Height cm </p>
+                                   </div>
+                              </div>
+                              <div class="admin-data-container-row">
+                                   <div class="admin-data-container-row-item">
+                                        <p class="admin-home-widget-title-data">Email: </p>
+                                        <p class="admin-home-widget-data">@u.Email</p>
+                                   </div>
+                              </div>
+                              <div class="admin-data-container-row">
+                                   <div class="admin-data-container-row-item">
+                                        <p class="admin-home-widget-title-data">Type: </p>
+                                        <p class="admin-home-widget-data">@u.Role</p>
+                                   </div>
+                              </div>
+                         </div>
+                    </a>
+               }
+               
+          </div>
+     </div>
+
+     @Scripts.Render("~/bundles/jquery-3.3.1/js")
+     @Scripts.Render("~/bundles/jquery.magnific-popup/js")
+     @Scripts.Render("~/bundles/masonry-pkgd/js")
+     @Scripts.Render("~/bundles/jquery-barfiller/js")
+     @Scripts.Render("~/bundles/jquery-slicknav/js")
+     @Scripts.Render("~/bundles/owl-carousel/js")
+     @Scripts.Render("~/bundles/main/js")
+     @Scripts.Render("~/bundles/bootstrap/js")
+</body>
+</html>

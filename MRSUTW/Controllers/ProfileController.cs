@@ -1,29 +1,76 @@
-﻿using MRSUTW.Models;
+﻿using AutoMapper;
+using MRSUTW.BusinessLogic.Interfaces;
+using MRSUTW.Domain.Entities.User;
+using MRSUTW.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
 namespace MRSUTW.Controllers
 {
-    public class ProfileController : Controller
-    {
-        // GET: Profile
-        public ActionResult Index()
-        {
-               User u = new User();
-               u.Username = "Lucia Talmazan";
-               u.Email= "admin@gmail.com";
-               u.Registred = "25 february 2023";
-               u.Identity = "Female";
-               u.Description = "Every day sport becomes more important than ever. Of course, we all notice the bad diet that many people follow now due to the lack of time. Fast food saturated with fats and carbohydrates has become one of the meals of our children as well as adults.";
-               u.Age = 20;
-               u.Weight = 50;
-               u.Height = 170;
-            
+     public class ProfileController : Controller
+     {
+          private ISession _session;
+
+          public ProfileController()
+          {
+               var bl = new BusinessLogic.BussinesLogic();
+               _session = bl.GetSessionBL();
+          }
+          // GET: Profile
+          public ActionResult Index()
+          {
+               var userCookie = Request.Cookies["MRSUTW"];
+               if (userCookie == null) { return RedirectToAction("Index", "Home"); }
+
+               var config = new MapperConfiguration(cfg => {
+                    cfg.CreateMap<UProfileData, User>();
+               });
+
+               IMapper mapper = config.CreateMapper();
+
+               User u = mapper.Map<User>(_session.GetProfileByCookie(userCookie.Value));
+
 
                return View(u);
-        }
-    }
+          }
+
+          [ActionName("Profile")]
+          public ActionResult Index(int id)
+          {
+               var userCookie = Request.Cookies["MRSUTW"];
+               if (userCookie == null) { return RedirectToAction("Index", "Home"); }
+
+               var config = new MapperConfiguration(cfg => {
+                    cfg.CreateMap<UProfileData, User>();
+               });
+
+               IMapper mapper = config.CreateMapper();
+
+               User u = mapper.Map<User>(_session.GetProfileById(id));
+
+               return View("Index", u);
+          }
+
+          [HttpPost]
+          public ActionResult Index(User data)
+          {
+               _session.UpdateProfile(new UProfileData
+               {
+                    ID = data.ID,
+                    Username = data.Username,
+                    Email = data.Email,
+                    Identity = data.Identity,
+                    Description = data.Description,
+                    Age = data.Age,
+                    Weight = data.Weight,
+                    Height = data.Height,
+               });
+
+               return View(data);
+          }
+     }
 }
