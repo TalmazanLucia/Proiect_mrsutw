@@ -118,6 +118,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\themes\barfiller.css" />
+    <Content Include="Content\themes\base\Memberships.css" />
     <Content Include="Content\themes\bootstrap-grid.css" />
     <Content Include="Content\themes\bootstrap-grid.min.css" />
     <Content Include="Content\themes\bootstrap-reboot.css" />
@@ -301,6 +302,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Controllers\MembershipsController.cs" />
     <Compile Include="Controllers\AdminHomeController.cs" />
     <Compile Include="Controllers\AdminUsersController.cs" />
     <Compile Include="Controllers\SalaController.cs" />
@@ -315,6 +317,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AdminHomeData.cs" />
+    <Compile Include="Models\MembershipsModel.cs" />
     <Compile Include="Models\ProductsModel.cs" />
     <Compile Include="Models\TrainersModel.cs" />
     <Compile Include="Models\User.cs" />
@@ -350,6 +353,7 @@
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Shared\_Search.cshtml" />
     <Content Include="Views\healthy_menu\Index.cshtml" />
+    <Content Include="Views\Memberships\Index.cshtml" />
     <Content Include="Views\AdminHome\Index.cshtml" />
     <Content Include="Views\AdminUsers\Index.cshtml" />
     <Content Include="Views\Shared\_AdminHeader.cshtml" />
