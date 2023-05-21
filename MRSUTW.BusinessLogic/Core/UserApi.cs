@@ -277,7 +277,7 @@ namespace MRSUTW.BusinessLogic.Core
                     result.Weight = profile.Weight;
                     result.Height = profile.Height;
                     result.Email = profile.Email;
-                    result.Role =  profile.Role;
+                    result.Role = profile.Role;
 
                     db.SaveChanges();
                }
