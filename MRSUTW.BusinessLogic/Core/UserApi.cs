@@ -315,21 +315,6 @@ namespace MRSUTW.BusinessLogic.Core
 
                return users;
           }
-          internal PostResponse UpdateTrainerAction(UTrainersData profile)
-          {
-               using (var db = new UserContext())
-               {
-                    var result = db.Users.FirstOrDefault(u => u.Id == profile.ID);
-
-                    if (result == null)
-                    {
-                         return new PostResponse { Status = false, StatusMsg = "User not found" };
-                    }
-
-                    if (profile.Username.Length < 5)
-                    {
-                         return new PostResponse { Status = false, StatusMsg = "Username too short" };
-                    }
 
           internal UTrainersData GetTrainersAction()
           {
