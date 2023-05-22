@@ -1,15 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web.Http;
+using System.Text;
+using System.Threading.Tasks;
+using System.Xml.Linq;
+using MRSUTW.Domain.Enums;
 
-namespace MRSUTW.Models
+namespace MRSUTW.Domain.Entities.User
 {
-    public class ActivitiesModel
+    public class Table_Activities
     {
-        // GET api/<controller>
+
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int id { get; set; }
         public string Prof { get; set; }
         public string Luni { get; set; }
