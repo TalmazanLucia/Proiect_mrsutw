@@ -40,7 +40,7 @@ namespace MRSUTW.Controllers
                     };
 
                     var userLogin = _session.UserLogin(data);
-                    if (userLogin.Status)
+                    if (userLogin.Status && data.Credential != null)
                     {
                          HttpCookie cookie = _session.GenCookie(data.Credential);
                          ControllerContext.HttpContext.Response.Cookies.Add(cookie);

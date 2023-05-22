@@ -1,49 +1,49 @@
-﻿
-<header class="header-section">
+﻿<header class="header-section">
     <div class="container-fluid">
-         <div class="row">
-              <div class="col-lg-3">
-                   <div class="logo">
-                        <a href="./index.html">
-                             <img src="./../../img/logo.png" alt="">
-                        </a>
-                   </div>
-              </div>
-              <div class="col-lg-6">
-                   <nav class="nav-menu">
-                        <ul>
-                             <li><a href="@Url.Action("Index", "Home")">Home</a></li>
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="logo">
+                    <a href="@Url.Action("Index", "Home")">
+                        <img src="./../../img/logo.png" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <nav class="nav-menu">
+                    <ul>
+                        <li><a href="@Url.Action("Index", "Home")">Home</a></li>
 
-                             <li><a href="@Url.Action("Index", "Trainers") ">Trainers</a></li>
-                             <li><a href="@Url.Action("Index", "Sala")">Classes</a></li>
-                             <li><a href="@Url.Action("Index", "healthy_menu")">Menus</a></li>
-
-                             <li>
-                                  <a href="#">Pages</a>
-                                  <ul class="dropdown">
-                                       <li><a href="./about-us.html">About us</a></li>
-                                       <li><a href="@Url.Action("Index", "Trainers") ">Trainers</a></li>
-                                  </ul>
-                             </li>
-                             @if (Request.Cookies["MRSUTW"] == null)
-                             {
-                                  <li><a href="@Url.Action("Index", "SignIn")">Sign In</a></li>
-                             } else
-                             {
-                                  <li><a href="@Url.Action("DeleteCookie", "Home")">Log out</a></li>
-                             }
-                        </ul>
-                   </nav>
-              </div>
-              @if (Request.Cookies["MRSUTW"] != null)
-              {
-                   <a href="@Url.Action("Index", "Profile")" style="margin-left:auto">
-                        <div class="col-lg-3" style="max-width: 50px; margin-left:auto; height: 50px !important; background: #b8b8b8; border-radius: 100%; display: flex; align-items: center; justify-content: center;">
-                             <img src="~/img/avatar.svg" style=" height: 30px; width: auto;" />
-                        </div>
-                   </a>
-              }
-         </div>
+                        <li><a href="@Url.Action("Index", "Trainers") ">Trainers</a></li>
+                        <li><a href="@Url.Action("Index", "Sala")">Classes</a></li>
+                        <li>
+                            <a href="#">Pages</a>
+                            <ul class="dropdown">
+                                <li><a href="./about-us.html">About us</a></li>
+                                <li><a href="@Url.Action("Index", "Trainers") ">Trainers</a></li>
+                                <li><a href="@Url.Action("Index", "Memberships") ">Memberships</a></li>
+                                <li><a href="@Url.Action("Index", "healthy_menu")">Products</a></li>
+                            </ul>
+                        </li>
+                        @if (Request.Cookies["MRSUTW"] == null)
+                        {
+                            <li><a href="@Url.Action("Index", "SignIn")">Sign In</a></li>
+                        }
+                        else
+                        {
+                            <li><a href="@Url.Action("DeleteCookie", "Home")">Log out</a></li>
+                        }
+                    </ul>
+                </nav>
+            </div>
+            @if (Request.Cookies["MRSUTW"] != null)
+            {
+                <a href="@Url.Action("Index", "Profile")" style="margin-left:auto">
+                    <div class="col-lg-3" style="max-width: 50px; margin-left:auto; height: 50px !important; background: #b8b8b8; border-radius: 100%; display: flex; align-items: center; justify-content: center;">
+                        <img src="~/img/avatar.svg" style=" height: 30px; width: auto;" />
+                    </div>
+                </a>
+            }
+        </div>
 
         <div class="canvas-open">
             <i class="fa fa-bars"></i>

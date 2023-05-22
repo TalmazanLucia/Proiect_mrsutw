@@ -272,14 +272,14 @@ namespace MRSUTW.BusinessLogic.Core
                     return new PostResponse { Status = false, StatusMsg = "Username too short" };
                 }
 
-                result.Username = profile.Username;
-                result.Identity = profile.Identity;
-                result.Age = profile.Age;
-                result.Description = profile.Description;
-                result.Weight = profile.Weight;
-                result.Height = profile.Height;
-                result.Email = profile.Email;
-                result.Role = profile.Role;
+                    result.Username = profile.Username;
+                    result.Identity = profile.Identity;
+                    result.Age = profile.Age;
+                    result.Description = profile.Description;
+                    result.Weight = profile.Weight;
+                    result.Height = profile.Height;
+                    result.Email = profile.Email;
+                    result.Role = profile.Role;
 
                 db.SaveChanges();
             }
