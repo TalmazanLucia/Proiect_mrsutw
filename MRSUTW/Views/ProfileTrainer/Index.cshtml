@@ -1,7 +1,8 @@
 ﻿@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @using System.Web.Optimization
+@model MRSUTW.Models.User
 
 <!DOCTYPE html>
 <html>
@@ -18,12 +19,12 @@
                     <div class="col-lg-6">
                          <h1 style="color:white;">About me</h1>
                          <h6 style="color:#FF6700;">Gym Trainer</h6>
-                         <p>My days are filled with enthusiasm, dedication, and the pursuit of helping individuals achieve their fitness goals. Stepping into the gym each morning, I am greeted by an atmosphere buzzing with energy and determination.</p>
+                         <p>@Model.Description</p>
                          <div class="row about-list">
                               <div class="col-md-6">
                                    <div class="media">
                                         <label style="color:gray;">Name:  </label>
-                                        <p style="color:white;">Damira Dhell</p>
+                                        <p style="color:white;">@Model.Username</p>
                                    </div>
                                    <div class="media">
                                         <label style="color:gray;">Study:</label>
@@ -31,7 +32,7 @@
                                    </div>
                                    <div class="media">
                                         <label style="color:gray;">E-mail:</label>
-                                        <p style="color:white;">damira@gmail.com</p>
+                                        <p style="color:white;">@Model.Email</p>
                                    </div>
                                    <div class="media">
                                         <label style="color:gray;">Phone:</label>
@@ -41,19 +42,19 @@
                               <div class="col-md-6">
                                    <div class="media">
                                         <label style="color:gray;">Identify:  </label>
-                                        <p style="color:white;">Female</p>
+                                        <p style="color:white;">@Model.Identity</p>
                                    </div>
                                    <div class="media">
                                         <label style="color:gray;">Age:</label>
-                                        <p style="color:white;">22 Yr</p>
+                                        <p style="color:white;">@Model.Age Yr</p>
                                    </div>
                                    <div class="media">
                                         <label style="color:gray;">Weight(kg):</label>
-                                        <p style="color:white;">60</p>
+                                        <p style="color:white;">@Model.Weight</p>
                                    </div>
                                    <div class="media">
                                         <label style="color:gray;">Height(cm):</label>
-                                        <p style="color:white;">162</p>
+                                        <p style="color:white;">@Model.Height</p>
                                    </div>
                               </div>
                          </div>
@@ -106,3 +107,5 @@
      @Scripts.Render("~/bundles/bootstrap/js")
 </body>
 </html>
+
+

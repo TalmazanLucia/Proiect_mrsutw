@@ -2,7 +2,7 @@
      Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @using System.Web.Optimization
-@model MRSUTW.Models.TrainersModel
+@model IEnumerable<MRSUTW.Models.User>
 <!DOCTYPE html>
 
 <html>
@@ -26,40 +26,21 @@
                     <div class="ts-slider owl-carousel owl-loaded owl-drag">
                          <div class="owl-stage-outer">
                               <div class="owl-stage" style="transform: translate3d(-585px, 0px, 0px); transition: all 1.2s ease 0s; width: 1171px;">
-                                   <div class="owl-item" style="width: 97.556px;">
-                                        <div class="col-lg-4">
-                                             <div class="ts-item set-bg" data-setbg="./../../img/team/team-1.jpg" style="background-image: url(&quot;./../../img/team/team-1.jpg&quot;);">
-                                                  <div class="ts_text">
-                                                       <a href="@Url.Action("Index", "ProfileTrainer")">
-                                                            <h4>Damira Dhell</h4>
-                                                            <span>Gym Trainer, 22 years</span>
-                                                       </a>
+                                   @foreach (var u in Model)
+                                   {
+                                        <div class="owl-item" style="width: 97.556px;">
+                                             <div class="col-lg-4">
+                                                  <div class="ts-item set-bg" data-setbg="./../../img/team/team-1.jpg" style="background-image: url(&quot;./../../img/team/team-1.jpg&quot;);">
+                                                       <div class="ts_text">
+                                                            <a href="@Url.Action("Index", "ProfileTrainer", new {id = u.ID})">
+                                                                 <h4>@u.Username</h4>
+                                                                 <span>Gym Trainer, @u.Age years</span>
+                                                            </a>
+                                                       </div>
                                                   </div>
                                              </div>
                                         </div>
-                                   </div><div class="owl-item" style="width: 97.556px;">
-                                        <div class="col-lg-4">
-                                             <div class="ts-item set-bg" data-setbg="./../../img/team/team-2.jpg" style="background-image: url(&quot;./../../img/team/team-2.jpg&quot;);">
-                                                  <div class="ts_text">
-                                                       <a href="@Url.Action("Index", "ProfileTrainer2")">
-                                                            <h4>Ethart Eachel</h4>
-                                                            <span>Gym Trainer, 30 years</span>
-                                                       </a>
-                                                  </div>
-                                             </div>
-                                        </div>
-                                   </div><div class="owl-item" style="width: 97.556px;">
-                                        <div class="col-lg-4">
-                                             <div class="ts-item set-bg" data-setbg="./../../img/team/team-3.jpg" style="background-image: url(&quot;./../../img/team/team-3.jpg&quot;);">
-                                                  <div class="ts_text">
-                                                       <a href="@Url.Action("Index", "ProfileTrainer3")">
-                                                            <h4>Fernard Fachel</h4>
-                                                            <span>Gym Trainer, 26 years</span>
-                                                       </a>
-                                                  </div>
-                                             </div>
-                                        </div>
-                                   </div>
+                                   }
                               </div>
                          </div>
                     </div>

@@ -22,15 +22,17 @@ namespace MRSUTW.Controllers
           // GET: Trainers
           public ActionResult Index()
           {
+
                var config = new MapperConfiguration(cfg => {
-                    cfg.CreateMap<UTrainersData, TrainersModel>();
+                    cfg.CreateMap<UProfileData, User>();
                });
 
                IMapper mapper = config.CreateMapper();
 
-               TrainersModel u = mapper.Map<TrainersModel>(_session.GetTrainers());
+               List<UProfileData> usersProfileDataList = _session.GetTrainers();
+               List<User> users = usersProfileDataList.Select(usersProfileData => mapper.Map<User>(usersProfileData)).ToList();
 
-               return View(u);
+               return View(users);
           }
      }
 }
