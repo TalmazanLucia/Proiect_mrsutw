@@ -42,9 +42,10 @@ namespace MRSUTW.BusinessLogic
           {
                return GetUsersAction();
           }
-          public UTrainersData GetTrainers()
+          public List<UProfileData> GetTrainers()
           {
                return GetTrainersAction();
           }
+
      }
 }
