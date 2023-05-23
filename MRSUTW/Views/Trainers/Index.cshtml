@@ -30,14 +30,31 @@
                                    {
                                         <div class="owl-item" style="width: 97.556px;">
                                              <div class="col-lg-4">
-                                                  <div class="ts-item set-bg" data-setbg="./../../img/team/team-1.jpg" style="background-image: url(&quot;./../../img/team/team-1.jpg&quot;);">
-                                                       <div class="ts_text">
-                                                            <a href="@Url.Action("Index", "ProfileTrainer", new {id = u.ID})">
-                                                                 <h4>@u.Username</h4>
-                                                                 <span>Gym Trainer, @u.Age years</span>
-                                                            </a>
-                                                       </div>
+                                                  <div>
+                                                       @if (u.Identity == "Female")
+                                                       {
+                                                            <div class="ts-item set-bg" data-setbg="./../../img/team/team-1.jpg" style="background-image: url(&quot;./../../img/team/team-1.jpg&quot;);">
+                                                                 <div class="ts_text">
+                                                                      <a href="@Url.Action("Index", "ProfileTrainer", new {id = u.ID})">
+                                                                           <h4>@u.Username</h4>
+                                                                           <span>Gym Trainer, @u.Age years</span>
+                                                                      </a>
+                                                                 </div>
+                                                            </div>
+                                                       }
+                                                       else 
+                                                       {
+                                                            <div class="ts-item set-bg" data-setbg="./../../img/team/team-3.jpg" style="background-image: url(&quot;./../../img/team/team-1.jpg&quot;);">
+                                                                 <div class="ts_text">
+                                                                      <a href="@Url.Action("Index", "ProfileTrainer", new {id = u.ID})">
+                                                                           <h4>@u.Username</h4>
+                                                                           <span>Gym Trainer, @u.Age years</span>
+                                                                      </a>
+                                                                 </div>
+                                                            </div>
+                                                       }
                                                   </div>
+
                                              </div>
                                         </div>
                                    }

@@ -61,7 +61,14 @@
                     </div>
                     <div class="col-lg-6">
                          <div class="about-avatar">
-                              <img src="./../../img/team/team-1.jpg" title="" alt="">
+                              @if (Model.Identity == "Female")
+                              {
+                                   <img src="./../../img/team/team-1.jpg" title="" alt="">
+                              }
+                              else
+                              {
+                                   <img src="./../../img/team/team-3.jpg" title="" alt="">
+                              }
                          </div>
                     </div>
                </div>
