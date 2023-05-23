@@ -305,6 +305,9 @@
     <Compile Include="Controllers\MembershipsController.cs" />
     <Compile Include="Controllers\AdminHomeController.cs" />
     <Compile Include="Controllers\AdminUsersController.cs" />
+    <Compile Include="Controllers\ProfileTrainer3Controller.cs" />
+    <Compile Include="Controllers\ProfileTrainer2Controller.cs" />
+    <Compile Include="Controllers\ProfileTrainerController.cs" />
     <Compile Include="Controllers\SalaController.cs" />
     <Compile Include="Controllers\healthy_menuController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -358,6 +361,8 @@
     <Content Include="Views\AdminUsers\Index.cshtml" />
     <Content Include="Views\Shared\_AdminHeader.cshtml" />
     <Content Include="Views\ProfileTrainer\Index.cshtml" />
+    <Content Include="Views\ProfileTrainer2\Index.cshtml" />
+    <Content Include="Views\ProfileTrainer3\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
