@@ -1,14 +1,14 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
     string[] TableHeaders = new string[] {"",
-                            "Luni",
-                            "Marti",
-                            "Miercuri",
-                            "Joi",
-                            "Vineri",
-                            "Sambata",
-                            "Duminica",
-                            "Locul Desfasurarii"};
+                            "Monday",
+                            "Tuesday",
+                            "Wednesday",
+                            "Thursday",
+                            "Friday",
+                            "Saturday",
+                            "Sunday",
+                            "Place"};
 }
 @using System.Web.Optimization
 
@@ -23,7 +23,16 @@
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb-text">
                         <h2>
-                            <a href="@Url.Action("Index", "Appointment")" class="primary-btn-new-btn">Programare</a>
+
+                            @if (Request.Cookies["MRSUTW"] != null)
+                            {
+                                <a href="@Url.Action("Index", "Appointment")" class="primary-btn-new-btn">Programare</a>
+                            }
+                            else
+                            {
+                                <a href="@Url.Action("Index", "SignIn")" class="primary-btn-new-btn">Programare</a>
+
+                            }
                         </h2>
                     </div>
                 </div>
@@ -71,25 +80,28 @@
                             <h5 class="title">Latest news</h5>
                             <div class="latest-large set-bg" data-setbg="./../../img/letest-blog/latest-1.jpeg">
                                 <div class="ll-text">
-                                    <h5><a href="https://sport.utm.md/felicitari-echipa-utm-dor-pentru-locul-i-intre-institutiile-de-invatamant-superior/">Felicitări echipa UTM-DOR pentru Locul I între Instituțiile de Învățământ Superior</a></h5>
+                                    <h5><a href="#">Congratulations to the UTM-DOR team for the 1st place among the Superior Education Institutions</a></h5>
                                     <ul>
                                         <li>Nov 19, 2022</li>
+                                        <li>20 Comment</li>
                                     </ul>
                                 </div>
                             </div>
-                            <div class="latest-large set-bg" data-setbg="./../../img/letest-blog/latest-2.jpeg">
+                            <div class="latest-large set-bg" data-setbg="./../../img/letest-blog/latest-2.jpg">
                                 <div class="ll-text">
-                                    <h5><a href="https://sport.utm.md/felicitari-lui-lilian-balan-student-imc-211-facultatea-energetica-si-inginerie-electrica-utm/">Felicitări lui Lilian Balan, student IMC-211, Facultatea Energetica si Inginerie Electrica, UTM</a></h5>
+                                    <h5><a href="#">Congratulations to Lilian Balan, student IMC-211, Faculty of Energy and Electrical Engineering, UTM</a></h5>
                                     <ul>
                                         <li>Mar 16, 2022</li>
+                                        <li>20 Comment</li>
                                     </ul>
                                 </div>
                             </div>
-                            <div class="latest-large set-bg" data-setbg="./../../img/letest-blog/latest-3.jpeg">
+                            <div class="latest-large set-bg" data-setbg="./../../img/letest-blog/latest-3.jpg">
                                 <div class="ll-text">
-                                    <h5><a href="https://sport.utm.md/felicitari-utm-rugby-team/">Felicitări UTM Rugby Team</a></h5>
+                                    <h5><a href="#">Congratulations UTM Rugby Team</a></h5>
                                     <ul>
                                         <li>Sep 21, 2021</li>
+                                        <li>20 Comment</li>
                                     </ul>
                                 </div>
                             </div>
@@ -106,7 +118,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="class-details-timetable_title">
-                         <h5>Training schedule</h5>
+                        <h5>Training schedule</h5>
                     </div>
                 </div>
             </div>
@@ -132,131 +144,131 @@
                                     {
                                         foreach (var Data in Model)
                                         {
-                                                                <tr>
-                                                                    <td class="class-time"><h5>@Data.Prof</h5></td>
-                                                                    @{
-                                                                        if (int.Parse(@Data.id) % 2 == 1)
-                                                                        {
-                                                                            if (@Data.Luni != "")
-                                                                            {
-                                                                                <td class="dark-bg hover-dp ts-meta">@Data.Luni</td>
-                                                                            }
-                                                                            else
-                                                                            {
-                                                                                <td class="dark-bg blank-td"></td>
-                                                                            }
-                                                                            if (@Data.Marti != "")
-                                                                            {
-                                                                                <td class="hover-dp ts-meta">@Data.Marti</td>
-                                                                            }
-                                                                            else
-                                                                            {
-                                                                                <td class="blank-td"></td>
-                                                                            }
-                                                                            if (@Data.Miercuri != "")
-                                                                            {
-                                                                                <td class="dark-bg hover-dp ts-meta">@Data.Miercuri</td>
-                                                                            }
-                                                                            else
-                                                                            {
-                                                                                <td class="dark-bg blank-td"></td>
-                                                                            }
-                                                                            if (@Data.Joi != "")
-                                                                            {
-                                                                                <td class="hover-dp ts-meta">@Data.Joi</td>
-                                                                            }
-                                                                            else
-                                                                            {
-                                                                                <td class="blank-td"></td>
-                                                                            }
-                                                                            if (@Data.Vineri != "")
-                                                                            {
-                                                                                <td class="dark-bg hover-dp ts-meta">@Data.Vineri</td>
-                                                                            }
-                                                                            else
-                                                                            {
-                                                                                <td class="dark-bg blank-td"></td>
-                                                                            }
-                                                                            if (@Data.Sambata != "")
-                                                                            {
-                                                                                <td class="hover-dp ts-meta">@Data.Sambata</td>
-                                                                            }
-                                                                            else
-                                                                            {
-                                                                                <td class="blank-td"></td>
-                                                                            }
-                                                                            if (@Data.Duminica != "")
-                                                                            {
-                                                                                <td class="dark-bg hover-dp ts-meta">@Data.Duminica</td>
-                                                                            }
-                                                                            else
-                                                                            {
-                                                                                <td class="dark-bg blank-td"></td>
-                                                                            }
-                                                                        }
-                                                                        else
-                                                                        {
-                                                                            if (@Data.Luni != "")
-                                                                            {
-                                                                                <td class="hover-dp ts-meta">@Data.Luni</td>
-                                                                            }
-                                                                            else
-                                                                            {
-                                                                                <td class="blank-td"></td>
-                                                                            }
-                                                                            if (@Data.Marti != "")
-                                                                            {
-                                                                                <td class="dark-bg hover-dp ts-meta">@Data.Marti</td>
-                                                                            }
-                                                                            else
-                                                                            {
-                                                                                <td class="dark-bg blank-td"></td>
-                                                                            }
-                                                                            if (@Data.Miercuri != "")
-                                                                            {
-                                                                                <td class="hover-dp ts-meta">@Data.Miercuri</td>
-                                                                            }
-                                                                            else
-                                                                            {
-                                                                                <td class="blank-td"></td>
-                                                                            }
-                                                                            if (@Data.Joi != "")
-                                                                            {
-                                                                                <td class="dark-bg hover-dp ts-meta">@Data.Joi</td>
-                                                                            }
-                                                                            else
-                                                                            {
-                                                                                <td class="dark-bg blank-td"></td>
-                                                                            }
-                                                                            if (@Data.Vineri != "")
-                                                                            {
-                                                                                <td class="hover-dp ts-meta">@Data.Vineri</td>
-                                                                            }
-                                                                            else
-                                                                            {
-                                                                                <td class="blank-td"></td>
-                                                                            }
-                                                                            if (@Data.Sambata != "")
-                                                                            {
-                                                                                <td class="dark-bg hover-dp ts-meta">@Data.Sambata</td>
-                                                                            }
-                                                                            else
-                                                                            {
-                                                                                <td class="dark-bg blank-td"></td>
-                                                                            }
-                                                                            if (@Data.Duminica != "")
-                                                                            {
-                                                                                <td class="hover-dp ts-meta">@Data.Duminica</td>
-                                                                            }
-                                                                            else
-                                                                            {
-                                                                                <td class="blank-td"></td>
-                                                                            }
+                                            <tr>
+                                                <td class="class-time"><h5>@Data.Prof</h5></td>
+                                                @{
+                                                    if (@Data.id % 2 == 1)
+                                                    {
+                                                        if (@Data.Luni != "")
+                                                        {
+                                                            <td class="dark-bg hover-dp ts-meta">@Data.Luni</td>
+                                                        }
+                                                        else
+                                                        {
+                                                            <td class="dark-bg blank-td"></td>
+                                                        }
+                                                        if (@Data.Marti != "")
+                                                        {
+                                                            <td class="hover-dp ts-meta">@Data.Marti</td>
+                                                        }
+                                                        else
+                                                        {
+                                                            <td class="blank-td"></td>
+                                                        }
+                                                        if (@Data.Miercuri != "")
+                                                        {
+                                                            <td class="dark-bg hover-dp ts-meta">@Data.Miercuri</td>
+                                                        }
+                                                        else
+                                                        {
+                                                            <td class="dark-bg blank-td"></td>
+                                                        }
+                                                        if (@Data.Joi != "")
+                                                        {
+                                                            <td class="hover-dp ts-meta">@Data.Joi</td>
+                                                        }
+                                                        else
+                                                        {
+                                                            <td class="blank-td"></td>
+                                                        }
+                                                        if (@Data.Vineri != "")
+                                                        {
+                                                            <td class="dark-bg hover-dp ts-meta">@Data.Vineri</td>
+                                                        }
+                                                        else
+                                                        {
+                                                            <td class="dark-bg blank-td"></td>
+                                                        }
+                                                        if (@Data.Sambata != "")
+                                                        {
+                                                            <td class="hover-dp ts-meta">@Data.Sambata</td>
+                                                        }
+                                                        else
+                                                        {
+                                                            <td class="blank-td"></td>
+                                                        }
+                                                        if (@Data.Duminica != "")
+                                                        {
+                                                            <td class="dark-bg hover-dp ts-meta">@Data.Duminica</td>
+                                                        }
+                                                        else
+                                                        {
+                                                            <td class="dark-bg blank-td"></td>
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        if (@Data.Luni != "")
+                                                        {
+                                                            <td class="hover-dp ts-meta">@Data.Luni</td>
+                                                        }
+                                                        else
+                                                        {
+                                                            <td class="blank-td"></td>
+                                                        }
+                                                        if (@Data.Marti != "")
+                                                        {
+                                                            <td class="dark-bg hover-dp ts-meta">@Data.Marti</td>
+                                                        }
+                                                        else
+                                                        {
+                                                            <td class="dark-bg blank-td"></td>
+                                                        }
+                                                        if (@Data.Miercuri != "")
+                                                        {
+                                                            <td class="hover-dp ts-meta">@Data.Miercuri</td>
+                                                        }
+                                                        else
+                                                        {
+                                                            <td class="blank-td"></td>
+                                                        }
+                                                        if (@Data.Joi != "")
+                                                        {
+                                                            <td class="dark-bg hover-dp ts-meta">@Data.Joi</td>
+                                                        }
+                                                        else
+                                                        {
+                                                            <td class="dark-bg blank-td"></td>
+                                                        }
+                                                        if (@Data.Vineri != "")
+                                                        {
+                                                            <td class="hover-dp ts-meta">@Data.Vineri</td>
+                                                        }
+                                                        else
+                                                        {
+                                                            <td class="blank-td"></td>
+                                                        }
+                                                        if (@Data.Sambata != "")
+                                                        {
+                                                            <td class="dark-bg hover-dp ts-meta">@Data.Sambata</td>
+                                                        }
+                                                        else
+                                                        {
+                                                            <td class="dark-bg blank-td"></td>
+                                                        }
+                                                        if (@Data.Duminica != "")
+                                                        {
+                                                            <td class="hover-dp ts-meta">@Data.Duminica</td>
+                                                        }
+                                                        else
+                                                        {
+                                                            <td class="blank-td"></td>
+                                                        }
 
-                                                                        }
-                                                                    }
-                                                                    <td class="class-time"><h5>@Data.LoculDesfasurarii</h5></td>
-                                                                </tr>
+                                                    }
+                                                }
+                                                <td class="class-time"><h5>@Data.LoculDesfasurarii</h5></td>
+                                            </tr>
                                         }
                                     }
                                 }
