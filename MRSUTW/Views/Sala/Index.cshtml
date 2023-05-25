@@ -1,5 +1,14 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
+    string[] TableHeaders = new string[] {"",
+                            "Monday",
+                            "Tuesday",
+                            "Wednesday",
+                            "Thursday",
+                            "Friday",
+                            "Saturday",
+                            "Sunday",
+                            "Place"};
 }
 @using System.Web.Optimization
 
@@ -13,11 +22,18 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb-text">
-                        <h2>Activities</h2>
-                        <div class="bt-option">
-                            <a href="@Url.Action("Index", "Home")">Home</a>
-                            <a href="#">Classes</a>
-                        </div>
+                        <h2>
+
+                            @if (Request.Cookies["MRSUTW"] != null)
+                            {
+                                <a href="@Url.Action("Index", "Appointment")" class="primary-btn-new-btn">Programare</a>
+                            }
+                            else
+                            {
+                                <a href="@Url.Action("Index", "SignIn")" class="primary-btn-new-btn">Programare</a>
+
+                            }
+                        </h2>
                     </div>
                 </div>
             </div>
@@ -56,98 +72,40 @@
                                 </p>
                             </div>
                         </div>
-                        <!--<div class="cd-trainer">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="cd-trainer-pic">
-                                        <img src="./../../img/classes/class-details/trainer-profile.jpg" alt="">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="cd-trainer-text">
-                                        <div class="trainer-title">
-                                            <h4>Athart Rachel</h4>
-                                            <span>Gym Trainer</span>
-                                        </div>
-                                        <div class="trainer-social">
-                                            <a href="#"><i class="fa fa-facebook"></i></a>
-                                            <a href="#"><i class="fa fa-twitter"></i></a>
-                                            <a href="#"><i class="fa fa-youtube-play"></i></a>
-                                            <a href="#"><i class="fa fa-instagram"></i></a>
-                                            <a href="#"><i class="fa  fa-envelope-o"></i></a>
-                                        </div>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                            tempor incididunt ut labore et dolore magna aliqua viverra maecenas lacus
-                                            vel facilisis.
-                                        </p>
-                                        <ul class="trainer-info">
-                                            <li><span>Age</span>35</li>
-                                            <li><span>Weight</span>148lbs</li>
-                                            <li><span>Height</span>10' 2``</li>
-                                            <li><span>Occupation</span>no-founder</li>
-                                        </ul>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                            tempor incididunt ut labore et dolore magna aliqua viverra maecenas lacus
-                                            vel facilisis.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>-->
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-8">
                     <div class="sidebar-option">
-                         <div class="so-latest">
-                              <h5 class="title">Latest news</h5>
-                              <div class="latest-large set-bg" data-setbg="./../../img/letest-blog/latest-1.jpeg">
-                                   <div class="ll-text">
-                                        <h5><a href="#">Congratulations to the UTM-DOR team for the 1st place among the Superior Education Institutions</a></h5>
-                                        <ul>
-                                             <li>Nov 19, 2022</li>
-                                             <li>20 Comment</li>
-                                        </ul>
-                                   </div>
-                              </div>
-                              <div class="latest-large set-bg" data-setbg="./../../img/letest-blog/latest-2.jpg">
-                                   <div class="ll-text">
-                                        <h5><a href="#">Congratulations to Lilian Balan, student IMC-211, Faculty of Energy and Electrical Engineering, UTM</a></h5>
-                                        <ul>
-                                             <li>Mar 16, 2022</li>
-                                             <li>20 Comment</li>
-                                        </ul>
-                                   </div>
-                              </div>
-                              <div class="latest-large set-bg" data-setbg="./../../img/letest-blog/latest-3.jpg">
-                                   <div class="ll-text">
-                                        <h5><a href="#">Congratulations UTM Rugby Team</a></h5>
-                                        <ul>
-                                             <li>Sep 21, 2021</li>
-                                             <li>20 Comment</li>
-                                        </ul>
-                                   </div>
-                              </div>
-                              <!--<div class="latest-item">
-         <div class="li-pic">
-             <img src="./../../img/letest-blog/latest-4.jpg" alt="">
-         </div>
-         <div class="li-text">
-             <h6><a href="#">Ina Garten's Skillet-Roasted Lemon Chicken</a></h6>
-             <span class="li-time">Aug 15, 2019</span>
-         </div>
-     </div>
-     <div class="latest-item">
-         <div class="li-pic">
-             <img src="./../../img/letest-blog/latest-5.jpg" alt="">
-         </div>
-         <div class="li-text">
-             <h6><a href="#">The Best Weeknight Baked Potatoes, 3 Creative Ways</a></h6>
-             <span class="li-time">Aug 15, 2019</span>
-         </div>
-     </div>-->
-                         </div>
+                        <div class="so-latest">
+                            <h5 class="title">Latest news</h5>
+                            <div class="latest-large set-bg" data-setbg="./../../img/letest-blog/latest-1.jpeg">
+                                <div class="ll-text">
+                                    <h5><a href="#">Congratulations to the UTM-DOR team for the 1st place among the Superior Education Institutions</a></h5>
+                                    <ul>
+                                        <li>Nov 19, 2022</li>
+                                        <li>20 Comment</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="latest-large set-bg" data-setbg="./../../img/letest-blog/latest-2.jpg">
+                                <div class="ll-text">
+                                    <h5><a href="#">Congratulations to Lilian Balan, student IMC-211, Faculty of Energy and Electrical Engineering, UTM</a></h5>
+                                    <ul>
+                                        <li>Mar 16, 2022</li>
+                                        <li>20 Comment</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="latest-large set-bg" data-setbg="./../../img/letest-blog/latest-3.jpg">
+                                <div class="ll-text">
+                                    <h5><a href="#">Congratulations UTM Rugby Team</a></h5>
+                                    <ul>
+                                        <li>Sep 21, 2021</li>
+                                        <li>20 Comment</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -160,7 +118,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="class-details-timetable_title">
-                         <h5>Training schedule</h5>
+                        <h5>Training schedule</h5>
                     </div>
                 </div>
             </div>
@@ -170,200 +128,150 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th></th>
-                                    <th>Monday</th>
-                                    <th>Tuesday</th>
-                                    <th>Wednesday</th>
-                                    <th>Thursday</th>
-                                    <th>Friday</th>
-                                    <th>Saturday</th>
-                                    <th>Sunday</th>
-                                    <th>Place</th>
+                                    @{
+                                        foreach (var head in TableHeaders)
+                                        {
+                                            <th>
+                                                @head
+                                            </th>
+                                        }
+                                    }
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td class="class-time">
-                                        <h5>Popusoi Anatolie</h5>
-                                        <span>Athletism</span>
-                                    </td>
-                                    <td class="dark-bg hover-dp ts-meta">
-                                        <span>16:30-18:00</span>
-                                    </td>
-                                    <td class="blank-td"></td>
-                                    <td class="dark-bg hover-dp ts-meta">
-                                        <span>16:30-18:00</span>
-                                    </td>
-                                    <td class="blank-td"></td>
-                                    <td class="dark-bg blank-td"></td>
-                                    <td class="blank-td"></td>
-                                    <td class="dark-bg blank-td"></td>
-                                    <td class="class-time">
-                                         <h5>Manege, athletics hall</h5>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="class-time">
-                                        <h5>Covaliova Tatiana</h5>
-                                        <span>Volley-ball(women)</span>
-                                    </td>
-                                    <td class="blank-td"></td>
-                                    <td class="dark-bg hover-dp ts-meta">
-                                        <span>17:00-19:15</span>
-                                    </td>
-                                    <td class="blank-td"></td>
-                                    <td class="dark-bg hover-dp ts-meta">
-                                        <span>17:00-19:00</span>
-                                    </td>
-                                    <td class="blank-td"></td>
-                                    <td class="dark-bg blank-td"></td>
-                                    <td class="hover-dp ts-meta">
-                                        <span>11:00-13:30</span>
-                                    </td>
-                                    <td class="class-time">
-                                        <h5>UTM Sports Centre</h5>
-                                        <span>str. Studentilor 3/8</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="class-time">
-                                        <h5>Prozorov Veaceslav</h5>
-                                        <span>Table tennis</span>
-                                    </td>
-                                    <td class="dark-bg hover-dp ts-meta">
-                                        <span>16:45-19:00</span>
-                                    </td>
-                                    <td class="blank-td"></td>
-                                    <td class="dark-bg hover-dp ts-meta">
-                                        <span>16:45-19:00</span>
-                                    </td>
-                                    <td class="hover-dp ts-meta">
-                                        <span>16:45-19:00</span>
-                                    </td>
-                                    <td class="dark-bg blank-td"></td>
-                                    <td class="blank-td"></td>
-                                    <td class="dark-bg blank-td"></td>
-                                    <td class="class-time">
-                                        <h5>Florilor Sports Hall</h5>
-                                        <span>str. Florilor 4/1</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="class-time">
-                                        <h5>Verghizova Olga</h5>
-                                        <span>Basket-ball(woman)</span>
-                                    </td>
-                                    <td class="hover-dp ts-meta">
-                                        <span>17:00-18:30</span>
-                                    </td>
-                                    <td class="dark-bg blank-td"></td>
-                                    <td class="hover-dp ts-meta">
-                                        <span>18:30-20:00</span>
-                                    </td>
-                                    <td class="dark-bg blank-td"></td>
-                                    <td class="hover-dp ts-meta">
-                                        <span>17:00-18:30</span>
-                                    </td>
-                                    <td class="dark-bg hover-dp ts-meta">
-                                        <span>12:00-13:30</span>
-                                    </td>
-                                    <td class="blank-td"></td>
-                                    <td class="class-time">
-                                        <h5>UTM Sports Centre</h5>
-                                        <span>str. Studentilor 3/8</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="class-time">
-                                        <h5>Macovchina Olga</h5>
-                                        <span>Basket-ball(men)</span>
-                                    </td>
-                                    <td class="dark-bg hover-dp ts-meta">
-                                        <span>18:30-20:00</span>
-                                    </td>
-                                    <td class="blank-td"></td>
-                                    <td class="dark-bg hover-dp ts-meta">
-                                        <span>17:00-18:30</span>
-                                    </td>
-                                    <td class="blank-td"></td>
-                                    <td class="dark-bg hover-dp ts-meta">
-                                        <span>18:30-20:00</span>
-                                    </td>
-                                    <td class="hover-dp ts-meta">
-                                        <span>13:30-15:00</span>
-                                    </td>
-                                    <td class="dark-bg blank-td"></td>
-                                    <td class="class-time">
-                                        <h5>UTM Sports Centre</h5>
-                                        <span>str. Studentilor 3/8</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="class-time">
-                                        <h5>Gangan Valentin</h5>
-                                        <span>Free fight</span>
-                                    </td>
-                                    <td class="hover-dp ts-meta">
-                                        <span>16:00-17:30</span>
-                                    </td>
-                                    <td class="dark-bg hover-dp ts-meta">
-                                        <span>16:00-17:30</span>
-                                    </td>
-                                    <td class="blank-td"></td>
-                                    <td class="dark-bg hover-dp ts-meta">
-                                        <span>16:00-17:30</span>
-                                    </td>
-                                    <td class="hover-dp ts-meta">
-                                        <span>16:00-17:30</span>
-                                    </td>
-                                    <td class="dark-bg blank-td"></td>
-                                    <td class="blank-td"></td>
-                                    <td class="class-time">
-                                        <h5>CL Olympics; Lyceum. Sports</h5>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="class-time">
-                                        <h5>Ramcovici Victor</h5>
-                                        <span>Chess</span>
-                                    </td>
-                                    <td class="dark-bg hover-dp ts-meta">
-                                        <span>16:45-18:30</span>
-                                    </td>
-                                    <td class="blank-td"></td>
-                                    <td class="dark-bg hover-dp ts-meta">
-                                        <span>16:45-18:30</span>
-                                    </td>
-                                    <td class="blank-td"></td>
-                                    <td class="dark-bg hover-dp ts-meta">
-                                        <span>16:45-18:30</span>
-                                    </td>
-                                    <td class="blank-td"></td>
-                                    <td class="dark-bg blank-td"></td>
-                                    <td class="class-time">
-                                         <h5>The chess and checkers club</h5>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="class-time">
-                                        <h5>Sturza Greta</h5>
-                                        <span>Checkers</span>
-                                    </td>
-                                    <td class="blank-td"></td>
-                                    <td class="dark-bg hover-dp ts-meta">
-                                        <span>15:00-19:30</span>
-                                    </td>
-                                    <td class="blank-td"></td>
-                                    <td class="dark-bg hover-dp ts-meta">
-                                        <span>15:00-19:30</span>
-                                    </td>
-                                    <td class="blank-td"></td>
-                                    <td class="dark-bg blank-td"></td>
-                                    <td class="blank-td"></td>
-                                    <td class="class-time">
-                                         <h5>The chess and checkers club</h5>
-                                    </td>
-                                </tr>
+                                @{
+                                    if (Model != null)
+                                    {
+                                        foreach (var Data in Model)
+                                        {
+                                            <tr>
+                                                <td class="class-time"><h5>@Data.Prof</h5></td>
+                                                @{
+                                                    if (@Data.id % 2 == 1)
+                                                    {
+                                                        if (@Data.Luni != "")
+                                                        {
+                                                            <td class="dark-bg hover-dp ts-meta">@Data.Luni</td>
+                                                        }
+                                                        else
+                                                        {
+                                                            <td class="dark-bg blank-td"></td>
+                                                        }
+                                                        if (@Data.Marti != "")
+                                                        {
+                                                            <td class="hover-dp ts-meta">@Data.Marti</td>
+                                                        }
+                                                        else
+                                                        {
+                                                            <td class="blank-td"></td>
+                                                        }
+                                                        if (@Data.Miercuri != "")
+                                                        {
+                                                            <td class="dark-bg hover-dp ts-meta">@Data.Miercuri</td>
+                                                        }
+                                                        else
+                                                        {
+                                                            <td class="dark-bg blank-td"></td>
+                                                        }
+                                                        if (@Data.Joi != "")
+                                                        {
+                                                            <td class="hover-dp ts-meta">@Data.Joi</td>
+                                                        }
+                                                        else
+                                                        {
+                                                            <td class="blank-td"></td>
+                                                        }
+                                                        if (@Data.Vineri != "")
+                                                        {
+                                                            <td class="dark-bg hover-dp ts-meta">@Data.Vineri</td>
+                                                        }
+                                                        else
+                                                        {
+                                                            <td class="dark-bg blank-td"></td>
+                                                        }
+                                                        if (@Data.Sambata != "")
+                                                        {
+                                                            <td class="hover-dp ts-meta">@Data.Sambata</td>
+                                                        }
+                                                        else
+                                                        {
+                                                            <td class="blank-td"></td>
+                                                        }
+                                                        if (@Data.Duminica != "")
+                                                        {
+                                                            <td class="dark-bg hover-dp ts-meta">@Data.Duminica</td>
+                                                        }
+                                                        else
+                                                        {
+                                                            <td class="dark-bg blank-td"></td>
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        if (@Data.Luni != "")
+                                                        {
+                                                            <td class="hover-dp ts-meta">@Data.Luni</td>
+                                                        }
+                                                        else
+                                                        {
+                                                            <td class="blank-td"></td>
+                                                        }
+                                                        if (@Data.Marti != "")
+                                                        {
+                                                            <td class="dark-bg hover-dp ts-meta">@Data.Marti</td>
+                                                        }
+                                                        else
+                                                        {
+                                                            <td class="dark-bg blank-td"></td>
+                                                        }
+                                                        if (@Data.Miercuri != "")
+                                                        {
+                                                            <td class="hover-dp ts-meta">@Data.Miercuri</td>
+                                                        }
+                                                        else
+                                                        {
+                                                            <td class="blank-td"></td>
+                                                        }
+                                                        if (@Data.Joi != "")
+                                                        {
+                                                            <td class="dark-bg hover-dp ts-meta">@Data.Joi</td>
+                                                        }
+                                                        else
+                                                        {
+                                                            <td class="dark-bg blank-td"></td>
+                                                        }
+                                                        if (@Data.Vineri != "")
+                                                        {
+                                                            <td class="hover-dp ts-meta">@Data.Vineri</td>
+                                                        }
+                                                        else
+                                                        {
+                                                            <td class="blank-td"></td>
+                                                        }
+                                                        if (@Data.Sambata != "")
+                                                        {
+                                                            <td class="dark-bg hover-dp ts-meta">@Data.Sambata</td>
+                                                        }
+                                                        else
+                                                        {
+                                                            <td class="dark-bg blank-td"></td>
+                                                        }
+                                                        if (@Data.Duminica != "")
+                                                        {
+                                                            <td class="hover-dp ts-meta">@Data.Duminica</td>
+                                                        }
+                                                        else
+                                                        {
+                                                            <td class="blank-td"></td>
+                                                        }
+
+                                                    }
+                                                }
+                                                <td class="class-time"><h5>@Data.LoculDesfasurarii</h5></td>
+                                            </tr>
+                                        }
+                                    }
+                                }
                             </tbody>
                         </table>
                     </div>
