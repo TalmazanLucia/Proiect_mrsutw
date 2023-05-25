@@ -277,7 +277,7 @@ namespace MRSUTW.BusinessLogic.Core
                     result.Weight = profile.Weight;
                     result.Height = profile.Height;
                     result.Email = profile.Email;
-                    result.Role =  profile.Role;
+                    result.Role = profile.Role;
 
                     db.SaveChanges();
                }
@@ -316,19 +316,39 @@ namespace MRSUTW.BusinessLogic.Core
                return users;
           }
 
-          internal UTrainersData GetTrainersAction()
+          internal List<UProfileData> GetTrainersAction()
           {
-               UTrainersData t = new UTrainersData();
-               t.Username = "Arnold Bunicescu";
-               t.Email = "arnold_trainer@gmail.com";
-               t.Registred = "5 may 2023";
-               t.Identity = "Male";
-               t.Description = "Trainer for beginners, advanced, ";
-               t.Age = 22;
-               t.Weight = 86;
-               t.Height = 196;
+               List<UProfileData> users = new List<UProfileData>();
 
-               return t;
+               using (var db = new UserContext())
+               {
+                    var userList = db.Users.ToList();
+
+                    foreach (var user in userList)
+                    {
+                         if (user.Role == Domain.Enums.URole.Trainer)
+                         {
+                              var userprofile = new UProfileData
+                              {
+                                   ID = user.Id,
+                                   Username = user.Username,
+                                   Email = user.Email,
+                                   Registred = user.Registred,
+                                   Identity = user.Identity,
+                                   Description = user.Description,
+                                   Age = user.Age,
+                                   Weight = user.Weight,
+                                   Height = user.Height,
+                                   Role = user.Role
+                              };
+
+                              users.Add(userprofile);
+                         }
+                    }
+               }
+
+               return users;
           }
+
      }
 }

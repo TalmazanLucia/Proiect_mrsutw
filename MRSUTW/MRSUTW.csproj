@@ -302,9 +302,11 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Controllers\DishesController.cs" />
     <Compile Include="Controllers\MembershipsController.cs" />
     <Compile Include="Controllers\AdminHomeController.cs" />
     <Compile Include="Controllers\AdminUsersController.cs" />
+    <Compile Include="Controllers\ProfileTrainerController.cs" />
     <Compile Include="Controllers\SalaController.cs" />
     <Compile Include="Controllers\healthy_menuController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -319,6 +321,7 @@
     <Compile Include="Models\AdminHomeData.cs" />
     <Compile Include="Models\MembershipsModel.cs" />
     <Compile Include="Models\ProductsModel.cs" />
+    <Compile Include="Models\Recipes.cs" />
     <Compile Include="Models\TrainersModel.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\UserSignup.cs" />
@@ -357,7 +360,9 @@
     <Content Include="Views\AdminHome\Index.cshtml" />
     <Content Include="Views\AdminUsers\Index.cshtml" />
     <Content Include="Views\Shared\_AdminHeader.cshtml" />
+    <Content Include="Views\ProfileTrainer\Index.cshtml" />
     <Content Include="Views\Dishes.cshtml" />
+    <Content Include="Views\Dishes\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

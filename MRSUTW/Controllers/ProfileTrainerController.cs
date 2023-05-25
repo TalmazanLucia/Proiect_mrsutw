@@ -10,18 +10,21 @@ using System.Web.Mvc;
 
 namespace MRSUTW.Controllers
 {
-     public class TrainersController : Controller
+     public class ProfileTrainerController : Controller
      {
           private ISession _session;
 
-          public TrainersController()
+          public ProfileTrainerController()
           {
                var bl = new BusinessLogic.BussinesLogic();
                _session = bl.GetSessionBL();
           }
-          // GET: Trainers
-          public ActionResult Index()
+
+          // GET: ProfileTrainer
+          public ActionResult Index(int id)
           {
+               var userCookie = Request.Cookies["MRSUTW"];
+               if (userCookie == null) { return RedirectToAction("Index", "Home"); }
 
                var config = new MapperConfiguration(cfg => {
                     cfg.CreateMap<UProfileData, User>();
@@ -29,10 +32,9 @@ namespace MRSUTW.Controllers
 
                IMapper mapper = config.CreateMapper();
 
-               List<UProfileData> usersProfileDataList = _session.GetTrainers();
-               List<User> users = usersProfileDataList.Select(usersProfileData => mapper.Map<User>(usersProfileData)).ToList();
+               User u = mapper.Map<User>(_session.GetProfileById(id));
 
-               return View(users);
+               return View(u);
           }
      }
 }
