@@ -14,6 +14,14 @@
   În cazul în care nu este un vizitator al site-ului, ci un utilizator înregistrat în site, e posibiă vizualizarea datelor despre antrenor accesând prin click pe acesta. Prin urmare obținem o pagină ca în figurile de mai jos.
   ![image](https://github.com/TalmazanLucia/Proiect_mrsutw/assets/124093437/aab4cf96-8709-4f8f-87e7-d652a031fbb4)
   ![image](https://github.com/TalmazanLucia/Proiect_mrsutw/assets/124093437/0a054085-2291-41dc-8d18-c78b3c7ce4fa)
+  
+  Aici putem vedea afișate datele din baza de date în forma de tabel.
+  ![image](https://github.com/TalmazanLucia/Proiect_mrsutw/assets/95626780/503854c3-af75-45ce-9048-3ed5aea215c1)
+  
+  Tot pe pagina asta putem vedea informatii despre salile complexului.
+  ![image](https://github.com/TalmazanLucia/Proiect_mrsutw/assets/95626780/5ad9bbb0-06d7-4ce4-afed-d76e1c4b63b5)
+
+
 
 
 ## 🚀 Development
