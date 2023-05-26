@@ -18,5 +18,6 @@ namespace MRSUTW.BusinessLogic.Interfaces
           PostResponse UpdateProfile(UProfileData profile);
           List<UProfileData> GetUsers();
           List<UProfileData> GetTrainers();
+          bool GetIsAdminTypeByCookie(string cookie);
      }
 }

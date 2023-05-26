@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using MRSUTW.BusinessLogic.Interfaces;
 using MRSUTW.Domain.Entities.Dishes;
-using MRSUTW.Domain.Entities.User;
 using MRSUTW.Models;
 using System;
 using System.Collections.Generic;
@@ -11,17 +10,17 @@ using System.Web.Mvc;
 
 namespace MRSUTW.Controllers
 {
-    public class healthy_menuController : Controller
+    public class DishesController : Controller
     {
         private IDishes _dishes;
-        public healthy_menuController()
-        {
 
+        public DishesController()
+        {
             var bl = new BusinessLogic.BussinesLogic();
             _dishes = bl.GetDishesBL();
         }
-        // GET: healthy_menu
-        public ActionResult Index()
+        // GET: DishItem
+        public ActionResult Index(int id)
         {
             var config = new MapperConfiguration(cfg => {
                 cfg.CreateMap<DishesData, Dish>();
@@ -29,10 +28,9 @@ namespace MRSUTW.Controllers
 
             IMapper mapper = config.CreateMapper();
 
-            List<DishesData> usersProfileDataList = _dishes.GetDishes();
-            List<Dish> dishes = usersProfileDataList.Select(usersProfileData => mapper.Map<Dish>(usersProfileData)).ToList();
+            Dish u = mapper.Map<Dish>(_dishes.GetDishesById(id));
 
-            return View(dishes);
+            return View(u);
         }
     }
 }

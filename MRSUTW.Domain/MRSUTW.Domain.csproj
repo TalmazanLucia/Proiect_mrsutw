@@ -51,6 +51,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Activities\Table_Activities.cs" />
+    <Compile Include="Entities\Dish\DishesData.cs" />
+    <Compile Include="Entities\Dish\DishesDbTable.cs" />
     <Compile Include="Entities\User\DbAppointments.cs" />
     <Compile Include="Entities\User\Table_Activities.cs" />
     <Compile Include="Entities\User\SessionsDbTable.cs" />
