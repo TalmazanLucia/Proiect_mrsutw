@@ -28,6 +28,15 @@
   Tot pe pagina asta putem vedea informatii despre salile complexului.
   ![image](https://github.com/TalmazanLucia/Proiect_mrsutw/assets/95626780/5ad9bbb0-06d7-4ce4-afed-d76e1c4b63b5)
 
+Pentru a mentine un mold de viata echilibrat, nu este suficienta doar practicarea sportului, ci si o atentie sporita la ce consumam. Am venit in intampinarea clientilor nostri cu un set de retete pe gustul fiecaruia:
+![image](https://github.com/TalmazanLucia/Proiect_mrsutw/assets/124093655/348c8134-7ef3-4a76-a60c-816e3716cb85)
+
+Mai jos am prezentat o pagina cu detaliile unei retete:
+![image](https://github.com/TalmazanLucia/Proiect_mrsutw/assets/124093655/6bf9329d-8192-4c7b-9833-11f17cf52889)
+
+In caz ca website-ul nostru si-a indeplinit scopul de a atrage atentia clientului, acesta poate imediat sa-si faca o rezervare la un antrenament, alegand unul dintre abonamentele disponibile:
+![image](https://github.com/TalmazanLucia/Proiect_mrsutw/assets/124093655/87398a2e-3a82-41d0-bdde-bec52b32b940)
+
 
 
    Un administrator, poate vizualiza și edita datele din aplicație, pagină specială accesată din pagina de profil, pentru a avea grijă de ea, precum utilizatorii.
