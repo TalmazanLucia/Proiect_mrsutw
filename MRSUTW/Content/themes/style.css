@@ -165,6 +165,31 @@ ol {
 
 /* buttons */
 
+
+
+.primary-btn-new-btn {
+	display: inline-block;
+	font-size: 20px;
+	padding: 17px 30px 16px;
+	color: #ffffff;
+	background: #f36100;
+	line-height: normal;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+
+	.primary-btn-new-btn.btn-normal {
+		-webkit-transition: all 0.3s;
+		-o-transition: all 0.3s;
+		transition: all 0.3s;
+	}
+
+		.primary-btn-new-btn.btn-normal:hover {
+			background: #f36100;
+			border-color: #f36100;
+		}
+
 .primary-btn {
 	display: inline-block;
 	font-size: 14px;
@@ -1648,6 +1673,7 @@ ol {
 	.class-timetable table tbody tr td {
 		width: 146px;
 		padding: 35px 0;
+		color: #fff;
 	}
 
 		.class-timetable table tbody tr td.class-time {
