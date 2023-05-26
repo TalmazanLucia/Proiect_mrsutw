@@ -15,6 +15,15 @@
   ![image](https://github.com/TalmazanLucia/Proiect_mrsutw/assets/124093437/aab4cf96-8709-4f8f-87e7-d652a031fbb4)
   ![image](https://github.com/TalmazanLucia/Proiect_mrsutw/assets/124093437/0a054085-2291-41dc-8d18-c78b3c7ce4fa)
 
+Pentru a mentine un mold de viata echilibrat, nu este suficienta doar practicarea sportului, ci si o atentie sporita la ce consumam. Am venit in intampinarea clientilor nostri cu un set de retete pe gustul fiecaruia:
+![image](https://github.com/TalmazanLucia/Proiect_mrsutw/assets/124093655/348c8134-7ef3-4a76-a60c-816e3716cb85)
+
+Mai jos am prezentat o pagina cu detaliile unei retete:
+![image](https://github.com/TalmazanLucia/Proiect_mrsutw/assets/124093655/6bf9329d-8192-4c7b-9833-11f17cf52889)
+
+In caz ca website-ul nostru si-a indeplinit scopul de a atrage atentia clientului, acesta poate imediat sa-si faca o rezervare la un antrenament, alegand unul dintre abonamentele disponibile:
+![image](https://github.com/TalmazanLucia/Proiect_mrsutw/assets/124093655/87398a2e-3a82-41d0-bdde-bec52b32b940)
+
 
 ## 🚀 Development
 Pentru a porni proiectul e nevoie de a fi siguri că este stabilit MRSUTW ca și Startup Project, care arată ca în figura de mai jos:
