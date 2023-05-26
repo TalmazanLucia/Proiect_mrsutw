@@ -1,0 +1,88 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using System.Web.Optimization
+@model MRSUTW.Models.Dish
+
+<!DOCTYPE html>
+
+<html>
+<body>
+    <section class="pricing-section spad">
+        <div class="container">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <span>Nutrition</span>
+                    <h2>Dishes</h2>
+                </div>
+            </div>
+            <div class="row align-items-center flex-row-reverse">
+                <div class="col-lg-6">
+                    <h1 style="color:white;">Recipe</h1>
+                    <h6 style="color:#FF6700;">@Model.Name</h6>
+                    <div class="row about-list">
+                        <div class="col-md-6">
+                            <div class="media">
+                                <label style="color:gray;">Ingredients:</label>
+                                <p style="color:white;">@Model.Description</p>
+                            </div>
+                            <div class="media">
+                                <label style="color:gray;">Cook:</label>
+                                <p style="color:white;">15min</p>
+                            </div>
+                            <div class="media">
+                                <label style="color:gray;">Prep:</label>
+                                <p style="color:white;">15min</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-avatar">
+                        <img src="./../../img/healthy_menu/menu1.jpg" title="" alt="">
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="counter">
+                <div class="row">
+                    <div class="col-6 col-lg-3">
+                        <div class="count-data text-center">
+                            <h6 style="color:#FF6700;" class="count h2" data-to="190" data-speed="190">576</h6>
+                            <p class="m-0px font-w-600">kcal</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <div class="count-data text-center">
+                            <h6 style="color:#FF6700;" class="count h2" data-to="500" data-speed="500">21g</h6>
+                            <p class="m-0px font-w-600">fat</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <div class="count-data text-center">
+                            <h6 style="color:#FF6700;" class="count h2" data-to="150" data-speed="150">72g</h6>
+                            <p class="m-0px font-w-600">carbs</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <div class="count-data text-center">
+                            <h6 style="color:#FF6700;" class="count h2" data-to="850" data-speed="850">16g</h6>
+                            <p class="m-0px font-w-600">protein</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    @Scripts.Render("~/bundles/jquery-3.3.1/js")
+    @Scripts.Render("~/bundles/jquery.magnific-popup/js")
+    @Scripts.Render("~/bundles/masonry-pkgd/js")
+    @Scripts.Render("~/bundles/jquery-barfiller/js")
+    @Scripts.Render("~/bundles/jquery-slicknav/js")
+    @Scripts.Render("~/bundles/owl-carousel/js")
+    @Scripts.Render("~/bundles/main/js")
+    @Scripts.Render("~/bundles/bootstrap/js")
+</body>
+</html>
