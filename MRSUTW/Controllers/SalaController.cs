@@ -38,7 +38,7 @@ namespace MRSUTW.Controllers
                 while(dr.Read())
                 {
                     activities.Add(new ActivitiesModel() {
-                        //id = dr["id"].ToString(),
+                        id = (int)dr["id"],
                         Prof = dr["Prof"].ToString(),
                         Luni = dr["Luni"].ToString(),
                         Marti = dr["Marti"].ToString(),

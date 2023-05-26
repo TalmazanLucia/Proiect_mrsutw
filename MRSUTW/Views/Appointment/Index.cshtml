@@ -21,6 +21,38 @@
         </div>
     </section>
     <section class="class-details-section spad">
+
+        <div class="login-form">
+
+            @using (Ajax.BeginForm("Index", "Appointment", new AjaxOptions
+            {
+                HttpMethod = "POST",
+                OnSuccess = "succes",
+                OnFailure = "failure",
+                UpdateTargetId = "resultTarget"
+            }))
+            {
+                <div>
+                    <form action="select1.php" method="post">
+                        <p>
+                            <select>
+                                <option disabled>Выберите героя</option>
+                                <option value="Чебурашка">Чебурашка</option>
+                                <option value="Крокодил Гена">Крокодил Гена</option>
+                                <option value="Шапокляк">Шапокляк</option>
+                                <option value="Крыса Лариса">Крыса Лариса</option>
+                            </select>
+                        </p>
+                    </form>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="Username" name="Username" placeholder="Username:" value="" required>
+                </div>
+
+                <button type="submit">Register</button>
+            }
+        </div>
     </section>
+
 </body>
 </html>

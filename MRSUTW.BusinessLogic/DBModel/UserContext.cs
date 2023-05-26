@@ -8,14 +8,15 @@ using System.Threading.Tasks;
 
 namespace MRSUTW.BusinessLogic.DBModel
 {
-     public class UserContext : DbContext
-     {
-          public UserContext() :
-               base("name=MRSUTW")
-          { }
+    public class UserContext : DbContext
+    {
+        public UserContext() :
+             base("name=MRSUTW")
+        { }
 
-          public virtual DbSet<UDbTable> Users { get; set; }
-          public virtual DbSet<SessionsDbTable> Sessions { get; set; }
-          public virtual DbSet<Table_Activities> Activities { get; set; }
+        public virtual DbSet<UDbTable> Users { get; set; }
+        public virtual DbSet<SessionsDbTable> Sessions { get; set; }
+        public virtual DbSet<Table_Activities> Activities { get; set; }
+        public virtual DbSet<DbAppointments> Appointments { get; set; }
     }
 }
