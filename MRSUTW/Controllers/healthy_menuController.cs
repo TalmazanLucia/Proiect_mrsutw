@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using MRSUTW.BusinessLogic.Interfaces;
 using MRSUTW.Domain.Entities.Dishes;
+using MRSUTW.Domain.Entities.User;
 using MRSUTW.Models;
 using System;
 using System.Collections.Generic;
@@ -23,20 +24,15 @@ namespace MRSUTW.Controllers
         public ActionResult Index()
         {
             var config = new MapperConfiguration(cfg => {
-                cfg.CreateMap<DishesData, ProductsModel>();
+                cfg.CreateMap<DishesData, Dish>();
             });
 
             IMapper mapper = config.CreateMapper();
 
-            List<DishesData> dishesDataList = _dishes.GetDishes();
-            List<ProductsModel> dishes = dishesDataList.Select(usersProfileData => mapper.Map<ProductsModel>(dishesDataList)).ToList();
+            List<DishesData> usersProfileDataList = _dishes.GetDishes();
+            List<Dish> dishes = usersProfileDataList.Select(usersProfileData => mapper.Map<Dish>(usersProfileData)).ToList();
 
-            ProductsModel p = new ProductsModel();
-            p.Username = "Customer";
-            p.Menus = new List<string> { "Meniu #1", "Meniu #2", "Meniu #3", "Meniu #4", "Meniu #5" };
-
-
-            return View(p);
+            return View(dishes);
         }
     }
 }

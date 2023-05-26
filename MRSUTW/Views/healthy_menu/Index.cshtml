@@ -2,7 +2,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @using System.Web.Optimization
-@model MRSUTW.Models.ProductsModel
+@model IEnumerable<MRSUTW.Models.Dish>
 
 <!DOCTYPE html>
 
@@ -13,100 +13,48 @@
             <div class="col-lg-12">
                 <section class="breadcrumb-section set-bg" data-setbg="./../../img/healthy_menu/menu_back7.png" style="background-size: 100%;">
                     <div class="col-lg-12">
-                    <div class="section-title">
-                        <span>Nutrition</span>
-                        <h2>Healthy dishes for you</h2>
-                    </div>
-            </div>
-    </section>
-    <div class="row">
-        <div class="ts-slider owl-carousel owl-loaded owl-drag">
-            <div class="owl-stage-outer">
-                <div class="owl-stage" style="transform: translate3d(-585px, 0px, 0px); transition: all 3s ease 0s; width: 1171px;">
-                    <div class="owl-item cloned" style="width: 97.556px;">
-                        <div class="col-lg-4">
-                            <div class="ts-item set-bg" data-setbg="./../../img/healthy_menu/menu1.jpg" style="background-image: url(&quot;./../../img/healthy_menu/menu1.jpg&quot;);">
-                                <div class="ts_text">
-                                    <a href="@Url.Action("Index", "Dishes")">
-                                        <h4>Burrito bowl with chipotle black beans</h4>
-                                        <span>Burrito bowl with chipotle black beans</span>
-                                    </a>
-                                </div>
-                            </div>
+                        <div class="section-title">
+                            <span>Nutrition</span>
+                            <h2>Healthy dishes for you</h2>
                         </div>
                     </div>
-                    <div class="owl-item cloned" style="width: 97.556px;">
-                        <div class="col-lg-4">
-                            <div class="ts-item set-bg" data-setbg="./../../img/healthy_menu/menu2.jpg" style="background-image: url(&quot;./../../img/healthy_menu/menu2.jpg&quot;);">
-                                <div class="ts_text">
-                                    <a href="@Url.Action("Index", "Dishes")">
-                                        <h4>Chicken satay salad</h4>
-                                        <span>Chicken satay salad</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div><div class="owl-item cloned" style="width: 97.556px;">
-                        <div class="col-lg-4">
-                            <div class="ts-item set-bg" data-setbg="./../../img/healthy_menu/menu3.jpg" style="background-image: url(&quot;./../../img/healthy_menu/menu3.jpg&quot;);">
-                                <div class="ts_text">
-                                    <a href="@Url.Action("Index", "Dishes")">
-                                        <h4>Healthy salmon bowl</h4>
-                                        <span>Healthy salmon bowl</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div><div class="owl-item" style="width: 97.556px;">
-                        <div class="col-lg-4">
-                            <div class="ts-item set-bg" data-setbg="./../../img/healthy_menu/menu4.jpg" style="background-image: url(&quot;./../../img/healthy_menu/menu4.jpg&quot;);">
-                                <div class="ts_text">
-                                    <a href="@Url.Action("Index", "Dishes")">
-                                        <h4>Healthy bolognese</h4>
-                                        <span>Healthy bolognese</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div><div class="owl-item" style="width: 97.556px;">
-                        <div class="col-lg-4">
-                            <div class="ts-item set-bg" data-setbg="./../../img/healthy_menu/menu5.jpg" style="background-image: url(&quot;./../../img/healthy_menu/menu5.jpg&quot;);">
-                                <div class="ts_text">
-                                    <a href="@Url.Action("Index", "Dishes")">
-                                        <h4>Penne with cabbage & walnuts</h4>
-                                        <span>Penne with cabbage & walnuts</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div><div class="owl-item" style="width: 97.556px;">
-                        <div class="col-lg-4">
-                            <div class="ts-item set-bg" data-setbg="./../../img/healthy_menu/menu6.jpg" style="background-image: url(&quot;./../../img/healthy_menu/menu5.jpg&quot;);">
-                                <div class="ts_text">
-                                    <a href="@Url.Action("Index", "Dishes")">
-                                        <h4>Chicken parmigiana</h4>
-                                        <span>Chicken parmigiana</span>
-                                    </a>
-                                </div>
+                </section>
+                <div class="row">
+                    <div class="ts-slider owl-carousel owl-loaded owl-drag">
+                        <div class="owl-stage-outer">
+                            <div class="owl-stage" style="transform: translate3d(-585px, 0px, 0px); transition: all 1.2s ease 0s; width: 1171px;">
+
+                                @foreach (var u in Model)
+                                {
+                                    <div class="owl-item cloned" style="width: 97.556px;">
+                                        <div class="col-lg-4">
+                                            <div class="ts-item set-bg" data-setbg="./../../img/healthy_menu/menu3.jpg" style="background-image: url(&quot;./../../img/healthy_menu/menu3.jpg&quot;);">
+                                                <div class="ts_text">
+                                                    <a href="@Url.Action("Index", "Dishes", new { id = u.ID})">
+                                                        <h4>@u.Name</h4>
+                                                        <span>@u.Description</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    </div>
-    </div>
 
-    </div>
-    </div>
-    @Scripts.Render("~/bundles/jquery-3.3.1/js")
-    @Scripts.Render("~/bundles/jquery.magnific-popup/js")
-    @Scripts.Render("~/bundles/masonry-pkgd/js")
-    @Scripts.Render("~/bundles/jquery-barfiller/js")
-    @Scripts.Render("~/bundles/jquery-slicknav/js")
-    @Scripts.Render("~/bundles/owl-carousel/js")
-    @Scripts.Render("~/bundles/main/js")
-    @Scripts.Render("~/bundles/bootstrap/js")
+        </div>
+        </div>
+        @Scripts.Render("~/bundles/jquery-3.3.1/js")
+        @Scripts.Render("~/bundles/jquery.magnific-popup/js")
+        @Scripts.Render("~/bundles/masonry-pkgd/js")
+        @Scripts.Render("~/bundles/jquery-barfiller/js")
+        @Scripts.Render("~/bundles/jquery-slicknav/js")
+        @Scripts.Render("~/bundles/owl-carousel/js")
+        @Scripts.Render("~/bundles/main/js")
+        @Scripts.Render("~/bundles/bootstrap/js")
 </body>
 </html>

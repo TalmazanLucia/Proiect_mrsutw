@@ -15,6 +15,11 @@ namespace MRSUTW.BusinessLogic
         {
             return GetDishesAction();
         }
+
+        public DishesData GetDishesById(int id)
+        {
+            return GetDishesByIdAction(id);
+        }
     }
 }
 

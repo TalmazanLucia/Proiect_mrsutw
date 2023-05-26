@@ -33,5 +33,32 @@ namespace MRSUTW.BusinessLogic.Core
 
             return dishesData;
         }
+
+        internal DishesData GetDishesByIdAction(int id)
+        {
+            DishesData dishesData = new DishesData();
+
+            using (var db = new UserContext())
+            {
+                var dishesList = db.Dishes.ToList();
+
+                foreach (var dish in dishesList)
+                {
+                    if (dish.Id == id)
+                    {
+                        var dishData = new DishesData
+                        {
+                            ID = dish.Id,
+                            Name = dish.Name,
+                            Description = dish.Description,
+                        };
+
+                        dishesData = dishData;
+                    }
+                }
+            }
+
+            return dishesData;
+        }
     }
 }

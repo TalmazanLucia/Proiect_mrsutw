@@ -10,6 +10,7 @@ namespace MRSUTW.BusinessLogic.Interfaces
     public interface IDishes
     {
         List<DishesData> GetDishes();
+        DishesData GetDishesById(int id);
     }
 }
 

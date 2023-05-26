@@ -345,7 +345,7 @@
     <Compile Include="Models\AdminHomeData.cs" />
     <Compile Include="Models\MembershipsModel.cs" />
     <Compile Include="Models\ProductsModel.cs" />
-    <Compile Include="Models\Recipes.cs" />
+    <Compile Include="Models\Dish.cs" />
     <Compile Include="Models\TrainersModel.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\UserSignup.cs" />

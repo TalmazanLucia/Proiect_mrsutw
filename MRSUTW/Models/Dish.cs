@@ -6,8 +6,9 @@ using System.Web;
 
 namespace MRSUTW.Models
 {
-    public class Recipes
+    public class Dish
     {
+        public int ID { get; set; }
         public string Name { get; set; }
         public string Ingredients { get; set; }
         public string Method { get; set; }
