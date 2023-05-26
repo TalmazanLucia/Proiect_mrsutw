@@ -352,5 +352,50 @@ namespace MRSUTW.BusinessLogic.Core
                return users;
           }
 
+          public bool GetIsAdminTypeByCookieAction(string cookie)
+          {
+               SessionsDbTable session;
+               UDbTable curentUser;
+
+               using (var db = new UserContext())
+               {
+                    session = db.Sessions.FirstOrDefault(s => s.CookieString == cookie && s.ExpireTime > DateTime.Now);
+               }
+
+               using (var db = new UserContext())
+               {
+                    var validate = new EmailAddressAttribute();
+                    if (validate.IsValid(session.UserEmail))
+                    {
+                         curentUser = db.Users.FirstOrDefault(u => u.Email == session.UserEmail);
+                    }
+                    else
+                    {
+                         curentUser = db.Users.FirstOrDefault(u => u.Email == session.UserEmail);
+                    }
+               }
+               var userprofile = new UProfileData
+               {
+                    ID = curentUser.Id,
+                    Username = curentUser.Username,
+                    Email = curentUser.Email,
+                    Registred = curentUser.Registred,
+                    Identity = curentUser.Identity,
+                    Description = curentUser.Description,
+                    Age = curentUser.Age,
+                    Weight = curentUser.Weight,
+                    Height = curentUser.Height,
+                    Role = curentUser.Role,
+               };
+
+               if (userprofile.Role == Domain.Enums.URole.Administrator)
+               {
+                    return true;
+               }
+               else
+               {
+                    return false;
+               }
+          }
      }
 }
