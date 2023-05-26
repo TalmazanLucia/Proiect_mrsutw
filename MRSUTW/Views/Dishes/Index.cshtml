@@ -23,8 +23,24 @@
                     <div class="row about-list">
                         <div class="col-md-6">
                             <div class="media">
-                                <label style="color:gray;">Ingredients:</label>
+                                <label style="color:gray;">Description: </label>
                                 <p style="color:white;">@Model.Description</p>
+                            </div>
+                            <div class="media">
+                                <label style="color:gray;">Ingredients:</label>
+                                <p style="color:white;">
+                                    125g basmati rice
+                                    1 tbsp olive oil
+                                    2 garlic cloves, chopped
+                                    400g can black beans, drained and rinsed
+                                    1 tbsp cider vinegar
+                                    1 tsp honey
+                                    1 tbsp chipotle paste
+                                    100g chopped curly kale
+                                    1 avocado, halved and sliced
+                                    1 medium tomato, chopped
+                                    1 small red onion, chopped
+                                </p>
                             </div>
                             <div class="media">
                                 <label style="color:gray;">Cook:</label>
@@ -39,7 +55,26 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="about-avatar">
-                        <img src="./../../img/healthy_menu/menu1.jpg" title="" alt="">
+                        @if (Model.ID == 1)
+                        {
+                            <img src="./../../img/healthy_menu/menu1.jpg" title="" alt="">
+                        }
+                        else if (Model.ID == 2)
+                        {
+                            <img src="./../../img/healthy_menu/menu2.jpg" title="" alt="">
+                        }
+                        else if (Model.ID == 3)
+                        {
+                            <img src="./../../img/healthy_menu/menu3.jpg" title="" alt="">
+                        }
+                        else if (Model.ID == 4)
+                        {
+                            <img src="./../../img/healthy_menu/menu4.jpg" title="" alt="">
+                        }
+                        else if (Model.ID == 5)
+                        {
+                            <img src="./../../img/healthy_menu/menu5.jpg" title="" alt="">
+                        }
                     </div>
                 </div>
             </div>
