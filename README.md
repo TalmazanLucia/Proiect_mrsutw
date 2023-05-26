@@ -29,7 +29,7 @@
   ![image](https://github.com/TalmazanLucia/Proiect_mrsutw/assets/95626780/5ad9bbb0-06d7-4ce4-afed-d76e1c4b63b5)
 
 Pentru a mentine un mold de viata echilibrat, nu este suficienta doar practicarea sportului, ci si o atentie sporita la ce consumam. Am venit in intampinarea clientilor nostri cu un set de retete pe gustul fiecaruia:
-![image](https://github.com/TalmazanLucia/Proiect_mrsutw/assets/124093655/348c8134-7ef3-4a76-a60c-816e3716cb85)
+![image](https://github.com/TalmazanLucia/Proiect_mrsutw/assets/124093655/7fe5e12d-d6e9-4f5d-89d0-0434b7d20bbf)
 
 Mai jos am prezentat o pagina cu detaliile unei retete:
 ![image](https://github.com/TalmazanLucia/Proiect_mrsutw/assets/124093655/6bf9329d-8192-4c7b-9833-11f17cf52889)
