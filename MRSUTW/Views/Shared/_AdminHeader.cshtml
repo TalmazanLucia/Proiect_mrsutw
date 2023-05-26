@@ -45,13 +45,24 @@
                </a>
           }
 
-
-          <div class="admin-nav-item">
+          @if (Model == "Classes")
+          {
+               <div class="admin-nav-item active">
+                    <div class="admin-nav-item-image">
+                         <img src="~/img/class.svg" alt="" />
+                    </div>
+                    <p class="admin-nav-item-text">Classes</p>
+               </div>
+          }
+          else
+          {
+          <a class="admin-nav-item" href="@Url.Action("Index", "AdminClasses")">
                <div class="admin-nav-item-image">
                     <img src="~/img/class.svg" alt="" />
                </div>
                <p class="admin-nav-item-text">Classes</p>
-          </div>
+          </a>
+          }
           <div class="admin-nav-item">
                <div class="admin-nav-item-image">
                     <img src="~/img/subscription.svg" alt="" />

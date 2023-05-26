@@ -18,6 +18,11 @@ namespace MRSUTW.BusinessLogic
         {
             return new DishesBL();
         }
+
+        public IActivities GetActivitiesBL()
+        {
+               return new ActivitiesBL();
+        }
     }
 }
 

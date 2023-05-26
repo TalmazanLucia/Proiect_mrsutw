@@ -134,6 +134,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\AdminClassesController.cs" />
     <Compile Include="Models\ActivitiesModel.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -387,6 +388,7 @@
     <Content Include="Views\Shared\_AdminHeader.cshtml" />
     <Content Include="Views\ProfileTrainer\Index.cshtml" />
     <Content Include="Views\Dishes\Index.cshtml" />
+    <Content Include="Views\AdminClasses\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
