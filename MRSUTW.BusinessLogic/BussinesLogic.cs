@@ -9,9 +9,15 @@ namespace MRSUTW.BusinessLogic
 {
     public class BussinesLogic
     {
-          public ISession GetSessionBL()
-          {
-               return new SessionBL();
-          }
+        public ISession GetSessionBL()
+        {
+            return new SessionBL();
+        }
+
+        public IDishes GetDishesBL()
+        {
+            return new DishesBL();
+        }
     }
 }
+

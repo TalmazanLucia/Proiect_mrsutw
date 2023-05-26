@@ -1,4 +1,5 @@
-﻿using MRSUTW.Domain.Entities.User;
+﻿using MRSUTW.Domain.Entities.Dishes;
+using MRSUTW.Domain.Entities.User;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -16,5 +17,9 @@ namespace MRSUTW.BusinessLogic.DBModel
 
           public virtual DbSet<UDbTable> Users { get; set; }
           public virtual DbSet<SessionsDbTable> Sessions { get; set; }
-     }
+          public virtual DbSet<Table_Activities> Activities { get; set; }
+          public virtual DbSet<DishesDbTable> Dishes { get; set; }
+
+
+    }
 }
