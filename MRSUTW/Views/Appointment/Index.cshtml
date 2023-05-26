@@ -21,7 +21,6 @@
         </div>
     </section>
     <section class="class-details-section spad">
-
         <div class="login-form">
 
             @using (Ajax.BeginForm("Index", "Appointment", new AjaxOptions
@@ -34,23 +33,17 @@
             {
                 <div class="form-group">
                     <select style="margin-bottom: 2rem; width: 100%; width: 100%; padding: 10px; font-size: 16px; border-radius: 5px; border: none; background-color: #f2f2f2; color: #333; margin-bottom: 8px; ">
-                        <option disabled>Выберите героя</option>
-                        <option value="Чебурашка">Vasia</option>
-                        <option value="Крокодил Гена">Ghena</option>
-                        <option value="Шапокляк">Borea</option>
-                    </select>
-                    <select style="margin-bottom: 1rem; width: 100%; width: 100%; padding: 10px; font-size: 16px; border-radius: 5px; border: none; background-color: #f2f2f2; color: #333; margin-bottom: 8px; ">
-                        <option disabled>Выберите героя</option>
-                        <option value="Чебурашка">39$</option>
-                        <option value="Крокодил Гена">99$</option>
-                        <option value="Шапокляк">59$</option>
+                        <option disabled>Choose Trainer</option>
+                        <option value="Trainer1">Vasia</option>
+                        <option value="Trainer2">Ghena</option>
+                        <option value="Trainer3">Borea</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <input type="text" id="Username" name="Username" placeholder="Username:" value="" required>
+                    <input type="text" id="Username" name="Username" placeholder="Username:" value="">
                 </div>
 
-                <button type="submit">Register</button>
+                <button type="submit">Submit</button>
             }
         </div>
     </section>

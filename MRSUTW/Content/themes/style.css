@@ -1735,6 +1735,9 @@ ol {
 .class-details-section {
 	background: #151515;
 	padding-bottom: 60px;
+	align-items: center;
+	justify-content: center;
+	display: flex;
 }
 
 .class-details-text .cd-pic {
