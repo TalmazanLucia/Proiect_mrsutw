@@ -46,6 +46,9 @@ namespace MRSUTW.BusinessLogic
           {
                return GetTrainersAction();
           }
-
+          public bool GetIsAdminTypeByCookie(string cookie)
+          {
+               return GetIsAdminTypeByCookieAction(cookie);
+          }
      }
 }

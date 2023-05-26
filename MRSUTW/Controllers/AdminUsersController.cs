@@ -10,8 +10,8 @@ using System.Web.Mvc;
 
 namespace MRSUTW.Controllers
 {
-    public class AdminUsersController : Controller
-    {
+     public class AdminUsersController : Controller
+     {
           private ISession _session;
 
           public AdminUsersController()
@@ -26,16 +26,23 @@ namespace MRSUTW.Controllers
                var userCookie = Request.Cookies["MRSUTW"];
                if (userCookie == null) { return RedirectToAction("Index", "Home"); }
 
-               var config = new MapperConfiguration(cfg => {
-                    cfg.CreateMap<UProfileData, User>();
-               });
+               if (_session.GetIsAdminTypeByCookie(userCookie.Value))
+               {
+                    var config = new MapperConfiguration(cfg => {
+                         cfg.CreateMap<UProfileData, User>();
+                    });
 
-               IMapper mapper = config.CreateMapper();
+                    IMapper mapper = config.CreateMapper();
 
-               List<UProfileData> usersProfileDataList = _session.GetUsers();
-               List<User> users = usersProfileDataList.Select(usersProfileData => mapper.Map<User>(usersProfileData)).ToList();
+                    List<UProfileData> usersProfileDataList = _session.GetUsers();
+                    List<User> users = usersProfileDataList.Select(usersProfileData => mapper.Map<User>(usersProfileData)).ToList();
 
-               return View(users);
+                    return View(users);
+               }
+               else
+               {
+                    return RedirectToAction("Index", "Home");
+               }
           }
-    }
+     }
 }
