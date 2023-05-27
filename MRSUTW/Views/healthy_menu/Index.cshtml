@@ -22,20 +22,79 @@
                 <div class="row">
                     <div class="ts-slider owl-carousel owl-loaded owl-drag">
                         <div class="owl-stage-outer">
-                            <div class="owl-stage" style="transform: translate3d(-585px, 0px, 0px); transition: all 1.2s ease 0s; width: 1171px;">
+                            <div class="owl-stage" style="transform: translate3d(-585px, 0px, 0px); transition: all 7s ease 0s; width: 1171px;">
 
                                 @foreach (var u in Model)
                                 {
-                                    <div class="owl-item cloned" style="width: 97.556px;">
+                                    <div class="owl-item" style="width: 97.556px;">
                                         <div class="col-lg-4">
-                                            <div class="ts-item set-bg" data-setbg="./../../img/healthy_menu/menu3.jpg" style="background-image: url(&quot;./../../img/healthy_menu/menu3.jpg&quot;);">
-                                                <div class="ts_text">
-                                                    <a href="@Url.Action("Index", "Dishes", new { id = u.ID})">
-                                                        <h4>@u.Name</h4>
-                                                        <span>@u.Description</span>
-                                                    </a>
+                                            @if (u.ID == 1)
+                                            {
+                                                <div class="ts-item set-bg" data-setbg="./../../img/healthy_menu/menu1.jpg" style="background-image: url(&quot;./../../img/healthy_menu/menu3.jpg&quot;);">
+                                                    <div class="ts_text">
+                                                        <a href="@Url.Action("Index", "Dishes", new { id = u.ID})">
+                                                            <h4>@u.Name</h4>
+                                                            <span>@u.Description</span>
+                                                        </a>
+                                                    </div>
                                                 </div>
-                                            </div>
+                                            }
+                                            else if (u.ID == 2)
+                                            {
+                                                <div class="ts-item set-bg" data-setbg="./../../img/healthy_menu/menu2.jpg" style="background-image: url(&quot;./../../img/healthy_menu/menu_back7.jpg&quot;);">
+                                                    <div class="ts_text">
+                                                        <a href="@Url.Action("Index", "Dishes", new { id = u.ID})">
+                                                            <h4>@u.Name</h4>
+                                                            <span>@u.Description</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            }
+                                            else if (u.ID == 3)
+                                            {
+                                                <div class="ts-item set-bg" data-setbg="./../../img/healthy_menu/menu3.jpg" style="background-image: url(&quot;./../../img/healthy_menu/menu_back7.jpg&quot;);">
+                                                    <div class="ts_text">
+                                                        <a href="@Url.Action("Index", "Dishes", new { id = u.ID})">
+                                                            <h4>@u.Name</h4>
+                                                            <span>@u.Description</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            }
+                                            else if (u.ID == 4)
+                                            {
+                                                <div class="ts-item set-bg" data-setbg="./../../img/healthy_menu/menu4.jpg" style="background-image: url(&quot;./../../img/healthy_menu/menu_back7.jpg&quot;);">
+                                                    <div class="ts_text">
+                                                        <a href="@Url.Action("Index", "Dishes", new { id = u.ID})">
+                                                            <h4>@u.Name</h4>
+                                                            <span>@u.Description</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            }
+                                            else if (u.ID == 5)
+                                            {
+                                                <div class="ts-item set-bg" data-setbg="./../../img/healthy_menu/menu5.jpg" style="background-image: url(&quot;./../../img/healthy_menu/menu_back7.jpg&quot;);">
+                                                    <div class="ts_text">
+                                                        <a href="@Url.Action("Index", "Dishes", new { id = u.ID})">
+                                                            <h4>@u.Name</h4>
+                                                            <span>@u.Description</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            }
+                                            else 
+                                            {
+                                                <div class="ts-item set-bg" data-setbg="./../../img/healthy_menu/menu2.jpg" style="background-image: url(&quot;./../../img/healthy_menu/menu_back7.jpg&quot;);">
+                                                    <div class="ts_text">
+                                                        <a href="@Url.Action("Index", "Dishes", new { id = u.ID})">
+                                                            <h4>@u.Name</h4>
+                                                            <span>@u.Description</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            }
+
                                         </div>
                                     </div>
                                 }
