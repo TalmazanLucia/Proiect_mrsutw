@@ -1,6 +1,24 @@
-# 💪 Fitness Complex
-      Site-ul web are rolul de a informa potențialii clienți despre posibilitățile pe care le oferă complexul sportiv al UTM.
+# 💪 UTM Fitness Complex
+ Site-ul web are rolul de a informa potențialii clienți despre posibilitățile pe care le oferă complexul sportiv al UTM.Deasemenea site-ul include o serie de functionalitati importante si utile pentru clienti.
       
+
+https://github.com/TalmazanLucia/Proiect_mrsutw/assets/100832810/f21edeb3-7711-42ab-b689-4399e3fb19f6
+
+
+      Pagini functionale:
+      1.Inregistrare 🏓
+      2.Logare 🏸
+      3.Profil client 🥎
+      4.Pagina antrenori 🏐
+      5.Profil antrenor 🏉
+      6.Pagina meniu sanatos 🥈
+      7.Pagina descriere reteta meniu ⚽
+      8.Pagina cu clase si orar 🏒
+      9.Pagina administrator 🥅
+      10.Pagina editare utilizator din profil administrator🎱 
+      11.Pagina editare clase din profil administrator 🎯
+      12.Pagina setare profil (selectare tip, varsta, descriere, greutate, inaltime) 🎳
+      13.Pagina abonamente 🏆
 ## ✨ Demo
   Site-ul oferă posibilitatea de a te înregistra și loga.
   ![image](https://github.com/TalmazanLucia/Proiect_mrsutw/assets/100832810/eb6f4305-fe73-4c0d-8d1d-e05e8b5b0f7c)
