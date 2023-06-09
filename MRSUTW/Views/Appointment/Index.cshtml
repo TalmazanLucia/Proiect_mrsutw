@@ -1,26 +1,60 @@
 ﻿@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @using System.Web.Optimization
 
 <!DOCTYPE html>
 
 <html>
+<head>
+     @Scripts.Render("~/bundles/jquery-3.3.1/js")
+     @Scripts.Render("~/bundles/jquery.magnific-popup/js")
+     @Scripts.Render("~/bundles/jquery-barfiller/js")
+     @Scripts.Render("~/bundles/jquery-slicknav/js")
+     <script type="text/javascript">
+        $(document).ready(function () {
+            $("#confirm").click(function () {
+                var oraValue = $("#ora").val();
+
+                $.ajax({
+                    url: "/Appointment/Save/",
+                    type: "POST",
+                    data: { ora: oraValue },
+                     success: function (result) {
+                          if (result.redirectUrl) {
+                               window.location.href = result.redirectUrl;
+                          } else {
+                               console.log(result);
+                          }
+                     },
+                    error: function (xhr, status, error) {
+                        console.log(xhr.responseText);
+                    }
+                });
+            });
+
+        });
+     </script>
+</head>
 <body>
-    <section class="breadcrumb-section set-bg" data-setbg="./../../img/breadcrumb-bg.jpg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="breadcrumb-text">
-                        <h2>
-                            <a href="@Url.Action("Index", "Sala")" class="primary-btn-new-btn">Inapoi</a>
-                        </h2>
+     <section class="breadcrumb-section set-bg" data-setbg="./../../img/breadcrumb-bg.jpg">
+          <div class="container">
+               <div class="row">
+                    <div class="col-lg-12 text-center">
+                         <input class="input-group-lg" name="ora" id="ora" />
+                         <div class="breadcrumb-text" style="display: flex; gap: 24px; justify-content: center;">
+                              <h2>
+                                   <a href="@Url.Action("Index", "Sala")" class="primary-btn-new-btn">Inapoi</a>
+                              </h2>
+                              <h2>
+                                   <button id="confirm" class="primary-btn-new-btn">Confirma</button>
+                              </h2>
+                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="class-details-section spad">
-    </section>
+               </div>
+          </div>
+     </section>
+     <section class="class-details-section spad">
+     </section>
 </body>
 </html>

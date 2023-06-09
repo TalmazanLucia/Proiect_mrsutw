@@ -53,14 +53,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActivitiesBL.cs" />
+    <Compile Include="AppointmentBL.cs" />
     <Compile Include="Core\ActivitiesApi.cs" />
     <Compile Include="Core\AdminApi.cs" />
+    <Compile Include="Core\AppointmentApi.cs" />
     <Compile Include="Core\DishesApi.cs" />
     <Compile Include="Core\UserApi.cs" />
     <Compile Include="BussinesLogic.cs" />
     <Compile Include="DBModel\UserContext.cs" />
     <Compile Include="DishesBL.cs" />
     <Compile Include="Interfaces\IActivities.cs" />
+    <Compile Include="Interfaces\IAppointment.cs" />
     <Compile Include="Interfaces\IDishes.cs" />
     <Compile Include="Interfaces\ISession.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

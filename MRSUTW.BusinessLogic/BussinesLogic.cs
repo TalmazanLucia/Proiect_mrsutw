@@ -7,22 +7,27 @@ using System.Threading.Tasks;
 
 namespace MRSUTW.BusinessLogic
 {
-    public class BussinesLogic
-    {
-        public ISession GetSessionBL()
-        {
-            return new SessionBL();
-        }
+     public class BussinesLogic
+     {
+          public ISession GetSessionBL()
+          {
+               return new SessionBL();
+          }
 
-        public IDishes GetDishesBL()
-        {
-            return new DishesBL();
-        }
+          public IDishes GetDishesBL()
+          {
+               return new DishesBL();
+          }
 
-        public IActivities GetActivitiesBL()
-        {
+          public IActivities GetActivitiesBL()
+          {
                return new ActivitiesBL();
-        }
-    }
+          }
+
+          public IAppointment GetAppointmentBL()
+          {
+               return new AppointmentBL();
+          }
+     }
 }
 
