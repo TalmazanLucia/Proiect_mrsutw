@@ -1,4 +1,5 @@
-﻿using MRSUTW.Domain.Entities.Dishes;
+﻿using MRSUTW.Domain.Entities.Appointment;
+using MRSUTW.Domain.Entities.Dishes;
 using MRSUTW.Domain.Entities.User;
 using System;
 using System.Collections.Generic;
@@ -19,7 +20,7 @@ namespace MRSUTW.BusinessLogic.DBModel
           public virtual DbSet<SessionsDbTable> Sessions { get; set; }
           public virtual DbSet<Table_Activities> Activities { get; set; }
           public virtual DbSet<DishesDbTable> Dishes { get; set; }
+          public virtual DbSet<AppointmentDb> Appointments { get; set; }
 
-
-    }
+     }
 }

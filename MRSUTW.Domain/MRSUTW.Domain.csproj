@@ -52,6 +52,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\Activities\Table_Activities.cs" />
+    <Compile Include="Entities\Appointment\Appointment.cs" />
+    <Compile Include="Entities\Appointment\AppointmentDb.cs" />
     <Compile Include="Entities\Dish\DishesData.cs" />
     <Compile Include="Entities\Dish\DishesDbTable.cs" />
     <Compile Include="Entities\User\SessionsDbTable.cs" />
